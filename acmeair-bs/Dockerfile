@@ -1,4 +1,4 @@
-FROM websphere-liberty:common
+FROM mongo:web
 
 ADD Dockerfile /root/Dockerfile
 
