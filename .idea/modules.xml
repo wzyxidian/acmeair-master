@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/acmeair-as/acmeair-as.iml" filepath="$PROJECT_DIR$/.idea/modules/acmeair-as/acmeair-as.iml" group="acmeair-as" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/acmeair-as/acmeair-as_main.iml" filepath="$PROJECT_DIR$/.idea/modules/acmeair-as/acmeair-as_main.iml" group="acmeair-as" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/acmeair-as/acmeair-as_test.iml" filepath="$PROJECT_DIR$/.idea/modules/acmeair-as/acmeair-as_test.iml" group="acmeair-as" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/acmeair-bs/acmeair-bs.iml" filepath="$PROJECT_DIR$/.idea/modules/acmeair-bs/acmeair-bs.iml" group="acmeair-bs" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/acmeair-bs/acmeair-bs_main.iml" filepath="$PROJECT_DIR$/.idea/modules/acmeair-bs/acmeair-bs_main.iml" group="acmeair-bs" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/acmeair-bs/acmeair-bs_test.iml" filepath="$PROJECT_DIR$/.idea/modules/acmeair-bs/acmeair-bs_test.iml" group="acmeair-bs" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/acmeair-cs/acmeair-cs.iml" filepath="$PROJECT_DIR$/.idea/modules/acmeair-cs/acmeair-cs.iml" group="acmeair-cs" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/acmeair-cs/acmeair-cs_main.iml" filepath="$PROJECT_DIR$/.idea/modules/acmeair-cs/acmeair-cs_main.iml" group="acmeair-cs" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/acmeair-cs/acmeair-cs_test.iml" filepath="$PROJECT_DIR$/.idea/modules/acmeair-cs/acmeair-cs_test.iml" group="acmeair-cs" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/acmeair-fs/acmeair-fs.iml" filepath="$PROJECT_DIR$/.idea/modules/acmeair-fs/acmeair-fs.iml" group="acmeair-fs" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/acmeair-fs/acmeair-fs_main.iml" filepath="$PROJECT_DIR$/.idea/modules/acmeair-fs/acmeair-fs_main.iml" group="acmeair-fs" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/acmeair-fs/acmeair-fs_test.iml" filepath="$PROJECT_DIR$/.idea/modules/acmeair-fs/acmeair-fs_test.iml" group="acmeair-fs" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/acmeair-loader/acmeair-loader.iml" filepath="$PROJECT_DIR$/.idea/modules/acmeair-loader/acmeair-loader.iml" group="acmeair-loader" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/acmeair-loader/acmeair-loader_main.iml" filepath="$PROJECT_DIR$/.idea/modules/acmeair-loader/acmeair-loader_main.iml" group="acmeair-loader" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/acmeair-loader/acmeair-loader_test.iml" filepath="$PROJECT_DIR$/.idea/modules/acmeair-loader/acmeair-loader_test.iml" group="acmeair-loader" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/acmeair-mainapp/acmeair-mainapp.iml" filepath="$PROJECT_DIR$/.idea/modules/acmeair-mainapp/acmeair-mainapp.iml" group="acmeair-mainapp" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/acmeair-mainapp/acmeair-mainapp_main.iml" filepath="$PROJECT_DIR$/.idea/modules/acmeair-mainapp/acmeair-mainapp_main.iml" group="acmeair-mainapp" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/acmeair-mainapp/acmeair-mainapp_test.iml" filepath="$PROJECT_DIR$/.idea/modules/acmeair-mainapp/acmeair-mainapp_test.iml" group="acmeair-mainapp" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/acmeair-master.iml" filepath="$PROJECT_DIR$/.idea/modules/acmeair-master.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/acmeair-services/acmeair-services.iml" filepath="$PROJECT_DIR$/.idea/modules/acmeair-services/acmeair-services.iml" group="acmeair-services" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/acmeair-services-mongo/acmeair-services-mongo.iml" filepath="$PROJECT_DIR$/.idea/modules/acmeair-services-mongo/acmeair-services-mongo.iml" group="acmeair-services-mongo" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/acmeair-services-mongo/acmeair-services-mongo_main.iml" filepath="$PROJECT_DIR$/.idea/modules/acmeair-services-mongo/acmeair-services-mongo_main.iml" group="acmeair-services-mongo" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/acmeair-services-mongo/acmeair-services-mongo_test.iml" filepath="$PROJECT_DIR$/.idea/modules/acmeair-services-mongo/acmeair-services-mongo_test.iml" group="acmeair-services-mongo" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/acmeair-services/acmeair-services_main.iml" filepath="$PROJECT_DIR$/.idea/modules/acmeair-services/acmeair-services_main.iml" group="acmeair-services" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/acmeair-services/acmeair-services_test.iml" filepath="$PROJECT_DIR$/.idea/modules/acmeair-services/acmeair-services_test.iml" group="acmeair-services" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/acmeair-ss/acmeair-ss.iml" filepath="$PROJECT_DIR$/.idea/modules/acmeair-ss/acmeair-ss.iml" group="acmeair-ss" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/acmeair-ss/acmeair-ss_main.iml" filepath="$PROJECT_DIR$/.idea/modules/acmeair-ss/acmeair-ss_main.iml" group="acmeair-ss" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/acmeair-ss/acmeair-ss_test.iml" filepath="$PROJECT_DIR$/.idea/modules/acmeair-ss/acmeair-ss_test.iml" group="acmeair-ss" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/acmeair-webapp/acmeair-webapp.iml" filepath="$PROJECT_DIR$/.idea/modules/acmeair-webapp/acmeair-webapp.iml" group="acmeair-webapp" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/acmeair-webapp/acmeair-webapp_main.iml" filepath="$PROJECT_DIR$/.idea/modules/acmeair-webapp/acmeair-webapp_main.iml" group="acmeair-webapp" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/acmeair-webapp/acmeair-webapp_test.iml" filepath="$PROJECT_DIR$/.idea/modules/acmeair-webapp/acmeair-webapp_test.iml" group="acmeair-webapp" />
+    </modules>
+  </component>
+</project>

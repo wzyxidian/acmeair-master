@@ -1,0 +1,39 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="Gradle : acmeair-master : acmeair-as-2.0.0-SNAPSHOT.war (exploded)">
+    <output-path>$PROJECT_DIR$/build/classes/artifacts/acmeair-as/exploded/acmeair-as-2.0.0-SNAPSHOT.war</output-path>
+    <properties id="gradle-properties">
+      <options external-project-path="$PROJECT_DIR$" />
+    </properties>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="acmeair-as_main/web/Web Gradle : acmeair-as-2.0.0-SNAPSHOT.war" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="acmeair-as_main" />
+          <element id="dir-copy" path="$PROJECT_DIR$/acmeair-as/build/resources/main" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="archive" name="acmeair-master-acmeair-services-2.0.0-SNAPSHOT.jar">
+            <element id="module-output" name="acmeair-services_main" />
+            <element id="dir-copy" path="$PROJECT_DIR$/acmeair-services/build/resources/main" />
+          </element>
+          <element id="library" level="project" name="Gradle: com.googlecode.json-simple:json-simple:1.1.1" />
+          <element id="library" level="project" name="Gradle: junit:junit:4.10" />
+          <element id="library" level="project" name="Gradle: org.hamcrest:hamcrest-core:1.1" />
+          <element id="archive" name="acmeair-master-acmeair-services-mongo-2.0.0-SNAPSHOT.jar">
+            <element id="module-output" name="acmeair-services-mongo_main" />
+            <element id="dir-copy" path="$PROJECT_DIR$/acmeair-services-mongo/build/resources/main" />
+          </element>
+          <element id="library" level="project" name="Gradle: org.mongodb:mongo-java-driver:3.1.1" />
+          <element id="library" level="project" name="Gradle: org.mongodb:bson:3.1.1" />
+          <element id="archive" name="acmeair-master-acmeair-loader-2.0.0-SNAPSHOT.jar">
+            <element id="module-output" name="acmeair-loader_main" />
+            <element id="dir-copy" path="$PROJECT_DIR$/acmeair-loader/build/resources/main" />
+          </element>
+        </element>
+      </element>
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/build/classes/artifacts/acmeair-as/exploded/acmeair-as-2.0.0-SNAPSHOT.war/META-INF/MANIFEST.MF" />
+      </element>
+    </root>
+  </artifact>
+</component>

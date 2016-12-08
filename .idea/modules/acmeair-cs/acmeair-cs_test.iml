@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module external.linked.project.id=":acmeair-cs:test" external.linked.project.path="$MODULE_DIR$/../../../acmeair-cs" external.root.project.path="$MODULE_DIR$/../../.." external.system.id="GRADLE" external.system.module.group="acmeair-master" external.system.module.type="sourceSet" external.system.module.version="2.0.0-SNAPSHOT" type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_8" inherit-compiler-output="false">
+    <output-test url="file://$MODULE_DIR$/../../../acmeair-cs/build/classes/test" />
+    <exclude-output />
+    <content url="file://$MODULE_DIR$/../../../acmeair-cs/src/test">
+      <sourceFolder url="file://$MODULE_DIR$/../../../acmeair-cs/src/test/java" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../../../acmeair-cs/src/test/resources" type="java-test-resource" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module" module-name="acmeair-cs_main" />
+    <orderEntry type="library" name="Gradle: javax:javaee-web-api:7.0" level="project" />
+    <orderEntry type="module" module-name="acmeair-services_main" />
+    <orderEntry type="module" module-name="acmeair-services-mongo_main" />
+    <orderEntry type="module" module-name="acmeair-loader_main" />
+    <orderEntry type="library" name="Gradle: com.googlecode.json-simple:json-simple:1.1.1" level="project" />
+    <orderEntry type="library" name="Gradle: org.mongodb:mongo-java-driver:3.1.1" level="project" />
+    <orderEntry type="library" name="Gradle: org.mongodb:bson:3.1.1" level="project" />
+    <orderEntry type="library" name="Gradle: junit:junit:4.10" level="project" />
+    <orderEntry type="library" name="Gradle: org.hamcrest:hamcrest-core:1.1" level="project" />
+  </component>
+  <component name="TestModuleProperties" production-module="acmeair-cs_main" />
+</module>

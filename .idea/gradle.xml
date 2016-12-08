@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="GradleSettings">
+    <option name="linkedExternalProjectsSettings">
+      <GradleProjectSettings>
+        <option name="distributionType" value="LOCAL" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="gradleHome" value="E:/BuildTools/gradle-3.2.1-all/gradle-3.2.1" />
+        <option name="gradleJvm" value="#JAVA_HOME" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/acmeair-as" />
+            <option value="$PROJECT_DIR$/acmeair-bs" />
+            <option value="$PROJECT_DIR$/acmeair-cs" />
+            <option value="$PROJECT_DIR$/acmeair-fs" />
+            <option value="$PROJECT_DIR$/acmeair-loader" />
+            <option value="$PROJECT_DIR$/acmeair-mainapp" />
+            <option value="$PROJECT_DIR$/acmeair-services" />
+            <option value="$PROJECT_DIR$/acmeair-services-mongo" />
+            <option value="$PROJECT_DIR$/acmeair-ss" />
+            <option value="$PROJECT_DIR$/acmeair-webapp" />
+          </set>
+        </option>
+        <option name="useAutoImport" value="true" />
+      </GradleProjectSettings>
+    </option>
+  </component>
+</project>
