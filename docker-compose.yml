@@ -1,4 +1,3 @@
-version 2
 main:
   container_name: main_service_liberty1
   net: ${NETWORK}
