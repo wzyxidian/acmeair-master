@@ -1,4 +1,4 @@
-FROM mongo:web
+FROM 192.168.0.190:5000/mongo:web
 
 ADD Dockerfile /root/Dockerfile
 
