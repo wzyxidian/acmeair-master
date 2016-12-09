@@ -18,5 +18,4 @@ ENV CUSTOMER_SERVICE=nginx1/acmeair
 ENV MONGO_HOST=as
 ENV MONGO_DBNAME=acmeair_sessiondb
 
-CMD ["/opt/ibm/wlp/bin/server", "run", "defaultServer"]
-ENTRYPOINT["/bin/bash","/usr/startMongo.sh"]
+ENTRYPOINT ["/bin/bash","/usr/startMongo.sh"]

@@ -17,5 +17,4 @@ EXPOSE 80
 ENV MONGO_HOST=fs
 ENV MONGO_DBNAME=acmeair_flightdb
 
-CMD ["/opt/ibm/wlp/bin/server", "run", "defaultServer"]
-ENTRYPOINT["/bin/bash","/usr/startMongo.sh"]
+ENTRYPOINT ["/bin/bash","/usr/startMongo.sh"]
