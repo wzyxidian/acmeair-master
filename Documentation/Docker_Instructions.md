@@ -9,7 +9,7 @@ Assume you have
 #### Run Acmeair in Micro-Service Mode with Docker
 
 	1. Create docker network
-		docker network create --driver bridge my-net
+		docker network create --driver bridge my_net
 	
 	2. Build/Start Containers
 		a. docker-compose build
