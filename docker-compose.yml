@@ -1,37 +1,51 @@
+nginx:
+  container_name: nginx
+  net: ${NETWORK}
+  restart: always
+  build: ./nginx/
+  ports:
+    - "80:80"
+
 main:
-  container_name: main_service_liberty1
+  container_name: main
   net: ${NETWORK}
   build: ./acmeair-mainapp/
   environment:
     - LICENSE=accept
 
 as:
-  container_name: auth_service_liberty1
+  container_name: as
   net: ${NETWORK}
   build: ./acmeair-as/
   environment:
     - LICENSE=accept
+  volumes:
+       - /docker/mongodb:/docker/mongodb
 
 bs:
-  container_name: booking_service_liberty1
+  container_name: bs
   net: ${NETWORK}
   build: ./acmeair-bs/
   environment:
     - LICENSE=accept
+  volumes:
+       - /docker/mongodb:/docker/mongodb
 
 cs:
-  container_name: customer_service_liberty1
+  container_name: cs
   net: ${NETWORK}
   build: ./acmeair-cs/
   environment:
     - LICENSE=accept
-
+  volumes:
+       - /docker/mongodb:/docker/mongodb
 
 fs:
-  container_name: flight_service_liberty1
+  container_name: fs
   net: ${NETWORK}
   build: ./acmeair-fs/
   environment:
     - LICENSE=accept
-
+  volumes:
+    - /docker/mongodb:/docker/mongodb
 
