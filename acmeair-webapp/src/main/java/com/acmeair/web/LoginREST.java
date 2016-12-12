@@ -15,23 +15,14 @@
 *******************************************************************************/
 package com.acmeair.web;
 
-import javax.ws.rs.Consumes;
-import javax.ws.rs.CookieParam;
-import javax.ws.rs.FormParam;
-import javax.ws.rs.GET;
-import javax.ws.rs.POST;
-import javax.ws.rs.Path;
-import javax.ws.rs.Produces;
-import javax.ws.rs.QueryParam;
-
-import javax.ws.rs.core.NewCookie;
-import javax.ws.rs.core.Response;
-
-import org.json.simple.JSONObject;
-
 import com.acmeair.service.AuthService;
 import com.acmeair.service.CustomerService;
 import com.acmeair.service.ServiceLocator;
+import org.json.simple.JSONObject;
+
+import javax.ws.rs.*;
+import javax.ws.rs.core.NewCookie;
+import javax.ws.rs.core.Response;
 
 
 @Path("/login")
@@ -41,8 +32,7 @@ public class LoginREST {
 			
 	private AuthService authService = ServiceLocator.instance().getService(AuthService.class);
 	private CustomerService customerService = ServiceLocator.instance().getService(CustomerService.class);
-	
-	
+
 	@POST
 	@Consumes({"application/x-www-form-urlencoded"})
 	@Produces("text/plain")
