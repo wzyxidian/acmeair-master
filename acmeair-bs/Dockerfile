@@ -19,7 +19,7 @@ ADD ./build/libs/*.war /opt/ibm/wlp/usr/servers/defaultServer/apps
 
 EXPOSE 80
 
-ENV AUTH_SERVICE=nginx1/acmeair
+ENV AUTH_SERVICE=localhost/auth/acmeair-as
 ENV MONGO_HOST=bs
 ENV MONGO_DBNAME=acmeair_bookingdb
 
