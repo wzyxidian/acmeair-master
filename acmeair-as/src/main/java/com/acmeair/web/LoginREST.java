@@ -108,8 +108,6 @@ public class LoginREST {
 	@Path("/authcheck/{tokenid}")
 	@Produces("application/json")
 	public Response validateSession(@PathParam("tokenid") String tokenid) {
-		System.out.println("authService :" + authService == null);
-		System.out.println("tokenid :" + tokenid == null);
 		JSONObject sessionJson = authService.validateSession(tokenid);
 		String customerid = (String) sessionJson.get("customerid");
 		

@@ -35,11 +35,6 @@ public class AuthServiceImpl extends AuthService implements MongoConstants {
 	
 	@Override
 	protected String getSession(String sessionid){
-		System.out.println("customerSession "+ customerSession == null);
-		System.out.println("eq(\"_id\", sessionid)" + eq("_id", sessionid) == null);
-		System.out.println("customerSession.find(eq(\"_id\", sessionid)) "+ customerSession.find(eq("_id", sessionid)) == null);
-		System.out.println(customerSession.find(eq("_id", sessionid)).first() == null);
-		System.out.println(customerSession.find(eq("_id", sessionid)).first().toJson() == null);
 		return customerSession.find(eq("_id", sessionid)).first().toJson();
 	}
 	
