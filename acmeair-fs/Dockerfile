@@ -1,5 +1,10 @@
 FROM 192.168.0.190:5000/mongo:installlib
 
+RUN mkdir /mongodb
+RUN mkdir /mongodb/data
+RUN mkdir /mongodb/log
+RUN touch /mongodb/log/mongodb.log
+
 ADD Dockerfile /root/Dockerfile
 
 ADD startMongo.sh /usr/startMongo.sh
