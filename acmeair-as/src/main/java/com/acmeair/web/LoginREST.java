@@ -72,7 +72,7 @@ public class LoginREST {
 			return null;
 		}
 	}
-	
+
 	@GET
 	@Path("/logout")
 	@Produces("text/plain")
