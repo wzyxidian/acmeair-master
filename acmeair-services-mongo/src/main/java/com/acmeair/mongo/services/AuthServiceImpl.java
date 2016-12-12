@@ -1,20 +1,17 @@
 package com.acmeair.mongo.services;
 
-import static com.mongodb.client.model.Filters.eq;
-
-import java.util.Date;
-
-import javax.annotation.PostConstruct;
-
-import org.bson.Document;
-
-
 import com.acmeair.mongo.ConnectionManager;
 import com.acmeair.mongo.MongoConstants;
 import com.acmeair.service.AuthService;
 import com.acmeair.service.DataService;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
+import org.bson.Document;
+
+import javax.annotation.PostConstruct;
+import java.util.Date;
+
+import static com.mongodb.client.model.Filters.eq;
 
 
 
@@ -38,6 +35,8 @@ public class AuthServiceImpl extends AuthService implements MongoConstants {
 	
 	@Override
 	protected String getSession(String sessionid){
+		System.out.println("customerSession "+ customerSession == null);
+		System.out.println("customerSession.find(eq(\"_id\", sessionid)) "+ customerSession.find(eq("_id", sessionid)) == null);
 		return customerSession.find(eq("_id", sessionid)).first().toJson();
 	}
 	
