@@ -1,3 +1,24 @@
+session_db1:
+  container_name: session_db1
+  image: mongo
+  net: ${NETWORK}
+
+booking_db1:
+  container_name: booking_db1
+  image: mongo
+  net: ${NETWORK}
+
+customer_db1:
+  container_name: customer_db1
+  image: mongo
+  net: ${NETWORK}
+
+flight_db1:
+  container_name: flight_db1
+  image: mongo
+  net: ${NETWORK}
+
+
 nginx:
   container_name: nginx
   net: ${NETWORK}
@@ -19,8 +40,6 @@ as:
   build: ./acmeair-as/
   environment:
     - LICENSE=accept
-  volumes:
-       - /docker/mongodb:/docker/mongodb
 
 bs:
   container_name: bs
@@ -28,8 +47,6 @@ bs:
   build: ./acmeair-bs/
   environment:
     - LICENSE=accept
-  volumes:
-       - /docker/mongodb:/docker/mongodb
 
 cs:
   container_name: cs
@@ -37,8 +54,6 @@ cs:
   build: ./acmeair-cs/
   environment:
     - LICENSE=accept
-  volumes:
-       - /docker/mongodb:/docker/mongodb
 
 fs:
   container_name: fs
@@ -46,6 +61,4 @@ fs:
   build: ./acmeair-fs/
   environment:
     - LICENSE=accept
-  volumes:
-    - /docker/mongodb:/docker/mongodb
 

@@ -1,13 +1,13 @@
-FROM 192.168.0.190:5000/mongo:installlib
+FROM 192.168.0.190:5000/web:lib
 
-RUN mkdir /mongodb
-RUN mkdir /mongodb/data
-RUN mkdir /mongodb/log
-RUN touch /mongodb/log/mongodb.log
+#RUN mkdir /mongodb
+#RUN mkdir /mongodb/data
+#RUN mkdir /mongodb/log
+#RUN touch /mongodb/log/mongodb.log
 
 ADD Dockerfile /root/Dockerfile
 
-ADD startMongo.sh /usr/startMongo.sh
+#ADD startMongo.sh /usr/startMongo.sh
 
 RUN rm -rf /opt/ibm/wlp/usr/servers/defaultServer/server.xml
 ADD server.xml /opt/ibm/wlp/usr/servers/defaultServer/server.xml
@@ -20,7 +20,7 @@ ADD ./build/libs/*.war /opt/ibm/wlp/usr/servers/defaultServer/apps
 EXPOSE 80
 
 ENV CUSTOMER_SERVICE=cs/acmeair-cs
-ENV MONGO_HOST=as
+ENV MONGO_HOST=session_db1
 ENV MONGO_DBNAME=acmeair_sessiondb
 
-ENTRYPOINT ["/bin/bash","/usr/startMongo.sh"]
+CMD ["/opt/ibm/wlp/bin/server", "run", "defaultServer"]
