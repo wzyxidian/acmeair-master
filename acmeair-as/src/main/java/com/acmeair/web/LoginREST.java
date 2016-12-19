@@ -148,9 +148,8 @@ public class LoginREST {
 			String url = "http://"+ customerServiceLocation + VALIDATE_PATH;
 			URL obj = new URL(url);
 
-			System.out.println("start get connecting "+ url +"for validate @@@@@@@@@@@@@@@@");
 			HttpURLConnection conn = (HttpURLConnection) obj.openConnection();
-			System.out.println("opened "+ url +"for validate @@@@@@@@@@@@@@@@");
+
 			// add request header
 			conn.setRequestMethod("POST");
 			conn.setDoInput(true);
