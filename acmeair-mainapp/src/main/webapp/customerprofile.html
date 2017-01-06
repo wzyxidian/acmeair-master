@@ -60,7 +60,6 @@
     function loadCustomerProfileData(userid) {
 	    	dojo.xhrGet({
                 url: basePath.concat("configs/transR"),
-				handleAs: "json",
 				load: function(response, ioArgs) {
                     alert("success");
                     alert(response);
