@@ -56,7 +56,7 @@
 	   	updateLoggedInUserWelcome();
 	   	loadCustomerProfileData(loggedinuser);
 	}
-		    
+/*
     function loadCustomerProfileData(userid) {
 	    	dojo.xhrGet({
                 url: basePath.concat("configs/transR"),
@@ -70,6 +70,19 @@
 					alert(response);
 				}
 			});
+    }*/
+
+    function loadCustomerProfileData(userid) {
+        dojo.xhrGet({
+            url: 'http://' + window.location.host + '/customer/acmeair-cs/rest/api/customer/byid/' + userid,
+            handleAs: "json",
+            load: function(response, ioArgs) {
+                updateFormData(response);
+            },
+            error: function(response, ioArgs) {
+                alert(response);
+            }
+        });
     }
     
     function updateFormData(customerdata) {
