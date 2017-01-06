@@ -59,13 +59,15 @@
 		    
     function loadCustomerProfileData(userid) {
 	    	dojo.xhrGet({
-                url: basePath.concat("transRequest"),
+                url: basePath.concat("configs/transR"),
 				handleAs: "json",
 				load: function(response, ioArgs) {
+                    alert("success");
                     alert(response);
 					updateFormData(response);
 				},
 				error: function(response, ioArgs) {
+                    alert("wrong");
 					alert(response);
 				}
 			});

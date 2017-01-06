@@ -1,8 +1,10 @@
 package com.acmeair.web;
 
 import com.acmeair.config.AcmeAirConfiguration;
+import com.acmeair.config.TrqansTest;
 import com.acmeair.service.ServiceLocator;
 
+import javax.json.Json;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -12,19 +14,16 @@ import javax.ws.rs.ApplicationPath;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
+import javax.ws.rs.core.Application;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Map;
+import java.util.*;
 
 /**
  * Created by Administrator on 2017/1/6.
  */
 @ApplicationPath("/rest/trans")
-public class TransReq{
-    @GET
-    @Path("/transRequest")
-    @Produces("application/json")
-    public String getDataServiceInfo() {
-        return "hello0";
+public class TransReq extends Application{
+    public Set<Class<?>> getClasses() {
+        return new HashSet<Class<?>>(Arrays.asList(TrqansTest.class));
     }
 }
