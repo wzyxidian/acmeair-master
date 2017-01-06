@@ -42,7 +42,9 @@
     dojo.require("dijit.Declaration");
 	
 	dojo.addOnLoad(pageLoaded);
-			
+
+	var basePath =  "rest/trans/";
+
 	function pageLoaded() {
 		var loggedinuser = dojo.cookie("loggedinuser");
 		if (loggedinuser == null) {
@@ -57,9 +59,10 @@
 		    
     function loadCustomerProfileData(userid) {
 	    	dojo.xhrGet({
-				url: 'http://' + window.location.host + '/customer/acmeair-cs/rest/api/customer/byid/' + userid,
+                url: basePath.concat("/transRequest"),
 				handleAs: "json",
 				load: function(response, ioArgs) {
+                    alert(response);
 					updateFormData(response);
 				},
 				error: function(response, ioArgs) {

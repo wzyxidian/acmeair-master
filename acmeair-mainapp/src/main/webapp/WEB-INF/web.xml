@@ -7,9 +7,17 @@
   <servlet>
     <servlet-name>com.acmeair.web.AppConfig</servlet-name>     
   </servlet>
+  <servlet>
+    <servlet-name>com.acmeair.web.TransReq</servlet-name>
+  </servlet>
+
   <servlet-mapping>
     <servlet-name>com.acmeair.web.AppConfig</servlet-name>
     <url-pattern>/rest/api/*</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>com.acmeair.web.TransReq</servlet-name>
+    <url-pattern>/rest/trans/*</url-pattern>
   </servlet-mapping>
   <listener>
     <description>Service Discovery Registration Service</description>
