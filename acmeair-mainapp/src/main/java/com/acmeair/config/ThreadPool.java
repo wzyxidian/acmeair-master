@@ -1,30 +1,30 @@
-package com.acmeair.config;
-
-
-import java.io.BufferedInputStream;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.io.InputStream;
-import java.net.ServerSocket;
-import java.net.Socket;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.Hashtable;
-import java.util.Iterator;
-import java.util.Properties;
-import java.util.Set;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.ThreadPoolExecutor;
-import java.util.concurrent.TimeUnit;
-
-/**
- * Created by Administrator on 2017/1/6.
- */
-public class ThreadPool {
-
+//package com.acmeair.config;
+//
+//
+//import java.io.BufferedInputStream;
+//import java.io.FileInputStream;
+//import java.io.FileNotFoundException;
+//import java.io.IOException;
+//import java.io.InputStream;
+//import java.net.ServerSocket;
+//import java.net.Socket;
+//import java.text.SimpleDateFormat;
+//import java.util.Date;
+//import java.util.HashMap;
+//import java.util.Hashtable;
+//import java.util.Iterator;
+//import java.util.Properties;
+//import java.util.Set;
+//import java.util.concurrent.ExecutorService;
+//import java.util.concurrent.Executors;
+//import java.util.concurrent.ThreadPoolExecutor;
+//import java.util.concurrent.TimeUnit;
+//
+///**
+// * Created by Administrator on 2017/1/6.
+// */
+//public class ThreadPool {
+//
 //    private ServerSocket serverSocket=null;
 //
 //    private int port=6100;
@@ -303,5 +303,5 @@ public class ThreadPool {
 //            }
 //        }
 //    }
-}
-
+//}
+//

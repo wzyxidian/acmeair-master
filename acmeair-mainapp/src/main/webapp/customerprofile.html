@@ -45,17 +45,17 @@
 
 	var basePath =  "rest/trans/";
 
-//	function pageLoaded() {
+	function pageLoaded() {
 //		var loggedinuser = dojo.cookie("loggedinuser");
 //		if (loggedinuser == null) {
 //			alert("you must login first to access this page");
 //			window.location.href="index.html";
 //			return;
 //		}
-//
+
 //	   	updateLoggedInUserWelcome();
-//	   	loadCustomerProfileData(loggedinuser);
-//	}
+	   	loadCustomerProfileData(loggedinuser);
+	}
     function loadCustomerProfileData(userid) {
 	    	dojo.xhrGet({
                 url: basePath.concat("configs/transR"),
