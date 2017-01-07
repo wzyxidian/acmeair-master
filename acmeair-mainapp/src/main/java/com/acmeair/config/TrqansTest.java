@@ -13,9 +13,8 @@ public class TrqansTest {
     @GET
     @Path("/transR")
     @Produces("application/json")
-    public String getDataServiceInfo() {
+    public Response getDataServiceInfo() {
         String result = HttpRequest.sendGet();
-       // return Response.ok(result).build();
-        return result;
+        return Response.ok(result).build();
     }
 }
