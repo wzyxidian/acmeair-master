@@ -22,9 +22,8 @@ import java.util.*;
 /**
  * Created by Administrator on 2017/1/6.
  */
-//@ApplicationPath("/rest/trans")
-@Path("/rest/trans")
-public class TransReq extends Application{
+@ApplicationPath("/rest/trans")
+public class TransReq {
     /*public Set<Class<?>> getClasses() {
         return new HashSet<Class<?>>(Arrays.asList(TrqansTest.class));
     }*/
