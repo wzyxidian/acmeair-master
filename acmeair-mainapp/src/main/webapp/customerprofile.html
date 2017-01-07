@@ -56,22 +56,23 @@
 	   	updateLoggedInUserWelcome();
 	   	loadCustomerProfileData(loggedinuser);
 	}
-    function loadCustomerProfileData(userid) {
-	    	dojo.xhrGet({
-                url: basePath.concat("configs/transR"),
-				load: function(response, ioArgs) {
-                    alert("success");
-                    alert(response);
-					updateFormData(response);
-				},
-				error: function(response, ioArgs) {
-                    alert("wrong");
-					alert(response);
-				}
-			});
-    }
+//    function loadCustomerProfileData(userid) {
+//	    	dojo.xhrGet({
+//                url: basePath.concat("configs/transR"),
+//                handleAs: "json",
+//				  load: function(response, ioArgs) {
+//                    alert("success");
+//                    alert(response);
+//					updateFormData(response);
+//				},
+//				error: function(response, ioArgs) {
+//                    alert("wrong");
+//					alert(response);
+//				}
+//			});
+//    }
 
-   /* function loadCustomerProfileData(userid) {
+    function loadCustomerProfileData(userid) {
         dojo.xhrGet({
             url: 'http://' + window.location.host + '/customer/acmeair-cs/rest/api/customer/byid/' + userid,
             handleAs: "json",
@@ -82,7 +83,7 @@
                 alert(response);
             }
         });
-    }*/
+    }
     
     function updateFormData(customerdata) {
 		dijit.byId('accountIdInput').set('value', customerdata._id);
