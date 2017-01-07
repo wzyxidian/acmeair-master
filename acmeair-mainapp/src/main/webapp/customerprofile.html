@@ -46,14 +46,14 @@
 	var basePath =  "rest/trans/";
 
 	function pageLoaded() {
-//		var loggedinuser = dojo.cookie("loggedinuser");
-//		if (loggedinuser == null) {
-//			alert("you must login first to access this page");
-//			window.location.href="index.html";
-//			return;
-//		}
+		var loggedinuser = dojo.cookie("loggedinuser");
+		if (loggedinuser == null) {
+			alert("you must login first to access this page");
+			window.location.href="index.html";
+			return;
+		}
 
-//	   	updateLoggedInUserWelcome();
+	   	updateLoggedInUserWelcome();
 	   	loadCustomerProfileData(loggedinuser);
 	}
     function loadCustomerProfileData(userid) {
