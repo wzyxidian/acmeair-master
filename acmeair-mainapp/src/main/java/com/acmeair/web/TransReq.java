@@ -1,24 +1,12 @@
 package com.acmeair.web;
 
-import com.acmeair.config.AcmeAirConfiguration;
-import com.acmeair.config.HttpRequest;
 import com.acmeair.config.TrqansTest;
-import com.acmeair.service.ServiceLocator;
 
-import javax.json.Json;
-import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 import javax.ws.rs.ApplicationPath;
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
-import javax.ws.rs.Produces;
 import javax.ws.rs.core.Application;
-import javax.ws.rs.core.Response;
-import java.io.IOException;
-import java.util.*;
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * Created by Administrator on 2017/1/6.
