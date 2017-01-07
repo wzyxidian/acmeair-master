@@ -2,7 +2,6 @@ package com.acmeair.web;
 
 import com.acmeair.config.AcmeAirConfiguration;
 import com.acmeair.config.HttpRequest;
-import com.acmeair.config.TrqansTest;
 import com.acmeair.service.ServiceLocator;
 
 import javax.json.Json;
