@@ -10,11 +10,11 @@ import javax.ws.rs.core.Response;
  */
 @Path("/configs")
 public class TrqansTest {
-    @GET
+   /* @GET
     @Path("/transR")
     @Produces("application/json")
     public Response getDataServiceInfo() {
         String result = HttpRequest.sendGet();
         return Response.ok(result).build();
-    }
+    }*/
 }
