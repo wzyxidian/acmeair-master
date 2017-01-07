@@ -2,6 +2,7 @@ package com.acmeair.web;
 
 import com.acmeair.config.AcmeAirConfiguration;
 import com.acmeair.config.HttpRequest;
+import com.acmeair.config.TrqansTest;
 import com.acmeair.service.ServiceLocator;
 
 import javax.json.Json;
@@ -23,15 +24,10 @@ import java.util.*;
  * Created by Administrator on 2017/1/6.
  */
 @ApplicationPath("/rest/trans")
-public class TransReq {
-    /*public Set<Class<?>> getClasses() {
+public class TransReq extends  Application{
+    public Set<Class<?>> getClasses() {
         return new HashSet<Class<?>>(Arrays.asList(TrqansTest.class));
-    }*/
-    @GET
-    @Path("/transR")
-    @Produces("application/json")
-    public Response getDataServiceInfo() {
-        String result = HttpRequest.sendGet();
-        return Response.ok(result).build();
     }
+
+
 }
