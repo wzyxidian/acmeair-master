@@ -56,7 +56,7 @@ public class CustomerREST {
 	@GET
 	@Path("/byid/{custid}")
 	@Produces("text/plain")
-	public Response getCustomer(@CookieParam("sessionid") String sessionid, @PathParam("custid") String customerid) {
+	public String getCustomer(@CookieParam("sessionid") String sessionid, @PathParam("custid") String customerid) {
 		if(logger.isLoggable(Level.FINE)){
 			logger.fine("getCustomer : session ID " + sessionid + " userid " + customerid);
 		}
@@ -64,10 +64,12 @@ public class CustomerREST {
 		try {
 			// make sure the user isn't trying to update a customer other than the one currently logged in
 			if (!validate(customerid)) {
-				return Response.status(Response.Status.FORBIDDEN).build();
+//				return Response.status(Response.Status.FORBIDDEN).build();
+                return "error";
 			}
 			
-			return Response.ok(customerService.getCustomerByUsername(customerid)).build();
+//			return Response.ok(customerService.getCustomerByUsername(customerid)).build();
+            return customerService.getCustomerByUsername(customerid);
 		}
 		catch (Exception e) {
 			e.printStackTrace();
