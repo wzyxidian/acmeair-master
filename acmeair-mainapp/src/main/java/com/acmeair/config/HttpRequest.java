@@ -13,11 +13,11 @@ import java.util.Map;
 public class HttpRequest {
 
     private static String param = "uid0@email.com";
-    private static String url = "http://192.168.0.190/customer/acmeair-cs/rest/api/customer/byid/" + param;
+    private static String url = "http://192.168.0.195/customer/acmeair-cs/rest/api/customer/byid/" + param;
 
 
     public static String sendGet() {
-        String result = "";
+        String result = "meiwenti";
         BufferedReader in = null;
         try {
             String urlNameString = url;
@@ -46,6 +46,7 @@ public class HttpRequest {
             }
         } catch (Exception e) {
             System.out.println("发送GET请求出现异常！" + e);
+            result = "wenti";
             e.printStackTrace();
         }
         // 使用finally块来关闭输入流
