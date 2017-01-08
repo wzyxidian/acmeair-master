@@ -54,6 +54,8 @@ cs:
   build: ./acmeair-cs/
   environment:
     - LICENSE=accept
+  ports:
+      - "81:80"
 
 fs:
   container_name: fs

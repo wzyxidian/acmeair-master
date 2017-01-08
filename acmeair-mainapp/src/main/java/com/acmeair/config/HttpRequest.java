@@ -13,7 +13,7 @@ import java.util.Map;
 public class HttpRequest {
 
     private static String param = "uid0@email.com";
-    private static String url = "http://172.18.0.1/customer/acmeair-cs/rest/api/customer/byid/" + param;
+    private static String url = "http://192.168.0.190:81/rest/api/customer/byid/" + param;
 
 
     public static String sendGet() {
