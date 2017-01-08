@@ -61,13 +61,14 @@ public class CustomerREST {
 			logger.fine("getCustomer : session ID " + sessionid + " userid " + customerid);
 		}
 
+		System.out.println("get in validate@@@@@@@@@@@@@@@@@");
 		try {
 			// make sure the user isn't trying to update a customer other than the one currently logged in
 			if (!validate(customerid)) {
 				return Response.status(Response.Status.FORBIDDEN).build();
 //                return "error";
 			}
-
+			System.out.println("get out validate@@@@@@@@@@@@@@@@@");
 			return Response.ok(customerService.getCustomerByUsername(customerid)).build();
 //            return customerService.getCustomerByUsername(customerid);
 		}
