@@ -15,6 +15,9 @@ public class HttpRequest {
     private static String param = "uid0@email.com";
     private static String url = "http://192.168.0.190:81/acmeair-cs/rest/api/customer/byid/" + param;
 
+    public static void main(String[] args) {
+        System.out.println(sendGet());
+    }
 
     public static String sendGet() {
         String result = "";

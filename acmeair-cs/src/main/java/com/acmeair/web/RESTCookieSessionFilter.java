@@ -61,99 +61,99 @@ public class RESTCookieSessionFilter implements Filter {
 	
 	@Override
 	public void doFilter(ServletRequest req, ServletResponse resp,	FilterChain chain) throws IOException, ServletException {
-		HttpServletRequest request = (HttpServletRequest)req;
-		HttpServletResponse response = (HttpServletResponse)resp;	
-		
-		String path = request.getContextPath() + request.getServletPath() + request.getPathInfo();
-	
-		if (path.endsWith(VALIDATE_PATH) || path.contains(CONFIG_PATH) || path.contains(LOADER_PATH)) {
-			// if validating id, let the request flow
-			// TODO: need to secure this somehow probably
-			chain.doFilter(req, resp);
-			return;
-		}
-		
-		Cookie cookies[] = request.getCookies();
-		Cookie sessionCookie = null;
-
-		if (cookies != null) {
-			for (Cookie c : cookies) {
-				if (c.getName().equals(SESSIONID_COOKIE_NAME)) {
-					sessionCookie = c;
-				}
-				if (sessionCookie!=null)
-					break; 
-			}
-			String sessionId = "";
-			if (sessionCookie!=null) // We need both cookie to work
-				sessionId= sessionCookie.getValue().trim();
-			// did this check as the logout currently sets the cookie value to "" instead of aging it out
-			// see comment in LogingREST.java
-			if (sessionId.equals("")) {
-				response.sendError(HttpServletResponse.SC_FORBIDDEN);
-				return;
-			}
-			
-			if (authServiceLocation == null || authServiceLocation == "") {
-				authServiceLocation = "localhost/acmeair";
-			}
-						
-			/* TODO: The jaxrs client code seems to a lot of classloading slowing everything way down - why?
-			 * For now, do simple http call below
-			ClientBuilder cb = ClientBuilder.newBuilder();
-			Client c = cb.build();		
-			
-			WebTarget t = c.target("http://" + authServiceLocation  + AUTHCHECK_PATH + sessionId);
-			Builder builder = t.request();
-			builder.accept("application/json");
-			
-			Response res = builder.get();
-			String output = res.readEntity(String.class);       
-			c.close();			        
-	    	*/
-			
-			// Instead, do simple http call
-						
-			// Set maxConnections - this seems to help with keepalives/running out of sockets with a high load.
-			if (System.getProperty("http.maxConnections")==null) {
-				System.setProperty("http.maxConnections", "50");
-			}
-			String url = "http://" + authServiceLocation  + AUTHCHECK_PATH + sessionId;
-
-			URL obj = new URL(url);
-			HttpURLConnection conn = (HttpURLConnection) obj.openConnection();
-			conn.setRequestMethod("GET");
-			
-			BufferedReader in = new BufferedReader(new InputStreamReader(conn.getInputStream()));
-			String line;
-			StringBuffer responseString = new StringBuffer();
-
-			while ((line = in.readLine()) != null) {
-				responseString.append(line);
-			}
-			in.close();
-			conn.disconnect();  // Is this necessary?
-			
-			String output = responseString.toString();
-	    					
-			String loginUser=null;
-			if (output != null) {
-				
-				JSONObject jsonObject = (JSONObject)JSONValue.parse(output);
-				loginUser=(String) jsonObject.get("customerid");
-				
-				request.setAttribute(LOGIN_USER, loginUser);
-				chain.doFilter(req, resp);
-				
-				return;
-			} else {
-				response.sendError(HttpServletResponse.SC_FORBIDDEN);
-				return;
-			}
-		}
-		
-		// if we got here, we didn't detect the session cookie, so we need to return 404
-		response.sendError(HttpServletResponse.SC_FORBIDDEN);
+//		HttpServletRequest request = (HttpServletRequest)req;
+//		HttpServletResponse response = (HttpServletResponse)resp;
+//
+//		String path = request.getContextPath() + request.getServletPath() + request.getPathInfo();
+//
+//		if (path.endsWith(VALIDATE_PATH) || path.contains(CONFIG_PATH) || path.contains(LOADER_PATH)) {
+//			// if validating id, let the request flow
+//			// TODO: need to secure this somehow probably
+//			chain.doFilter(req, resp);
+//			return;
+//		}
+//
+//		Cookie cookies[] = request.getCookies();
+//		Cookie sessionCookie = null;
+//
+//		if (cookies != null) {
+//			for (Cookie c : cookies) {
+//				if (c.getName().equals(SESSIONID_COOKIE_NAME)) {
+//					sessionCookie = c;
+//				}
+//				if (sessionCookie!=null)
+//					break;
+//			}
+//			String sessionId = "";
+//			if (sessionCookie!=null) // We need both cookie to work
+//				sessionId= sessionCookie.getValue().trim();
+//			// did this check as the logout currently sets the cookie value to "" instead of aging it out
+//			// see comment in LogingREST.java
+//			if (sessionId.equals("")) {
+//				response.sendError(HttpServletResponse.SC_FORBIDDEN);
+//				return;
+//			}
+//
+//			if (authServiceLocation == null || authServiceLocation == "") {
+//				authServiceLocation = "localhost/acmeair";
+//			}
+//
+//			/* TODO: The jaxrs client code seems to a lot of classloading slowing everything way down - why?
+//			 * For now, do simple http call below
+//			ClientBuilder cb = ClientBuilder.newBuilder();
+//			Client c = cb.build();
+//
+//			WebTarget t = c.target("http://" + authServiceLocation  + AUTHCHECK_PATH + sessionId);
+//			Builder builder = t.request();
+//			builder.accept("application/json");
+//
+//			Response res = builder.get();
+//			String output = res.readEntity(String.class);
+//			c.close();
+//	    	*/
+//
+//			// Instead, do simple http call
+//
+//			// Set maxConnections - this seems to help with keepalives/running out of sockets with a high load.
+//			if (System.getProperty("http.maxConnections")==null) {
+//				System.setProperty("http.maxConnections", "50");
+//			}
+//			String url = "http://" + authServiceLocation  + AUTHCHECK_PATH + sessionId;
+//
+//			URL obj = new URL(url);
+//			HttpURLConnection conn = (HttpURLConnection) obj.openConnection();
+//			conn.setRequestMethod("GET");
+//
+//			BufferedReader in = new BufferedReader(new InputStreamReader(conn.getInputStream()));
+//			String line;
+//			StringBuffer responseString = new StringBuffer();
+//
+//			while ((line = in.readLine()) != null) {
+//				responseString.append(line);
+//			}
+//			in.close();
+//			conn.disconnect();  // Is this necessary?
+//
+//			String output = responseString.toString();
+//
+//			String loginUser=null;
+//			if (output != null) {
+//
+//				JSONObject jsonObject = (JSONObject)JSONValue.parse(output);
+//				loginUser=(String) jsonObject.get("customerid");
+//
+//				request.setAttribute(LOGIN_USER, loginUser);
+//				chain.doFilter(req, resp);
+//
+//				return;
+//			} else {
+//				response.sendError(HttpServletResponse.SC_FORBIDDEN);
+//				return;
+//			}
+//		}
+//
+//		// if we got here, we didn't detect the session cookie, so we need to return 404
+//		response.sendError(HttpServletResponse.SC_FORBIDDEN);
 	}
 
 	@Override
