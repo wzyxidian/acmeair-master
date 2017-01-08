@@ -94,6 +94,8 @@ public class RESTCookieSessionFilter implements Filter {
 				return;
 			}
 
+			System.out.println("filter Test : + " + sessionId);
+
 			if (authServiceLocation == null || authServiceLocation == "") {
 				authServiceLocation = "localhost/acmeair";
 			}
