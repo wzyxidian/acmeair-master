@@ -1,5 +1,6 @@
 package com.acmeair.config;
 
+import javax.ws.rs.CookieParam;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
@@ -13,8 +14,8 @@ public class TrqansTest {
     @GET
     @Path("/transR")
     @Produces("application/json")
-    public Response getDataServiceInfo() {
-        String result = HttpRequest.sendGet();
+    public Response getDataServiceInfo(@CookieParam("sessionid") String sessionid) {
+        String result = HttpRequest.sendGet(sessionid);
         return Response.ok(result).build();
     }
 }

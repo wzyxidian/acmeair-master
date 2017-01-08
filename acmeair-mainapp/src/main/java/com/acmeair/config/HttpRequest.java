@@ -15,11 +15,8 @@ public class HttpRequest {
     private static String param = "uid0@email.com";
     private static String url = "http://192.168.0.190:81/acmeair-cs/rest/api/customer/byid/" + param;
 
-    public static void main(String[] args) {
-        System.out.println(sendGet());
-    }
 
-    public static String sendGet() {
+    public static String sendGet(String sessionId) {
         String result = "";
         BufferedReader in = null;
         try {
@@ -27,6 +24,7 @@ public class HttpRequest {
             // 打开和URL之间的连接
             URLConnection connection = realUrl.openConnection();
             // 设置通用的请求属性
+            connection.setRequestProperty("Cookie",sessionId);
             connection.setRequestProperty("accept", "*/*");
             connection.setRequestProperty("connection", "Keep-Alive");
             connection.setRequestProperty("User-Agent",
