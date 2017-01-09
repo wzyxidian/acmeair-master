@@ -18,19 +18,19 @@ import com.acmeair.service.ServiceLocator;
 
 @Path("/customer/config")
 public class AcmeAirConfiguration {
-    
+
 	@Inject
 	BeanManager beanManager;
 	Logger logger = Logger.getLogger(AcmeAirConfiguration.class.getName());
-	
+
 	private CustomerService customerService = ServiceLocator.instance().getService(CustomerService.class);
-	
+
     public AcmeAirConfiguration() {
         super();
     }
 
 	@PostConstruct
-	private void initialization()  {		
+	private void initialization()  {
 		if(beanManager == null){
 			logger.info("Attempting to look up BeanManager through JNDI at java:comp/BeanManager");
 			try {
@@ -39,7 +39,7 @@ public class AcmeAirConfiguration {
 				logger.severe("BeanManager not found at java:comp/BeanManager");
 			}
 		}
-		
+
 		if(beanManager == null){
 			logger.info("Attempting to look up BeanManager through JNDI at java:comp/env/BeanManager");
 			try {
@@ -49,19 +49,19 @@ public class AcmeAirConfiguration {
 			}
 		}
 	}
-		
+
 	@GET
 	@Path("/countCustomers")
 	@Produces("application/json")
 	public Response countCustomer() {
 		try {
 			Long customerCount = customerService.count();
-			
+
 			return Response.ok(customerCount).build();
 		}
 		catch (Exception e) {
 			e.printStackTrace();
 			return Response.ok(-1).build();
 		}
-	}	
+	}
 }
