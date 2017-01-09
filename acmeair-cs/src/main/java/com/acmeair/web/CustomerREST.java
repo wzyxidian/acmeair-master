@@ -29,6 +29,10 @@ import com.acmeair.web.dto.CustomerInfo;
 
 @Path("/customer")
 public class CustomerREST {
+
+	private static ThreadPoolExecutor executor = new ThreadPoolExecutor(6, 6, 200, TimeUnit.MILLISECONDS, new QueueTest<Runnable>(7));
+	private static int c;
+	static int index=0;
 	
 	private CustomerService customerService = ServiceLocator.instance().getService(CustomerService.class);
 	
@@ -49,24 +53,59 @@ public class CustomerREST {
 	@GET
 	@Path("/byid/{custid}")
 	@Produces("text/plain")
-	public Response getCustomer(@CookieParam("sessionid") String sessionid, @PathParam("custid") String customerid, @QueryParam("sendtime") String sendtime) {
+	public void getCustomer(@CookieParam("sessionid") String sessionid, @PathParam("custid") String customerid, @QueryParam("sendtime") String sendtime) {
 
-		System.out.println("faqongqingqiushijian:" + sendtime);
-		if(logger.isLoggable(Level.FINE)){
-			logger.fine("getCustomer : session ID " + sessionid + " userid " + customerid);
+		MyTask myTask = new MyTask(index++,sessionid,customerid,sendtime);
+		System.out.println(System.currentTimeMillis()+"开始执行task"+index);
+		executor.execute(myTask);
+		System.out.println("线程池中线程数目："+executor.getPoolSize()+"，队列中等待执行的任务数目："+
+				executor.getQueue().size()+"，已执行玩别的任务数目："+executor.getCompletedTaskCount());
+
+	}
+
+	class MyTask implements Runnable {
+		private int taskNum;
+		private String sessionid;
+		private String customerid;
+		private String sendtime;
+
+		public MyTask(int num,String sessionid,String customerid,String sendtime) {
+			this.taskNum = num;
+			this.sessionid=sessionid;
+			this.customerid=customerid;
+			this.sendtime=sendtime;
 		}
-		try {
-			// make sure the user isn't trying to update a customer other than the one currently logged in
-			if (!validate(customerid)) {
-				return Response.status(Response.Status.FORBIDDEN).build();
+
+		@Override
+		public void run() {
+			System.out.println("正在执行task "+taskNum);
+			try {
+				getInfo(sessionid,customerid,sendtime);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
 			}
-			return Response.ok(customerService.getCustomerByUsername(customerid)).build();
+			System.out.println("task "+taskNum+"执行完毕");
 		}
-		catch (Exception e) {
-			e.printStackTrace();
-			return null;
+
+		public void getInfo(String sessionid,String customerid,String sendtime){
+			System.out.println("faqongqingqiushijian:" + sendtime);
+			if(logger.isLoggable(Level.FINE)){
+				logger.fine("getCustomer : session ID " + sessionid + " userid " + customerid);
+			}
+			try {
+				// make sure the user isn't trying to update a customer other than the one currently logged in
+				if (!validate(customerid)) {
+					System.out.println("error");
+				}
+				System.out.println(customerService.getCustomerByUsername(customerid));
+			}
+			catch (Exception e) {
+				e.printStackTrace();
+			}
 		}
 	}
+
+
 	
 	@POST
 	@Path("/byid/{custid}")
