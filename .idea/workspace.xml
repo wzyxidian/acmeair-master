@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="7584a27f-0d6b-4d1f-a6bc-05ac925a8feb" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/acmeair-cs/src/main/java/com/acmeair/web/CustomerREST.java" afterPath="$PROJECT_DIR$/acmeair-cs/src/main/java/com/acmeair/web/CustomerREST.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/acmeair-cs/src/main/java/com/acmeair/web/QueueTest.java" afterPath="$PROJECT_DIR$/acmeair-cs/src/main/java/com/acmeair/web/QueueTest.java" />
     </list>
     <ignored path="acmeair-master.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -3589,7 +3587,7 @@
       <option name="presentableId" value="Default" />
       <updated>1483962261576</updated>
       <workItem from="1483962270535" duration="3949000" />
-      <workItem from="1483968524550" duration="1771000" />
+      <workItem from="1483968524550" duration="1786000" />
     </task>
     <task id="LOCAL-00001" summary="das">
       <created>1483968597817</created>
@@ -3612,11 +3610,18 @@
       <option name="project" value="LOCAL" />
       <updated>1483969715661</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="update thread">
+      <created>1483970312261</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1483970312261</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5720000" />
+    <option name="totallyTimeSpent" value="5735000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="0" />
