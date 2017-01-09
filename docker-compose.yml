@@ -14,7 +14,7 @@ customer_db1:
   container_name: customer_db1
   image: mongo
   net: ${NETWORK}
-  cupset: 1
+  cpuset: 1
   mem_limit: 1G
 
 flight_db1:
