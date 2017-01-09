@@ -16,7 +16,9 @@ public class TrqansTest {
     @Produces("application/json")
     public Response getDataServiceInfo(@CookieParam("sessionid") String sessionid) {
         System.out.println("trqans Test : + " + sessionid);
-        String result = HttpRequest.sendGet(sessionid);
-        return Response.ok(result).build();
+//        String result = ThreadPool.sendRequest(sessionid);
+//        return Response.ok(result).build();
+        ThreadPool.sendRequest(sessionid);
+        return null;
     }
 }
