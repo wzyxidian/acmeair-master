@@ -26,6 +26,8 @@ import javax.ws.rs.core.Response;
 import com.acmeair.service.CustomerService;
 import com.acmeair.service.ServiceLocator;
 import com.acmeair.web.dto.CustomerInfo;
+import java.util.concurrent.ThreadPoolExecutor;
+import java.util.concurrent.TimeUnit;
 
 @Path("/customer")
 public class CustomerREST {
