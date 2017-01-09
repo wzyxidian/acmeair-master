@@ -2,7 +2,7 @@ session_db1:
   container_name: session_db1
   image: mongo
   net: ${NETWORK}
-  cpuset: 0
+  cpuset: "0"
   mem_limit: 1G
 
 booking_db1:
@@ -14,7 +14,7 @@ customer_db1:
   container_name: customer_db1
   image: mongo
   net: ${NETWORK}
-  cpuset: 1
+  cpuset: "1"
   mem_limit: 1G
 
 flight_db1:
