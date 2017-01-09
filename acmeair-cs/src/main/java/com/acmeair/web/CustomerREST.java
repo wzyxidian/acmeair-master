@@ -61,8 +61,8 @@ public class CustomerREST {
 		MyTask myTask = new MyTask(index++,sessionid,customerid,sendtime);
 		System.out.println(System.currentTimeMillis()+"start task: "+index);
 		executor.execute(myTask);
-		System.out.println("poolSize："+executor.getPoolSize()+"，queueWaitSize："+
-				executor.getQueue().size()+"，finishTask："+executor.getCompletedTaskCount());
+		System.out.println("poolSize: "+executor.getPoolSize()+" , queueWaitSize: "+
+				executor.getQueue().size()+" , finishTask: "+executor.getCompletedTaskCount());
 
 	}
 
@@ -91,7 +91,7 @@ public class CustomerREST {
 		}
 
 		public void getInfo(String sessionid,String customerid,String sendtime){
-			System.out.println("faqongqingqiushijian:" + sendtime);
+			System.out.println("send time: " + sendtime);
 			if(logger.isLoggable(Level.FINE)){
 				logger.fine("getCustomer : session ID " + sessionid + " userid " + customerid);
 			}

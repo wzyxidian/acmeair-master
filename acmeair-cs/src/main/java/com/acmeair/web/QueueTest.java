@@ -243,7 +243,7 @@ public class QueueTest<E> extends AbstractQueue<E>
                 return true;
             }
         } finally {
-            System.out.println("offer queue time： "+System.currentTimeMillis());
+            System.out.println("offer queue time: "+System.currentTimeMillis());
             lock.unlock();
         }
     }
@@ -292,7 +292,7 @@ public class QueueTest<E> extends AbstractQueue<E>
             insert(e);
             return true;
         } finally {
-            System.out.println("offer queue time： "+System.currentTimeMillis());
+            System.out.println("offer queue time: "+System.currentTimeMillis());
             lock.unlock();
         }
     }
@@ -305,7 +305,7 @@ public class QueueTest<E> extends AbstractQueue<E>
             return (count == 0) ? null : extract();
         } finally {
 
-            System.out.println("poll queue time： "+System.currentTimeMillis());
+            System.out.println("poll queue time: "+System.currentTimeMillis());
             lock.unlock();
         }
 
@@ -320,7 +320,7 @@ public class QueueTest<E> extends AbstractQueue<E>
                 notEmpty.await();
             return extract();
         } finally {
-            System.out.println("poll queue time： "+System.currentTimeMillis());
+            System.out.println("poll queue time: "+System.currentTimeMillis());
             lock.unlock();
         }
     }
@@ -337,7 +337,7 @@ public class QueueTest<E> extends AbstractQueue<E>
             }
             return extract();
         } finally {
-            System.out.println("poll queue time： "+System.currentTimeMillis());
+            System.out.println("poll queue time: "+System.currentTimeMillis());
             lock.unlock();
         }
     }
