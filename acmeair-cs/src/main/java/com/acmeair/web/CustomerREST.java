@@ -51,7 +51,7 @@ public class CustomerREST {
 	@Produces("text/plain")
 	public Response getCustomer(@CookieParam("sessionid") String sessionid, @PathParam("custid") String customerid, @QueryParam("sendtime") String sendtime) {
 
-		System.out.println("faqongqingqiushijian:" + sendtime +"sendtime");
+		System.out.println("faqongqingqiushijian:" + sendtime);
 		if(logger.isLoggable(Level.FINE)){
 			logger.fine("getCustomer : session ID " + sessionid + " userid " + customerid);
 		}

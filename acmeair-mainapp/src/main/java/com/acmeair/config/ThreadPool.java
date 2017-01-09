@@ -17,10 +17,10 @@ public class ThreadPool {
     /**
      * 并发访问为100,200,500,1000,2000，而服务端的线程池队列为200，所以休眠的时间为1,2,4,10,20
      */
-    private static int sleep = 10;
+    private static int sleep = 20;
 
     /**
-     *
+     * 通过线程池来发送请求，线程池中最大线程数为2，通过修改sleep时间来控制并发量
      * @param sessionid
      */
     public static void sendRequest(String sessionid){
@@ -30,7 +30,7 @@ public class ThreadPool {
                 @Override
                 public void run() {
                     while(true){
-                        System.out.println("系统当前时间： " + System.nanoTime());
+                        System.out.println("dangqianxitongshijian： " + System.nanoTime());
                         String result = HttpRequest.sendGet(sessionid,System.nanoTime());
                         System.out.println(Thread.currentThread() + " --- " + result);
                         try {
