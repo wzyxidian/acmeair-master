@@ -32,7 +32,8 @@ import java.util.concurrent.TimeUnit;
 @Path("/customer")
 public class CustomerREST {
 
-	private static ThreadPoolExecutor executor = new ThreadPoolExecutor(6, 6, 200, TimeUnit.MILLISECONDS, new QueueTest<Runnable>(7));
+	private static int poolSize = 8;
+	private static ThreadPoolExecutor executor = new ThreadPoolExecutor(poolSize, poolSize, 200, TimeUnit.MILLISECONDS, new QueueTest<Runnable>(200));
 	private static int c;
 	static int index=0;
 
@@ -58,10 +59,10 @@ public class CustomerREST {
 	public void getCustomer(@CookieParam("sessionid") String sessionid, @PathParam("custid") String customerid, @QueryParam("sendtime") String sendtime) {
 
 		MyTask myTask = new MyTask(index++,sessionid,customerid,sendtime);
-		System.out.println(System.currentTimeMillis()+"开始执行task"+index);
+		System.out.println(System.currentTimeMillis()+"start task: "+index);
 		executor.execute(myTask);
-		System.out.println("线程池中线程数目："+executor.getPoolSize()+"，队列中等待执行的任务数目："+
-				executor.getQueue().size()+"，已执行玩别的任务数目："+executor.getCompletedTaskCount());
+		System.out.println("poolSize："+executor.getPoolSize()+"，queueWaitSize："+
+				executor.getQueue().size()+"，finishTask："+executor.getCompletedTaskCount());
 
 	}
 
@@ -80,13 +81,13 @@ public class CustomerREST {
 
 		@Override
 		public void run() {
-			System.out.println("正在执行task "+taskNum);
+			System.out.println("executing task "+taskNum);
 			try {
 				getInfo(sessionid,customerid,sendtime);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-			System.out.println("task "+taskNum+"执行完毕");
+			System.out.println("task "+taskNum+"finished");
 		}
 
 		public void getInfo(String sessionid,String customerid,String sendtime){

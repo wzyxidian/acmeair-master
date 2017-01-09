@@ -243,7 +243,7 @@ public class QueueTest<E> extends AbstractQueue<E>
                 return true;
             }
         } finally {
-            System.out.println("入队时间： "+System.currentTimeMillis());
+            System.out.println("offer queue time： "+System.currentTimeMillis());
             lock.unlock();
         }
     }
@@ -292,7 +292,7 @@ public class QueueTest<E> extends AbstractQueue<E>
             insert(e);
             return true;
         } finally {
-            System.out.println("入队时间： "+System.currentTimeMillis());
+            System.out.println("offer queue time： "+System.currentTimeMillis());
             lock.unlock();
         }
     }
@@ -305,7 +305,7 @@ public class QueueTest<E> extends AbstractQueue<E>
             return (count == 0) ? null : extract();
         } finally {
 
-            System.out.println("出队时间： "+System.currentTimeMillis());
+            System.out.println("poll queue time： "+System.currentTimeMillis());
             lock.unlock();
         }
 
@@ -320,13 +320,12 @@ public class QueueTest<E> extends AbstractQueue<E>
                 notEmpty.await();
             return extract();
         } finally {
-            System.out.println("出队时间： "+System.currentTimeMillis());
+            System.out.println("poll queue time： "+System.currentTimeMillis());
             lock.unlock();
         }
     }
 
     public E poll(long timeout, TimeUnit unit) throws InterruptedException {
-        System.out.println("poll time： "+System.currentTimeMillis());
         long nanos = unit.toNanos(timeout);
         final ReentrantLock lock = this.lock;
         lock.lockInterruptibly();
@@ -338,7 +337,7 @@ public class QueueTest<E> extends AbstractQueue<E>
             }
             return extract();
         } finally {
-            System.out.println("出队时间： "+System.currentTimeMillis());
+            System.out.println("poll queue time： "+System.currentTimeMillis());
             lock.unlock();
         }
     }
