@@ -57,6 +57,9 @@ public class CustomerREST {
 	@Path("/byid/{custid}")
 	@Produces("text/plain")
 	public Response getCustomer(@CookieParam("sessionid") String sessionid,@PathParam("custid") String customerid) {
+		customerid = customerid.split("&")[0];
+		String sendTime = customerid.split("&")[1];
+		System.out.println("发起请求时间==========：" + sendTime);
 		if(logger.isLoggable(Level.FINE)){
 			logger.fine("getCustomer : session ID " + sessionid + " userid " + customerid);
 		}

@@ -16,11 +16,11 @@ public class HttpRequest {
     private static String url = "http://192.168.0.190/customer/acmeair-cs/rest/api/customer/byid/" + param;
 
 
-    public static String sendGet(String sessionId) {
+    public static String sendGet(String sessionId, long time) {
         String result = "";
         BufferedReader in = null;
         try {
-            URL realUrl = new URL(url);
+            URL realUrl = new URL(url+"&" + time);
             // 打开和URL之间的连接
             URLConnection connection = realUrl.openConnection();
             // 设置通用的请求属性

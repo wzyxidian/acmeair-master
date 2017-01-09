@@ -31,7 +31,7 @@ public class ThreadPool {
                 public void run() {
                     while(true){
                         System.out.println("系统当前时间： " + System.nanoTime());
-                        String result = HttpRequest.sendGet(sessionid);
+                        String result = HttpRequest.sendGet(sessionid,System.nanoTime());
                         System.out.println(Thread.currentThread() + " --- " + result);
                         try {
                             Thread.sleep(sleep);
