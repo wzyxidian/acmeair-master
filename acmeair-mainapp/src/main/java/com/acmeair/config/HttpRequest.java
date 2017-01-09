@@ -20,7 +20,7 @@ public class HttpRequest {
         String result = "";
         BufferedReader in = null;
         try {
-            URL realUrl = new URL(url+"&" + time);
+            URL realUrl = new URL(url+"?" + "sendtime=" + time);
             // 打开和URL之间的连接
             URLConnection connection = realUrl.openConnection();
             // 设置通用的请求属性
