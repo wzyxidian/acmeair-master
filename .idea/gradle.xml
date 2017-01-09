@@ -5,7 +5,7 @@
       <GradleProjectSettings>
         <option name="distributionType" value="LOCAL" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="gradleHome" value="E:/BuildTools/gradle-3.2.1-all/gradle-3.2.1" />
+        <option name="gradleHome" value="D:/software/gradle-3.2.1-all/gradle-3.2.1" />
         <option name="gradleJvm" value="#JAVA_HOME" />
         <option name="modules">
           <set>
@@ -22,7 +22,6 @@
             <option value="$PROJECT_DIR$/acmeair-webapp" />
           </set>
         </option>
-        <option name="useAutoImport" value="true" />
       </GradleProjectSettings>
     </option>
   </component>
