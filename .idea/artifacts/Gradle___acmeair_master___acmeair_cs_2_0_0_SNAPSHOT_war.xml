@@ -16,9 +16,9 @@
             <element id="module-output" name="acmeair-services_main" />
             <element id="dir-copy" path="$PROJECT_DIR$/acmeair-services/build/resources/main" />
           </element>
+          <element id="library" level="project" name="Gradle: org.hamcrest:hamcrest-core:1.1" />
           <element id="library" level="project" name="Gradle: com.googlecode.json-simple:json-simple:1.1.1" />
           <element id="library" level="project" name="Gradle: junit:junit:4.10" />
-          <element id="library" level="project" name="Gradle: org.hamcrest:hamcrest-core:1.1" />
           <element id="archive" name="acmeair-master-acmeair-services-mongo-2.0.0-SNAPSHOT.jar">
             <element id="module-output" name="acmeair-services-mongo_main" />
             <element id="dir-copy" path="$PROJECT_DIR$/acmeair-services-mongo/build/resources/main" />
@@ -29,6 +29,12 @@
             <element id="module-output" name="acmeair-loader_main" />
             <element id="dir-copy" path="$PROJECT_DIR$/acmeair-loader/build/resources/main" />
           </element>
+          <element id="library" level="project" name="Gradle: commons-beanutils:commons-beanutils:1.8.0" />
+          <element id="library" level="project" name="Gradle: commons-collections:commons-collections:3.2.1" />
+          <element id="library" level="project" name="Gradle: commons-lang:commons-lang:2.5" />
+          <element id="library" level="project" name="Gradle: commons-logging:commons-logging:1.1.1" />
+          <element id="library" level="project" name="Gradle: net.sf.ezmorph:ezmorph:1.0.6" />
+          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/net.sf.json-lib/json-lib/2.4/136743e0d12df4e785e62b48618cee169b2ae546/json-lib-2.4-jdk15.jar" />
         </element>
       </element>
       <element id="directory" name="META-INF">

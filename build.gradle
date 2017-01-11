@@ -65,6 +65,7 @@ project(':acmeair-cs') {
         compile project(':acmeair-services')
         compile project(':acmeair-services-mongo')
         compile project(':acmeair-loader')
+        compile 'net.sf.json-lib:json-lib:2.4:jdk15'
         providedRuntime 'javax:javaee-web-api:7.0'
     }
 }

@@ -15,7 +15,7 @@ public class ThreadPool {
     private static int threadNum = 2;
 
     /**
-     * 并发访问为100,200,500,1000,2000，而服务端的线程池队列为200，所以休眠的时间为1,2,4,10,20
+     * 并发访问为5,10,100,1000,2000，而服务端的线程池队列为200，所以休眠的时间为400,200,20,10,20
      */
     private static int sleep = 20;
 
@@ -31,7 +31,7 @@ public class ThreadPool {
                 public void run() {
                     while(true){
                         System.out.println("dangqianxitongshijian： " + System.nanoTime());
-                        String result = HttpRequest.sendGet(sessionid,System.nanoTime());
+                        String result = HttpRequest.sendGet(sessionid,System.currentTimeMillis());
                         System.out.println(Thread.currentThread() + " --- " + result);
                         try {
                             Thread.sleep(sleep);

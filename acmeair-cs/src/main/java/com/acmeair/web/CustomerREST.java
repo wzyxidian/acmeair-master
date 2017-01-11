@@ -23,6 +23,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.ws.rs.*;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.Response;
+import java.util.Collection;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
@@ -57,11 +58,12 @@ public class CustomerREST {
 	@Produces("text/plain")
 	public void getCustomer(@CookieParam("sessionid") String sessionid, @PathParam("custid") String customerid, @QueryParam("sendtime") String sendtime) {
 
-		MyTask myTask = new MyTask(index++,sessionid,customerid,sendtime);
-		System.out.println(System.currentTimeMillis()+"start task: "+index);
-		executor.execute(myTask);
-		System.out.println("poolSize: "+executor.getPoolSize()+" , queueWaitSize: "+
-				executor.getQueue().size()+" , finishTask: "+executor.getCompletedTaskCount());
+//		MyTask myTask = new MyTask(index++,sessionid,customerid,sendtime);
+//		System.out.println(System.currentTimeMillis()+"start task: "+index);
+//		executor.execute(myTask);
+//		System.out.println("poolSize: "+executor.getPoolSize()+" , queueWaitSize: "+
+//				executor.getQueue().size()+" , finishTask: "+executor.getCompletedTaskCount());
+		CollectInfo.collectionConfigs();
 
 	}
 
@@ -100,7 +102,7 @@ public class CustomerREST {
 					System.out.println("error");
 				}
 				//System.out.println(customerService.getCustomerByUsername(customerid));
-				//String[] customerIds = {customerid,"uid1@email.com","uid2@email.com"};
+				String[] customerIds = {customerid,"uid1@email.com","uid2@email.com"};
 				System.out.println(customerService.getCustomersByUsernames(customerIds));
 			}
 			catch (Exception e) {
