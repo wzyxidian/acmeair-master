@@ -100,7 +100,7 @@ public class CustomerREST {
 					System.out.println("error");
 				}
 				//System.out.println(customerService.getCustomerByUsername(customerid));
-				String[] customerIds = {customerid,"uid1@email.com","uid2@email.com"};
+				//String[] customerIds = {customerid,"uid1@email.com","uid2@email.com"};
 				System.out.println(customerService.getCustomersByUsernames(customerIds));
 			}
 			catch (Exception e) {
