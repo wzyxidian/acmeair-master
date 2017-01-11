@@ -23,6 +23,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.ws.rs.*;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.Response;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
@@ -63,11 +66,15 @@ public class CustomerREST {
 	@Produces("text/plain")
 	public void getCustomer(@CookieParam("sessionid") String sessionid, @PathParam("custid") String customerid, @QueryParam("sendtime") String sendtime,@QueryParam("username") String username) {
 
-		MyTask myTask = new MyTask(index++,sessionid,customerid,sendtime,username);
-		System.out.println(System.currentTimeMillis()+"start task: "+index);
-		executor.execute(myTask);
-		System.out.println("poolSize: "+executor.getPoolSize()+" , queueWaitSize: "+
-				executor.getQueue().size());
+//		MyTask myTask = new MyTask(index++,sessionid,customerid,sendtime,username);
+//		System.out.println(System.currentTimeMillis()+"start task: "+index);
+//		executor.execute(myTask);
+//		System.out.println("poolSize: "+executor.getPoolSize()+" , queueWaitSize: "+
+//				executor.getQueue().size());
+		String[] s = CollectInfo.collectionConfigs();
+		for(int i = 0; i < s.length; i++){
+			System.out.println(s[i]+"====================");
+		}
 
 	}
 
