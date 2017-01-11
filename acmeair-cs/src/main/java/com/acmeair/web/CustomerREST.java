@@ -15,19 +15,18 @@
  *******************************************************************************/
 package com.acmeair.web;
 
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import com.acmeair.service.CustomerService;
+import com.acmeair.service.ServiceLocator;
+import com.acmeair.web.dto.CustomerInfo;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.ws.rs.*;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.Response;
-
-import com.acmeair.service.CustomerService;
-import com.acmeair.service.ServiceLocator;
-import com.acmeair.web.dto.CustomerInfo;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 @Path("/customer")
 public class CustomerREST {
@@ -100,7 +99,9 @@ public class CustomerREST {
 				if (!validate(customerid)) {
 					System.out.println("error");
 				}
-				System.out.println(customerService.getCustomerByUsername(customerid));
+				//System.out.println(customerService.getCustomerByUsername(customerid));
+				String[] customerIds = {customerid};
+				System.out.println(customerService.getCustomersByUsernames(customerIds));
 			}
 			catch (Exception e) {
 				e.printStackTrace();

@@ -1,21 +1,23 @@
 package com.acmeair.mongo.services;
 
-import static com.mongodb.client.model.Filters.eq;
-import static com.mongodb.client.model.Updates.combine;
-import static com.mongodb.client.model.Updates.set;
-
-import javax.annotation.PostConstruct;
-
-import org.bson.Document;
-
-
 import com.acmeair.mongo.ConnectionManager;
 import com.acmeair.mongo.MongoConstants;
 import com.acmeair.service.CustomerService;
 import com.acmeair.service.DataService;
 import com.acmeair.web.dto.CustomerInfo;
+import com.mongodb.Block;
+import com.mongodb.client.FindIterable;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
+import org.bson.Document;
+
+import javax.annotation.PostConstruct;
+import java.util.ArrayList;
+import java.util.List;
+
+import static com.mongodb.client.model.Filters.eq;
+import static com.mongodb.client.model.Updates.combine;
+import static com.mongodb.client.model.Updates.set;
 
 
 
@@ -104,6 +106,28 @@ public class CustomerServiceImpl extends CustomerService implements MongoConstan
 			customerDoc.append("password", null);
 		}
 		return customerDoc.toJson();
+	}
+
+	//cwz 根据多个用户名查找顾客
+	@Override
+	public String getCustomersByUsernames(String[] usernames){
+		List<Document> customersDocs = new ArrayList<>();
+		for(String username : usernames){
+			customersDocs.add(new Document("_id",username));
+		}
+		FindIterable<Document> customersIter = customer.find(new Document("$or", customersDocs));
+		StringBuffer result = new StringBuffer("");
+		customersIter.forEach(new Block<Document>() {
+			@Override
+			public void apply(Document customer) {
+				if(customer!=null){
+					customer.remove("password");
+					customer.append("password",null);
+					result.append(customer.toJson()).append(" ");
+				}
+			}
+		});
+		return result.toString();
 	}
 
 	@Override

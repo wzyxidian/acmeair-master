@@ -15,13 +15,12 @@
 *******************************************************************************/
 package com.acmeair.service;
 
-import javax.inject.Inject;
-
+import com.acmeair.web.dto.CustomerInfo;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
-import com.acmeair.web.dto.CustomerInfo;
+import javax.inject.Inject;
 
 public abstract class CustomerService {
 	protected static final int DAYS_TO_ALLOW_SESSION = 1;
@@ -42,6 +41,9 @@ public abstract class CustomerService {
 	protected abstract String getCustomer(String username);
 	
 	public abstract String getCustomerByUsername(String username);
+
+	//cwz 根据多个用户名查找顾客
+	public abstract String getCustomersByUsernames(String[] usernames);
 	
 	public boolean validateCustomer(String username, String password) {
 		boolean validatedCustomer = false;
