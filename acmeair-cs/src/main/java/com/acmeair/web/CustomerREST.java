@@ -95,6 +95,7 @@ public class CustomerREST {
 			try {
 				getInfo(sessionid,customerid,sendtime,username);
 				count++;
+				System.out.println(count);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
