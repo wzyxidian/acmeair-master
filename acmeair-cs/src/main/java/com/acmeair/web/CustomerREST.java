@@ -30,6 +30,12 @@ import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import java.util.HashMap;
+import java.util.Map;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Map.Entry;
 
 @Path("/customer")
 public class CustomerREST {
@@ -44,7 +50,6 @@ public class CustomerREST {
 
 	@Context
 	private HttpServletRequest request;
-
 
 	private boolean validate(String customerid)	{
 		String loginUser = (String) request.getAttribute(RESTCookieSessionFilter.LOGIN_USER);
@@ -74,27 +79,71 @@ public class CustomerREST {
 		private String sessionid;
 		private String customerid;
 		private String sendtime;
+		private String username;
+		private int ti = 100;
+		private int nr = 5000;
+		private int z = 20000;
+		private int to = 100;
 
-		public MyTask(int num,String sessionid,String customerid,String sendtime) {
+		public MyTask(int num,String sessionid,String customerid,String sendtime,String username) {
 			this.taskNum = num;
 			this.sessionid=sessionid;
 			this.customerid=customerid;
 			this.sendtime=sendtime;
+			this.username=username;
 		}
 
 		@Override
 		public void run() {
-			System.out.println("executing task "+taskNum);
 			try {
-				getInfo(sessionid,customerid,sendtime);
+				getInfo(sessionid,customerid,sendtime,username);
+				count++;
+				System.out.println(count);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-			System.out.println("task "+taskNum+"finished");
+
+			try {
+				if(count==index){
+					try {
+						String line = System.getProperty("line.separator");
+						StringBuffer str = new StringBuffer();
+						FileWriter fw = new FileWriter("/home/" + System.currentTimeMillis()
+								+ ".txt", true);
+						for (Entry<String, ArrayList<String>> vo : map.entrySet()) {
+							str.append(vo.getKey() + " : ").append(line);
+							for (int j = 0; j < vo.getValue().size(); j++) {
+								str.append(vo.getValue().get(j) + " ").append(line);
+							}
+						}
+						fw.write(str.toString());
+						fw.close();
+					} catch (IOException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+				}
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		}
 
-		public void getInfo(String sessionid,String customerid,String sendtime){
+		public void getInfo(String sessionid,String customerid,String sendtime,String username){
 			System.out.println("send time: " + sendtime);
+			if (map.containsKey("Task" + Integer.toString(taskNum))) {
+				ArrayList<String> value = map.get("Task"
+						+ Integer.toString(taskNum));
+				value.add("t0 = " + Long.parseLong(sendtime));
+				int num = sendtime.getBytes().length;
+				value.add("t0 msi = " + num);
+			} else {
+				ArrayList<String> value = new ArrayList<String>();
+				value.add("t0 = " + Long.parseLong(sendtime));
+				int num = sendtime.getBytes().length + username.getBytes().length;
+				value.add("t0 msi = " + num);
+				map.put("Task" + Integer.toString(taskNum), value);
+			}
 			if(logger.isLoggable(Level.FINE)){
 				logger.fine("getCustomer : session ID " + sessionid + " userid " + customerid);
 			}
@@ -103,13 +152,61 @@ public class CustomerREST {
 				if (!validate(customerid)) {
 					System.out.println("error");
 				}
-				//System.out.println(customerService.getCustomerByUsername(customerid));
-				String[] customerIds = {customerid,"uid1@email.com","uid2@email.com"};
+
+				if (map.containsKey("Task" + Integer.toString(taskNum))) {
+
+					ArrayList<String> value = map.get("Task"
+							+ Integer.toString(taskNum));
+					value.add("t3 = " + System.currentTimeMillis());
+					value.add("t3 Cu = 3333333");
+					value.add("t3 Ru = 66666666666");
+					value.add("t3 f(p) = 100000");
+					value.add("t3 ti = " + ti);
+					value.add("t3 nr = " + nr);
+					value.add("t3 z = " + z);
+
+				} else {
+
+					ArrayList<String> value = new ArrayList<String>();
+					value.add("t3 = " + System.currentTimeMillis());
+					value.add("t3 Cu = 3333333");
+					value.add("t3 Ru = 66666666666");
+					value.add("t3 f(p) = 100000");
+					value.add("t3 ti = " + ti);
+					value.add("t3 nr = " + nr);
+					value.add("t3 z = " + z);
+					map.put("Task" + Integer.toString(taskNum), value);
+				}
+				String[] customerIds = username.split(";");
+				String ss = customerService.getCustomersByUsernames(customerIds);
+
+				if (map.containsKey("Task" + Integer.toString(taskNum))) {
+
+					ArrayList<String> value = map.get("Task"
+							+ Integer.toString(taskNum));
+					value.add("t4 = " + System.currentTimeMillis());
+					int num = ss.getBytes().length;
+					value.add("t4 mso = " + num);
+					value.add("t4 to = " + to);
+
+				} else {
+
+					ArrayList<String> value = new ArrayList<String>();
+					value.add("t4 = " + System.currentTimeMillis());
+					int num = ss.getBytes().length;
+					value.add("t4 mso = " + num);
+					value.add("t4 to = " + to);
+					map.put("Task" + Integer.toString(taskNum), value);
+				}
 				System.out.println(customerService.getCustomersByUsernames(customerIds));
 			}
 			catch (Exception e) {
 				e.printStackTrace();
 			}
+		}
+
+		public String toString() {
+			return "Task" + taskNum;
 		}
 	}
 
