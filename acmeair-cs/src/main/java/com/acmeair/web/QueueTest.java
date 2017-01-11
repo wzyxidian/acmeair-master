@@ -11,6 +11,8 @@ import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.ReentrantLock;
+import java.util.ArrayList;
+
 
 public class QueueTest<E> extends AbstractQueue<E>
         implements BlockingQueue<E>, java.io.Serializable  {
@@ -243,7 +245,20 @@ public class QueueTest<E> extends AbstractQueue<E>
                 return true;
             }
         } finally {
-            System.out.println("offer queue time: "+System.currentTimeMillis());
+            long time = System.currentTimeMillis();
+            System.out.println(e+" offer queue time: "+time);
+            if (CustomerREST.map.containsKey(e.toString())) {
+                ArrayList<String> value = CustomerREST.map.get(e.toString());
+                value.add("t1 = "+time);
+                value.add("t1 Cu = 2222222222");
+                value.add("t1 Ru = 5555555555");
+            } else {
+                ArrayList<String> value = new ArrayList<String>();
+                value.add("t1 = "+time);
+                value.add("t1 Cu = h2222222222");
+                value.add("t1 Ru = h5555555555");
+                CustomerREST.map.put(e.toString(), value);
+            }
             lock.unlock();
         }
     }
@@ -292,7 +307,20 @@ public class QueueTest<E> extends AbstractQueue<E>
             insert(e);
             return true;
         } finally {
-            System.out.println("offer queue time: "+System.currentTimeMillis());
+            long time = System.currentTimeMillis();
+            System.out.println(e+" offer queue time: "+time);
+            if (CustomerREST.map.containsKey(e.toString())) {
+                ArrayList<String> value = CustomerREST.map.get(e.toString());
+                value.add("t1 = "+time);
+                value.add("t1 Cu = 2222222222");
+                value.add("t1 Ru = 5555555555");
+            } else {
+                ArrayList<String> value = new ArrayList<String>();
+                value.add("t1 = "+time);
+                value.add("t1 Cu = h2222222222");
+                value.add("t1 Ru = h5555555555");
+                CustomerREST.map.put(e.toString(), value);
+            }
             lock.unlock();
         }
     }
@@ -302,10 +330,25 @@ public class QueueTest<E> extends AbstractQueue<E>
         final ReentrantLock lock = this.lock;
         lock.lock();
         try {
+            if(count!=0){
+                E e = extract();
+                long time = System.currentTimeMillis();
+                System.out.println(e+" poll queue time: "+time);
+                if (CustomerREST.map.containsKey(e.toString())) {
+                    ArrayList<String> value = CustomerREST.map.get(e.toString());
+                    value.add("t2 = "+time);
+                    value.add("t2 Cu = 4444444444");
+                    value.add("t2 Ru = 7777777777");
+                } else {
+                    ArrayList<String> value = new ArrayList<String>();
+                    value.add("t2 = "+time);
+                    value.add("t2 Cu = h4444444444");
+                    value.add("t2 Ru = h7777777777");
+                    CustomerREST.map.put(e.toString(), value);
+                }
+            }
             return (count == 0) ? null : extract();
         } finally {
-
-            System.out.println("poll queue time: "+System.currentTimeMillis());
             lock.unlock();
         }
 
@@ -318,9 +361,23 @@ public class QueueTest<E> extends AbstractQueue<E>
         try {
             while (count == 0)
                 notEmpty.await();
-            return extract();
+            E e=extract();
+            long time = System.currentTimeMillis();
+            System.out.println(e+" poll queue time: "+time);
+            if (CustomerREST.map.containsKey(e.toString())) {
+                ArrayList<String> value = CustomerREST.map.get(e.toString());
+                value.add("t2 = "+time);
+                value.add("t2 Cu = 4444444444");
+                value.add("t2 Ru = 7777777777");
+            } else {
+                ArrayList<String> value = new ArrayList<String>();
+                value.add("t2 = "+time);
+                value.add("t2 Cu = h4444444444");
+                value.add("t2 Ru = h7777777777");
+                CustomerREST.map.put(e.toString(), value);
+            }
+            return e;
         } finally {
-            System.out.println("poll queue time: "+System.currentTimeMillis());
             lock.unlock();
         }
     }
@@ -335,9 +392,24 @@ public class QueueTest<E> extends AbstractQueue<E>
                     return null;
                 nanos = notEmpty.awaitNanos(nanos);
             }
-            return extract();
+            E e=extract();
+            long time = System.currentTimeMillis();
+            System.out.println(e+" poll queue time: "+time);
+            if (CustomerREST.map.containsKey(e.toString())) {
+                ArrayList<String> value = CustomerREST.map.get(e.toString());
+                value.add("t2 = "+time);
+                value.add("t2 Cu = 4444444444");
+                value.add("t2 Ru = 7777777777");
+            } else {
+                ArrayList<String> value = new ArrayList<String>();
+                value.add("t2 = "+time);
+                value.add("t2 Cu = h4444444444");
+                value.add("t2 Ru = h7777777777");
+                CustomerREST.map.put(e.toString(), value);
+            }
+            return e;
         } finally {
-            System.out.println("poll queue time: "+System.currentTimeMillis());
+
             lock.unlock();
         }
     }
