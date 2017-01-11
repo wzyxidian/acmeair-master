@@ -23,6 +23,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.ws.rs.*;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.Response;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
@@ -33,8 +36,9 @@ public class CustomerREST {
 
 	private static int poolSize = 8;
 	private static ThreadPoolExecutor executor = new ThreadPoolExecutor(poolSize, poolSize, 200, TimeUnit.MILLISECONDS, new QueueTest<Runnable>(200));
-	private static int c;
 	static int index=0;
+	static int count=0;
+	public static Map<String, ArrayList<String>> map = new HashMap<String, ArrayList<String>>();
 
 	private CustomerService customerService = ServiceLocator.instance().getService(CustomerService.class);
 
@@ -55,13 +59,13 @@ public class CustomerREST {
 	@GET
 	@Path("/byid/{custid}")
 	@Produces("text/plain")
-	public void getCustomer(@CookieParam("sessionid") String sessionid, @PathParam("custid") String customerid, @QueryParam("sendtime") String sendtime) {
+	public void getCustomer(@CookieParam("sessionid") String sessionid, @PathParam("custid") String customerid, @QueryParam("sendtime") String sendtime,@QueryParam("username") String username) {
 
-		MyTask myTask = new MyTask(index++,sessionid,customerid,sendtime);
+		MyTask myTask = new MyTask(index++,sessionid,customerid,sendtime,username);
 		System.out.println(System.currentTimeMillis()+"start task: "+index);
 		executor.execute(myTask);
 		System.out.println("poolSize: "+executor.getPoolSize()+" , queueWaitSize: "+
-				executor.getQueue().size()+" , finishTask: "+executor.getCompletedTaskCount());
+				executor.getQueue().size());
 
 	}
 
