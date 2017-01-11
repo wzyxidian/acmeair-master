@@ -81,6 +81,7 @@ public class CustomerREST {
 		private int nr = 5000;
 		private int z = 20000;
 		private int to = 100;
+        private int fp = 100000;
 
 		public MyTask(int num,String sessionid,String customerid,String sendtime,String username) {
 			this.taskNum = num;
@@ -95,7 +96,6 @@ public class CustomerREST {
 			try {
 				getInfo(sessionid,customerid,sendtime,username);
 				count++;
-				System.out.println(count);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
@@ -150,14 +150,18 @@ public class CustomerREST {
 					System.out.println("error");
 				}
 
+                int[] array = new int[fp];
+                sortNum(array, fp);
+                long time = System.currentTimeMillis();
+
 				if (map.containsKey("Task" + Integer.toString(taskNum))) {
 
 					ArrayList<String> value = map.get("Task"
 							+ Integer.toString(taskNum));
-					value.add("t3 = " + System.currentTimeMillis());
-					value.add("t3 Cu = 3333333");
-					value.add("t3 Ru = 66666666666");
-					value.add("t3 f(p) = 100000");
+                    value.add("t3 = " + time);
+                    value.add("t3 Cu = 3333333");
+                    value.add("t3 Ru = 66666666666");
+                    value.add("t3 f(p) = "+complexity(fp));
 					value.add("t3 ti = " + ti);
 					value.add("t3 nr = " + nr);
 					value.add("t3 z = " + z);
@@ -165,10 +169,10 @@ public class CustomerREST {
 				} else {
 
 					ArrayList<String> value = new ArrayList<String>();
-					value.add("t3 = " + System.currentTimeMillis());
-					value.add("t3 Cu = 3333333");
-					value.add("t3 Ru = 66666666666");
-					value.add("t3 f(p) = 100000");
+                    value.add("t3 = " + time);
+                    value.add("t3 Cu = 3333333");
+                    value.add("t3 Ru = 66666666666");
+                    value.add("t3 f(p) = "+complexity(fp));
 					value.add("t3 ti = " + ti);
 					value.add("t3 nr = " + nr);
 					value.add("t3 z = " + z);
@@ -205,6 +209,118 @@ public class CustomerREST {
 		public String toString() {
 			return "Task" + taskNum;
 		}
+
+        public void sortNum(int[] array, int num) {
+
+            // 生成随机数
+            for (int i = 0; i < array.length; i++) {
+                array[i] = (int) (Math.random() * num);
+            }
+            // 快排
+            sort2(array);
+
+        }
+
+        public void sort2(int[] a) {
+            qSort(a, 0, a.length - 1);
+        }
+
+        public void qSort(int[] a, int begin, int end) {
+            int middle;
+            if (begin < end) { // 一定要有这个判断终止，否则递归无法停止，将内存溢出
+                middle = partition(a, begin, end);
+                qSort(a, begin, middle - 1);
+                qSort(a, middle + 1, end);
+            }
+        }
+
+        public int partition(int[] a, int begin, int end) {
+            int midvalue = a[begin];
+            while (begin < end) {
+                while (begin < end && a[end] >= midvalue) {
+                    end--;
+                }
+                swap(a, begin, end);
+                while (begin < end && a[begin] < midvalue) {
+                    begin++;
+                }
+                swap(a, begin, end);
+            }
+            return begin; // 此时的a[begin]=a[end]=midvalue，返回的数组下标为排好序的
+        }
+
+        public void swap(int[] a, int begin, int end) {
+            int temp = a[end];
+            a[end] = a[begin];
+            a[begin] = temp;
+        }
+
+        public int complexity(int fp) {
+            int c = 0;
+            switch (fp) {
+                case 5000:
+                    c = 1;
+                    break;
+                case 10000:
+                    c = 2;
+                    break;
+                case 30000:
+                    c = 3;
+                    break;
+                case 60000:
+                    c = 4;
+                    break;
+                case 90000:
+                    c = 5;
+                    break;
+                case 100000:
+                    c = 6;
+                    break;
+                case 300000:
+                    c = 7;
+                    break;
+                case 500000:
+                    c = 8;
+                    break;
+                case 700000:
+                    c = 9;
+                    break;
+                case 900000:
+                    c = 10;
+                    break;
+                case 1000000:
+                    c = 11;
+                    break;
+                case 2000000:
+                    c = 12;
+                    break;
+                case 3000000:
+                    c = 13;
+                    break;
+                case 4000000:
+                    c = 14;
+                    break;
+                case 5000000:
+                    c = 15;
+                    break;
+                case 6000000:
+                    c = 16;
+                    break;
+                case 7000000:
+                    c = 17;
+                    break;
+                case 8000000:
+                    c = 18;
+                    break;
+                case 9000000:
+                    c = 19;
+                    break;
+                case 10000000:
+                    c = 20;
+                    break;
+            }
+            return c;
+        }
 	}
 
 
