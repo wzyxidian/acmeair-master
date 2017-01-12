@@ -94,6 +94,6 @@ public class CollectInfo {
     private static String parseCollectContainerID(String str){
         JSONArray jsonArray = JSONArray.fromObject(str);
         JSONObject jsonObject = jsonArray.getJSONObject(0);
-        return jsonObject.get("ID").toString();
+        return jsonObject.get("Id").toString();
     }
 }
