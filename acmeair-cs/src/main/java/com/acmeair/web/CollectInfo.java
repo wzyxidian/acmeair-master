@@ -82,7 +82,6 @@ public class CollectInfo {
                 e2.printStackTrace();
             }
         }
-        System.out.println(result+":--------------------------");
         return result;
     }
 
