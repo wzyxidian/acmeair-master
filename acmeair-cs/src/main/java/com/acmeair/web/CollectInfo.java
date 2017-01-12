@@ -1,5 +1,6 @@
 package com.acmeair.web;
 
+import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
 
 import java.io.BufferedReader;
@@ -91,7 +92,8 @@ public class CollectInfo {
      * @return containerID
      */
     private static String parseCollectContainerID(String str){
-        JSONObject jsonObject = JSONObject.fromObject(str);
+        JSONArray jsonArray = JSONArray.fromObject(str);
+        JSONObject jsonObject = jsonArray.getJSONObject(0);
         return jsonObject.get("ID").toString();
     }
 }
