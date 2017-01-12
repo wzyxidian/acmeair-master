@@ -21,7 +21,7 @@ public class CollectInfo {
 
     private static String collectContainerIDUrl = "http://192.168.0.190:2375/containers/" + containerName + "/json";
 
-    private static String collectConfigUrl = "http://localhost:8081/Restaurant/httpServlet";
+    private static String collectConfigUrl = "http://192.168.0.190:8081/Restaurant/httpServlet";
 
     public static String[] collectionConfigs(){
         if(containerID  != null){
