@@ -12,13 +12,13 @@
           <element id="dir-copy" path="$PROJECT_DIR$/acmeair-mainapp/build/resources/main" />
         </element>
         <element id="directory" name="lib">
-          <element id="library" level="project" name="Gradle: org.hamcrest:hamcrest-core:1.1" />
           <element id="archive" name="acmeair-master-acmeair-services-2.0.0-SNAPSHOT.jar">
             <element id="module-output" name="acmeair-services_main" />
             <element id="dir-copy" path="$PROJECT_DIR$/acmeair-services/build/resources/main" />
           </element>
           <element id="library" level="project" name="Gradle: com.googlecode.json-simple:json-simple:1.1.1" />
           <element id="library" level="project" name="Gradle: junit:junit:4.10" />
+          <element id="library" level="project" name="Gradle: org.hamcrest:hamcrest-core:1.1" />
         </element>
       </element>
       <element id="directory" name="META-INF">

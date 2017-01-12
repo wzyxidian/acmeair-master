@@ -41,7 +41,7 @@ import java.util.Map.Entry;
 public class CustomerREST {
 
 	private static int poolSize = 8;
-	private static ThreadPoolExecutor executor = new ThreadPoolExecutor(poolSize, poolSize, 200, TimeUnit.MILLISECONDS, new QueueTest<Runnable>(200));
+	static ThreadPoolExecutor executor = new ThreadPoolExecutor(poolSize, poolSize, 200, TimeUnit.MILLISECONDS, new QueueTest<Runnable>(200));
 	static int index=0;
 	static int count=0;
 	public static Map<String, ArrayList<String>> map = new HashMap<String, ArrayList<String>>();
@@ -67,7 +67,7 @@ public class CustomerREST {
 	public void getCustomer(@CookieParam("sessionid") String sessionid, @PathParam("custid") String customerid, @QueryParam("sendtime") String sendtime,@QueryParam("username") String username) {
 
 //		MyTask myTask = new MyTask(index++,sessionid,customerid,sendtime,username);
-//		System.out.println(System.currentTimeMillis()+"start task: "+index);
+//		System.out.println(System.nanoTime()+"start task: "+index);
 //		executor.execute(myTask);
 //		System.out.println("poolSize: "+executor.getPoolSize()+" , queueWaitSize: "+
 //				executor.getQueue().size());
@@ -159,7 +159,7 @@ public class CustomerREST {
 
                 int[] array = new int[fp];
                 sortNum(array, fp);
-                long time = System.currentTimeMillis();
+                long time = System.nanoTime();
 
 				if (map.containsKey("Task" + Integer.toString(taskNum))) {
 
@@ -192,7 +192,7 @@ public class CustomerREST {
 
 					ArrayList<String> value = map.get("Task"
 							+ Integer.toString(taskNum));
-					value.add("t4 = " + System.currentTimeMillis());
+					value.add("t4 = " + System.nanoTime());
 					int num = ss.getBytes().length;
 					value.add("t4 mso = " + num);
 					value.add("t4 to = " + to);
@@ -200,7 +200,7 @@ public class CustomerREST {
 				} else {
 
 					ArrayList<String> value = new ArrayList<String>();
-					value.add("t4 = " + System.currentTimeMillis());
+					value.add("t4 = " + System.nanoTime());
 					int num = ss.getBytes().length;
 					value.add("t4 mso = " + num);
 					value.add("t4 to = " + to);
