@@ -6,6 +6,7 @@ import java.net.URL;
 import java.net.URLConnection;
 import java.util.List;
 import java.util.Map;
+import java.util.Random;
 
 /**
  * Created by Administrator on 2017/1/6.
@@ -14,13 +15,23 @@ public class HttpRequest {
 
     private static String param = "uid0@email.com";
     private static String url = "http://192.168.0.190/customer/acmeair-cs/rest/api/customer/byid/" + param;
+    private static String username = "";
+    private static int PAPAMNUM = 10;
 
+    private static String generateUserName(){
+        StringBuilder stringBuilder = new StringBuilder();
+        Random random = new Random();
+        for(int i=0; i<PAPAMNUM; i++){
+            stringBuilder.append("uid" + random.nextInt(500) + "@email.com;");
+        }
+        return stringBuilder.toString().substring(0,stringBuilder.toString().length()-1);
+    }
 
     public static String sendGet(String sessionId, long time) {
         String result = "";
         BufferedReader in = null;
         try {
-            URL realUrl = new URL(url+"?" + "sendtime=" + time);
+            URL realUrl = new URL(url+"?" + "sendtime=" + time + "&username=" + generateUserName());
             // 打开和URL之间的连接
             URLConnection connection = realUrl.openConnection();
             // 设置通用的请求属性
