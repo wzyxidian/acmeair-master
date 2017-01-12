@@ -17,7 +17,7 @@ public class CollectInfo {
 
     private static String containerID = null;
 
-    private static String containerName = "nginx";
+    private static String containerName = "sseRegistry";
 
     private static String collectContainerIDUrl = "http://192.168.0.190:2375/containers/" + containerName + "/json";
 
@@ -91,8 +91,7 @@ public class CollectInfo {
      * @return containerID
      */
     private static String parseCollectContainerID(String str){
-        JSONArray jsonArray = JSONArray.fromObject(str);
-        JSONObject jsonObject = jsonArray.getJSONObject(0);
+        JSONObject jsonObject = JSONObject.fromObject(str);
         return jsonObject.get("Id").toString();
     }
 }
