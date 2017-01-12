@@ -18,8 +18,8 @@ public class TrqansTest {
         System.out.println("trqans Test : + " + sessionid);
 //        String result = ThreadPool.sendRequest(sessionid);
 //        return Response.ok(result).build();
-//        ThreadPool.sendRequest(sessionid);
-        HttpRequest.sendGet(sessionid,System.currentTimeMillis());
+        ThreadPool.sendRequest(sessionid);
+//        HttpRequest.sendGet(sessionid,System.currentTimeMillis());
         return null;
     }
 }

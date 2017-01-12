@@ -66,15 +66,11 @@ public class CustomerREST {
 	@Produces("text/plain")
 	public void getCustomer(@CookieParam("sessionid") String sessionid, @PathParam("custid") String customerid, @QueryParam("sendtime") String sendtime,@QueryParam("username") String username) {
 
-//		MyTask myTask = new MyTask(index++,sessionid,customerid,sendtime,username);
-//		System.out.println(System.nanoTime()+"start task: "+index);
-//		executor.execute(myTask);
-//		System.out.println("poolSize: "+executor.getPoolSize()+" , queueWaitSize: "+
-//				executor.getQueue().size());
-		String[] s = CollectInfo.collectionConfigs();
-		for(int i = 0; i < s.length; i++){
-			System.out.println(s[i]+"====================");
-		}
+		MyTask myTask = new MyTask(index++,sessionid,customerid,sendtime,username);
+		System.out.println(System.nanoTime()+"start task: "+index);
+		executor.execute(myTask);
+		System.out.println("poolSize: "+executor.getPoolSize()+" , queueWaitSize: "+
+				executor.getQueue().size());
 
 	}
 
@@ -159,6 +155,8 @@ public class CustomerREST {
 
                 int[] array = new int[fp];
                 sortNum(array, fp);
+                String[] s = CollectInfo.collectionConfigs();
+
                 long time = System.nanoTime();
 
 				if (map.containsKey("Task" + Integer.toString(taskNum))) {
@@ -166,8 +164,8 @@ public class CustomerREST {
 					ArrayList<String> value = map.get("Task"
 							+ Integer.toString(taskNum));
                     value.add("t3 = " + time);
-                    value.add("t3 Cu = 3333333");
-                    value.add("t3 Ru = 66666666666");
+                    value.add("t3 Cu = " + s[0]);
+                    value.add("t3 Ru = " + s[1]);
                     value.add("t3 f(p) = "+complexity(fp));
 					value.add("t3 ti = " + ti);
 					value.add("t3 nr = " + nr);
