@@ -17,7 +17,7 @@ public class CollectInfo {
 
     private static String containerID = null;
 
-    private static String containerName = "sseRegistry";
+    private static String containerName = "cs";
 
     private static String collectContainerIDUrl = "http://192.168.0.190:2375/containers/" + containerName + "/json";
 
@@ -26,12 +26,12 @@ public class CollectInfo {
     public static String[] collectionConfigs(){
         if(containerID  != null){
             String  result = sendRequest(collectConfigUrl + "?containerID=" + containerID);
-            return result.split(",");
+            return result.split("&");
         }else {
             String temp = sendRequest(collectContainerIDUrl);
             containerID = parseCollectContainerID(temp);
             String  result = sendRequest(collectConfigUrl + "?containerID=" + containerID);
-            return result.split(",");
+            return result.split("&");
         }
     }
 
