@@ -1,6 +1,7 @@
 package com.acmeair.config;
 
 
+import java.sql.Time;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
@@ -25,12 +26,12 @@ public class ThreadPool {
      */
     public static void sendRequest(String sessionid){
         ExecutorService fixedThreadPool = Executors.newFixedThreadPool(threadNum);
+        long time = System.currentTimeMillis();
         for(int i = 0; i < threadNum; i++){
             fixedThreadPool.execute(new Runnable() {
                 @Override
                 public void run() {
-                    while(true){
-                        System.out.println("dangqianxitongshijian： " + System.nanoTime());
+                    while(System.currentTimeMillis() - time <= 3 * 60 * 1000){
                         String result = HttpRequest.sendGet(sessionid,System.currentTimeMillis());
                         System.out.println(Thread.currentThread() + " --- " + result);
                         try {
