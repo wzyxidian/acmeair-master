@@ -25,12 +25,16 @@ public class CollectInfo {
 
     public static String[] collectionConfigs(){
         if(containerID  != null){
+            System.out.println("containerID:"+containerID);
             String  result = sendRequest(collectConfigUrl + "?containerID=" + containerID);
+            System.out.println("result : " + result);
             return result.split("&");
         }else {
             String temp = sendRequest(collectContainerIDUrl);
             containerID = parseCollectContainerID(temp);
+            System.out.println("get containerID:"+containerID);
             String  result = sendRequest(collectConfigUrl + "?containerID=" + containerID);
+            System.out.println("get result : "+ result);
             return result.split("&");
         }
     }
