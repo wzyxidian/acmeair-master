@@ -150,7 +150,7 @@ public class CustomerREST {
 				ArrayList<String> value = map.get("Task"
 						+ Integer.toString(taskNum));
 				value.add("t0 = " + Long.parseLong(sendtime));
-				int num = sendtime.getBytes().length;
+				int num = sendtime.getBytes().length+ username.getBytes().length;
 				value.add("t0 msi = " + num);
 			} else {
 				ArrayList<String> value = new ArrayList<String>();
