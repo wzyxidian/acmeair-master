@@ -63,7 +63,7 @@ cs:
   environment:
     - LICENSE=accept
   volumes:
-    /test/data:/test/data
+    - /test/data:/test/data
 
 fs:
   container_name: fs
