@@ -109,7 +109,7 @@ public class CustomerREST {
 
                         String line = System.getProperty("line.separator");
                         StringBuffer str = new StringBuffer();
-                        FileWriter fw = new FileWriter("/test/e.txt", true);
+                        FileWriter fw = new FileWriter("/test/" + System.currentTimeMillis() + ".txt", true);
                         Map<String, ArrayList<String>> map1 = new HashMap<String, ArrayList<String>>();
                         for (Entry<String, ArrayList<String>> vo : map
                                 .entrySet()) {
