@@ -43,7 +43,7 @@ public class CustomerREST {
 	static int count = 0; //执行完的任务数量
 	public static Map<String, ArrayList<String>> map = new HashMap<String, ArrayList<String>>();
 	static int dbcount = 0; //请求数据库数量
-	static int flag = poolSize; //判断是否开始写入文件
+	static int size = 500; //判断是否开始写入文件
 
 	private CustomerService customerService = ServiceLocator.instance().getService(CustomerService.class);
 
@@ -103,15 +103,32 @@ public class CustomerREST {
 			}
 
 			try {
-//				if (index > poolSize && executor.getQueue().size() == 0) {
-//					flag--;
-//					if (flag == 0) {
+					if (count == size) {
 						System.out.println("begin to write");
 						try {
 
 							String line = System.getProperty("line.separator");
 							StringBuffer str = new StringBuffer();
-							FileWriter fw = new FileWriter("/test/e.txt", true);
+							FileWriter fw = new FileWriter("/test/"+System.currentTimeMillis() +".txt", true);
+							Map<String, ArrayList<String>> map1 = new HashMap<String, ArrayList<String>>();
+							for (Entry<String, ArrayList<String>> vo : map
+									.entrySet()) {
+								for(int i=0;i<vo.getValue().size();i++){
+									if(vo.getValue().get(i).indexOf("count")!=-1){
+										map1.put(vo.getKey(), vo.getValue());
+									}
+								}
+							}
+
+							System.out.println("map1.size(): "+map1.size());
+							for (Entry<String, ArrayList<String>> vo : map1
+									.entrySet()) {
+								str.append(vo.getKey() + " : ");
+								for (int j = 0; j < vo.getValue().size(); j++) {
+									str.append(vo.getValue().get(j)).append(",");
+								}
+								str.append(line);
+							}
 							for (Entry<String, ArrayList<String>> vo : map
 									.entrySet()) {
 								str.append(vo.getKey() + " : ");
@@ -128,8 +145,7 @@ public class CustomerREST {
 							// TODO Auto-generated catch block
 							e.printStackTrace();
 						}
-//					}
-//				}
+				}
 			} catch (Exception e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
