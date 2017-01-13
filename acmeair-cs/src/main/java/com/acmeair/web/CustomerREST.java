@@ -111,7 +111,7 @@ public class CustomerREST {
 
 							String line = System.getProperty("line.separator");
 							StringBuffer str = new StringBuffer();
-							FileWriter fw = new FileWriter("./data/sortTime/e.txt", true);
+							FileWriter fw = new FileWriter("/test/data/e.txt", true);
 							for (Entry<String, ArrayList<String>> vo : map
 									.entrySet()) {
 								str.append(vo.getKey() + " : ");

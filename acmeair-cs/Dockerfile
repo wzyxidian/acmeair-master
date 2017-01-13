@@ -5,6 +5,8 @@ FROM 192.168.0.190:5000/web:lib
 #RUN mkdir /mongodb/log
 #RUN touch /mongodb/log/mongodb.log
 
+RUN mkdir /test/data
+
 ADD Dockerfile /root/Dockerfile
 
 #ADD startMongo.sh /usr/startMongo.sh
