@@ -37,216 +37,207 @@ import java.io.FileWriter;
 @Path("/customer")
 public class CustomerREST {
 
-	private static int poolSize = 8; //核心池大小
-	static ThreadPoolExecutor executor = new ThreadPoolExecutor(poolSize, poolSize, 200, TimeUnit.MILLISECONDS, new QueueTest<Runnable>(200),new ThreadPoolExecutor.DiscardPolicy());
-	static int index = 0; //请求数量
-	static int count = 0; //执行完的任务数量
-	public static Map<String, ArrayList<String>> map = new HashMap<String, ArrayList<String>>();
-	static int dbcount = 0; //请求数据库数量
-	static int size = 500; //判断是否开始写入文件
+    private static int poolSize = 8; //核心池大小
+    static ThreadPoolExecutor executor = new ThreadPoolExecutor(poolSize, poolSize, 200, TimeUnit.MILLISECONDS, new QueueTest<Runnable>(200), new ThreadPoolExecutor.DiscardPolicy());
+    static int index = 0; //请求数量
+    static int count = 0; //执行完的任务数量
+    public static Map<String, ArrayList<String>> map = new HashMap<String, ArrayList<String>>();
+    static int dbcount = 0; //请求数据库数量
+    static int size = 500; //判断是否开始写入文件
 
-	private CustomerService customerService = ServiceLocator.instance().getService(CustomerService.class);
+    private CustomerService customerService = ServiceLocator.instance().getService(CustomerService.class);
 
-	@Context
-	private HttpServletRequest request;
+    @Context
+    private HttpServletRequest request;
 
-	private boolean validate(String customerid)	{
-		String loginUser = (String) request.getAttribute(RESTCookieSessionFilter.LOGIN_USER);
-		if(logger.isLoggable(Level.FINE)){
-			logger.fine("validate : loginUser " + loginUser + " customerid " + customerid);
-		}
-		return customerid.equals(loginUser);
-	}
+    private boolean validate(String customerid) {
+        String loginUser = (String) request.getAttribute(RESTCookieSessionFilter.LOGIN_USER);
+        if (logger.isLoggable(Level.FINE)) {
+            logger.fine("validate : loginUser " + loginUser + " customerid " + customerid);
+        }
+        return customerid.equals(loginUser);
+    }
 
-	protected Logger logger =  Logger.getLogger(CustomerService.class.getName());
+    protected Logger logger = Logger.getLogger(CustomerService.class.getName());
 
-	@GET
-	@Path("/byid/{custid}")
-	@Produces("text/plain")
-	public void getCustomer(@CookieParam("sessionid") String sessionid, @PathParam("custid") String customerid, @QueryParam("sendtime") String sendtime,@QueryParam("username") String username) {
+    @GET
+    @Path("/byid/{custid}")
+    @Produces("text/plain")
+    public void getCustomer(@CookieParam("sessionid") String sessionid, @PathParam("custid") String customerid, @QueryParam("sendtime") String sendtime, @QueryParam("username") String username) {
 
-		MyTask myTask = new MyTask(index++,sessionid,customerid,sendtime,username);
-		System.out.println(System.nanoTime()+"start task: "+index);
-		executor.execute(myTask);
-		System.out.println("poolSize: "+executor.getPoolSize()+" , queueWaitSize: "+
-				executor.getQueue().size());
+        MyTask myTask = new MyTask(index++, sessionid, customerid, sendtime, username);
+        System.out.println(System.nanoTime() + "start task: " + index);
+        executor.execute(myTask);
+        System.out.println("poolSize: " + executor.getPoolSize() + " , queueWaitSize: " +
+                executor.getQueue().size());
 
-	}
+    }
 
-	class MyTask implements Runnable {
-		private int taskNum; //任务编号
-		private String sessionid; //session id
-		private String customerid; //customer id
-		private String sendtime; //请求发送时间
-		private String username; //用户名
-		private int ti = 100; //数据库输入数据
-		private int nr = 5000; //数据库表记录条数
-		private int z = 20000; //数据库并发连接数
-		private int to = 100; //数据库输出数据
-		private int fp = 100000; //程序复杂度
+    class MyTask implements Runnable {
+        private int taskNum; //任务编号
+        private String sessionid; //session id
+        private String customerid; //customer id
+        private String sendtime; //请求发送时间
+        private String username; //用户名
+        private int ti = 100; //数据库输入数据
+        private int nr = 5000; //数据库表记录条数
+        private int z = 20000; //数据库并发连接数
+        private int to = 100; //数据库输出数据
+        private int fp = 100000; //程序复杂度
 
-		public MyTask(int num, String sessionid, String customerid, String sendtime, String username) {
-			this.taskNum = num;
-			this.sessionid = sessionid;
-			this.customerid = customerid;
-			this.sendtime = sendtime;
-			this.username = username;
-		}
+        public MyTask(int num, String sessionid, String customerid, String sendtime, String username) {
+            this.taskNum = num;
+            this.sessionid = sessionid;
+            this.customerid = customerid;
+            this.sendtime = sendtime;
+            this.username = username;
+        }
 
-		@Override
-		public void run() {
-			try {
-				getInfo(sessionid, customerid, sendtime, username);
-				count++;
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
+        @Override
+        public void run() {
+            try {
+                getInfo(sessionid, customerid, sendtime, username);
+                count++;
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
 
-			try {
-					if (count == size) {
-						System.out.println("begin to write");
-						try {
+            try {
+                if (count == size) {
+                    System.out.println("begin to write");
+                    try {
 
-							String line = System.getProperty("line.separator");
-							StringBuffer str = new StringBuffer();
-							FileWriter fw = new FileWriter("/test/"+System.currentTimeMillis() +".txt", true);
-							Map<String, ArrayList<String>> map1 = new HashMap<String, ArrayList<String>>();
-							for (Entry<String, ArrayList<String>> vo : map
-									.entrySet()) {
-								for(int i=0;i<vo.getValue().size();i++){
-									if(vo.getValue().get(i).indexOf("count")!=-1){
-										map1.put(vo.getKey(), vo.getValue());
-									}
-								}
-							}
+                        String line = System.getProperty("line.separator");
+                        StringBuffer str = new StringBuffer();
+                        FileWriter fw = new FileWriter("/test/" + System.currentTimeMillis() + ".txt", true);
+                        Map<String, ArrayList<String>> map1 = new HashMap<String, ArrayList<String>>();
+                        for (Entry<String, ArrayList<String>> vo : map
+                                .entrySet()) {
+                            for (int i = 0; i < vo.getValue().size(); i++) {
+                                if (vo.getValue().get(i).indexOf("count") != -1) {
+                                    map1.put(vo.getKey(), vo.getValue());
+                                }
+                            }
+                        }
+                        System.out.println("map1.size(): " + map1.size());
+                        for (Entry<String, ArrayList<String>> vo : map1
+                                .entrySet()) {
+                            str.append(vo.getKey() + " : ");
+                            for (int j = 0; j < vo.getValue().size(); j++) {
+                                str.append(vo.getValue().get(j)).append(",");
+                            }
+                            str.append(line);
+                        }
 
-							System.out.println("map1.size(): "+map1.size());
-							for (Entry<String, ArrayList<String>> vo : map1
-									.entrySet()) {
-								str.append(vo.getKey() + " : ");
-								for (int j = 0; j < vo.getValue().size(); j++) {
-									str.append(vo.getValue().get(j)).append(",");
-								}
-								str.append(line);
-							}
-							for (Entry<String, ArrayList<String>> vo : map
-									.entrySet()) {
-								str.append(vo.getKey() + " : ");
-								for (int j = 0; j < vo.getValue().size(); j++) {
-									str.append(vo.getValue().get(j)).append(",");
-								}
-								str.append(line);
-							}
+                        fw.write(str.toString());
+                        fw.close();
 
-							fw.write(str.toString());
-							fw.close();
+                    } catch (IOException e) {
+                        // TODO Auto-generated catch block
+                        e.printStackTrace();
+                    }
+                }
+            } catch (Exception e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            }
+        }
 
-						} catch (IOException e) {
-							// TODO Auto-generated catch block
-							e.printStackTrace();
-						}
-				}
-			} catch (Exception e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-		}
-
-		/**
-		 * 通过customerid获取customer信息
-		 * @param sessionid
-		 * @param customerid
-		 * @param sendtime
-		 * @param username
-		 */
-		public void getInfo(String sessionid,String customerid,String sendtime,String username){
-			System.out.println("send time: " + sendtime);
-			if (map.containsKey("Task" + Integer.toString(taskNum))) {
-				ArrayList<String> value = map.get("Task"
-						+ Integer.toString(taskNum));
-				value.add("t0 = " + Long.parseLong(sendtime));
-				int num = sendtime.getBytes().length+ username.getBytes().length;
-				value.add("t0 msi = " + num);
-			} else {
-				ArrayList<String> value = new ArrayList<String>();
-				value.add("t0 = " + Long.parseLong(sendtime));
-				int num = sendtime.getBytes().length + username.getBytes().length;
-				value.add("t0 msi = " + num);
-				map.put("Task" + Integer.toString(taskNum), value);
-			}
-			if(logger.isLoggable(Level.FINE)){
-				logger.fine("getCustomer : session ID " + sessionid + " userid " + customerid);
-			}
-			try {
-				// make sure the user isn't trying to update a customer other than the one currently logged in
-				if (!validate(customerid)) {
-					System.out.println("error");
-				}
+        /**
+         * 通过customerid获取customer信息
+         *
+         * @param sessionid
+         * @param customerid
+         * @param sendtime
+         * @param username
+         */
+        public void getInfo(String sessionid, String customerid, String sendtime, String username) {
+            System.out.println("send time: " + sendtime);
+            if (map.containsKey("Task" + Integer.toString(taskNum))) {
+                ArrayList<String> value = map.get("Task"
+                        + Integer.toString(taskNum));
+                value.add("t0 = " + Long.parseLong(sendtime));
+                int num = sendtime.getBytes().length + username.getBytes().length;
+                value.add("t0 msi = " + num);
+            } else {
+                ArrayList<String> value = new ArrayList<String>();
+                value.add("t0 = " + Long.parseLong(sendtime));
+                int num = sendtime.getBytes().length + username.getBytes().length;
+                value.add("t0 msi = " + num);
+                map.put("Task" + Integer.toString(taskNum), value);
+            }
+            if (logger.isLoggable(Level.FINE)) {
+                logger.fine("getCustomer : session ID " + sessionid + " userid " + customerid);
+            }
+            try {
+                // make sure the user isn't trying to update a customer other than the one currently logged in
+                if (!validate(customerid)) {
+                    System.out.println("error");
+                }
 
                 int[] array = new int[fp];
                 sortNum(array, fp);
                 String[] s = CollectInfo.collectionConfigs();
                 long t3 = System.nanoTime();
 
-				if (map.containsKey("Task" + Integer.toString(taskNum))) {
+                if (map.containsKey("Task" + Integer.toString(taskNum))) {
 
-					ArrayList<String> value = map.get("Task"
-							+ Integer.toString(taskNum));
+                    ArrayList<String> value = map.get("Task"
+                            + Integer.toString(taskNum));
                     value.add("t3 = " + t3);
                     value.add("t3 Cu = " + s[0]);
                     value.add("t3 Ru = " + s[1]);
-                    value.add("t3 fp = "+fp);
-					value.add("t3 ti = " + ti);
-					value.add("t3 nr = " + nr);
-					value.add("t3 z = " + z);
+                    value.add("t3 fp = " + fp);
+                    value.add("t3 ti = " + ti);
+                    value.add("t3 nr = " + nr);
+                    value.add("t3 z = " + z);
 
-				} else {
+                } else {
 
-					ArrayList<String> value = new ArrayList<String>();
+                    ArrayList<String> value = new ArrayList<String>();
                     value.add("t3 = " + t3);
-					value.add("t3 Cu = " + s[0]);
-					value.add("t3 Ru = " + s[1]);
-                    value.add("t3 fp = "+fp);
-					value.add("t3 ti = " + ti);
-					value.add("t3 nr = " + nr);
-					value.add("t3 z = " + z);
-					map.put("Task" + Integer.toString(taskNum), value);
-				}
-				String[] customerIds = username.split(";");
-				dbcount++;
-				String ss = customerService.getCustomersByUsernames(customerIds);
-				long t4 = System.nanoTime();
-				dbcount--;
-				if (map.containsKey("Task" + Integer.toString(taskNum))) {
+                    value.add("t3 Cu = " + s[0]);
+                    value.add("t3 Ru = " + s[1]);
+                    value.add("t3 fp = " + fp);
+                    value.add("t3 ti = " + ti);
+                    value.add("t3 nr = " + nr);
+                    value.add("t3 z = " + z);
+                    map.put("Task" + Integer.toString(taskNum), value);
+                }
+                String[] customerIds = username.split(";");
+                dbcount++;
+                String ss = customerService.getCustomersByUsernames(customerIds);
+                long t4 = System.nanoTime();
+                dbcount--;
+                if (map.containsKey("Task" + Integer.toString(taskNum))) {
 
-					ArrayList<String> value = map.get("Task"
-							+ Integer.toString(taskNum));
-					value.add("t4 = " + t4);
-					int num = ss.getBytes().length;
-					value.add("t4 mso = " + num);
-					value.add("t4 to = " + to);
-					value.add("count = "+dbcount);
+                    ArrayList<String> value = map.get("Task"
+                            + Integer.toString(taskNum));
+                    value.add("t4 = " + t4);
+                    int num = ss.getBytes().length;
+                    value.add("t4 mso = " + num);
+                    value.add("t4 to = " + to);
+                    value.add("count = " + dbcount);
 
-				} else {
+                } else {
 
-					ArrayList<String> value = new ArrayList<String>();
-					value.add("t4 = " + t4);
-					int num = ss.getBytes().length;
-					value.add("t4 mso = " + num);
-					value.add("t4 to = " + to);
-					value.add("count = "+dbcount);
-					map.put("Task" + Integer.toString(taskNum), value);
-				}
+                    ArrayList<String> value = new ArrayList<String>();
+                    value.add("t4 = " + t4);
+                    int num = ss.getBytes().length;
+                    value.add("t4 mso = " + num);
+                    value.add("t4 to = " + to);
+                    value.add("count = " + dbcount);
+                    map.put("Task" + Integer.toString(taskNum), value);
+                }
 
-			}
-			catch (Exception e) {
-				e.printStackTrace();
-			}
-		}
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
 
-		public String toString() {
-			return "Task" + taskNum;
-		}
+        public String toString() {
+            return "Task" + taskNum;
+        }
 
         public void sortNum(int[] array, int num) {
 
@@ -292,58 +283,56 @@ public class CustomerREST {
             a[end] = a[begin];
             a[begin] = temp;
         }
-	}
+    }
 
 
+    @POST
+    @Path("/byid/{custid}")
+    @Produces("text/plain")
+    public Response putCustomer(@CookieParam("sessionid") String sessionid, CustomerInfo customer) {
+        String username = customer.getUsername();
+        if (!validate(username)) {
+            return Response.status(Response.Status.FORBIDDEN).build();
+        }
 
-	@POST
-	@Path("/byid/{custid}")
-	@Produces("text/plain")
-	public Response putCustomer(@CookieParam("sessionid") String sessionid, CustomerInfo customer) {
-		String username = customer.getUsername();
-		if (!validate(username)) {
-			return Response.status(Response.Status.FORBIDDEN).build();
-		}
+        String customerFromDB = customerService.getCustomerByUsernameAndPassword(username, customer.getPassword());
+        if (logger.isLoggable(Level.FINE)) {
+            logger.fine("putCustomer : " + customerFromDB);
+        }
 
-		String customerFromDB = customerService.getCustomerByUsernameAndPassword(username, customer.getPassword());
-		if(logger.isLoggable(Level.FINE)){
-			logger.fine("putCustomer : " + customerFromDB);
-		}
+        if (customerFromDB == null) {
+            // either the customer doesn't exist or the password is wrong
+            return Response.status(Response.Status.FORBIDDEN).build();
+        }
 
-		if (customerFromDB == null) {
-			// either the customer doesn't exist or the password is wrong
-			return Response.status(Response.Status.FORBIDDEN).build();
-		}
+        customerService.updateCustomer(username, customer);
 
-		customerService.updateCustomer(username, customer);
+        //Retrieve the latest results
+        customerFromDB = customerService.getCustomerByUsernameAndPassword(username, customer.getPassword());
+        return Response.ok(customerFromDB).build();
+    }
 
-		//Retrieve the latest results
-		customerFromDB = customerService.getCustomerByUsernameAndPassword(username, customer.getPassword());
-		return Response.ok(customerFromDB).build();
-	}
+    @POST
+    @Path("/validateid")
+    @Consumes({"application/x-www-form-urlencoded"})
+    @Produces("text/plain")
+    public Response validateCustomer(@FormParam("login") String login, @FormParam("password") String password) {
+        if (logger.isLoggable(Level.FINE)) {
+            logger.fine("validateid : login " + login + " password " + password);
+        }
 
-	@POST
-	@Path("/validateid")
-	@Consumes({"application/x-www-form-urlencoded"})
-	@Produces("text/plain")
-	public Response validateCustomer(@FormParam("login") String login, @FormParam("password") String password) {
-		if(logger.isLoggable(Level.FINE)){
-			logger.fine("validateid : login " + login + " password " + password);
-		}
+        String validCustomer = null;
 
-		String validCustomer = null;
+        if (customerService.validateCustomer(login, password)) {
+            validCustomer = "true";
+        } else {
+            validCustomer = "false";
+        }
 
-		if (customerService.validateCustomer(login, password)) {
-			validCustomer = "true";
-		} else {
-			validCustomer = "false";
-		}
+        String s = "{\"validCustomer\":\"" + validCustomer + "\"}";
 
-		String s = "{\"validCustomer\":\"" + validCustomer + "\"}";
-
-		return Response.ok(s).build();
-	}
-
+        return Response.ok(s).build();
+    }
 
 
 }
