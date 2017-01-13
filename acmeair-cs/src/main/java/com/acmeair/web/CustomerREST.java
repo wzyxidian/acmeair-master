@@ -43,7 +43,7 @@ public class CustomerREST {
     static int count = 0; //执行完的任务数量
     public static Map<String, ArrayList<String>> map = new HashMap<String, ArrayList<String>>();
     static int dbcount = 0; //请求数据库数量
-    static int size = 500; //判断是否开始写入文件
+    static int size = 50; //判断是否开始写入文件
 
     private CustomerService customerService = ServiceLocator.instance().getService(CustomerService.class);
 
@@ -109,7 +109,7 @@ public class CustomerREST {
 
                         String line = System.getProperty("line.separator");
                         StringBuffer str = new StringBuffer();
-                        FileWriter fw = new FileWriter("/test/" + System.currentTimeMillis() + ".txt", true);
+                        FileWriter fw = new FileWriter("/test/e.txt", true);
                         Map<String, ArrayList<String>> map1 = new HashMap<String, ArrayList<String>>();
                         for (Entry<String, ArrayList<String>> vo : map
                                 .entrySet()) {
