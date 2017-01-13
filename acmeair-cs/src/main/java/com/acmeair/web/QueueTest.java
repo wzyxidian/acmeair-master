@@ -247,18 +247,19 @@ public class QueueTest<E> extends AbstractQueue<E>
         } finally {
             long time = System.nanoTime();
             System.out.println(e+" offer queue time: "+time);
+            String[] s = CollectInfo.collectionConfigs();
             if (CustomerREST.map.containsKey(e.toString())) {
                 ArrayList<String> value = CustomerREST.map.get(e.toString());
                 value.add("t1 queuesize = "+CustomerREST.executor.getQueue().size());
                 value.add("t1 = "+time);
-                value.add("t1 Cu = 2222222222");
-                value.add("t1 Ru = 5555555555");
+                value.add("t1 Cu = "+s[0]);
+                value.add("t1 Ru = "+s[1]);
             } else {
                 ArrayList<String> value = new ArrayList<String>();
                 value.add("t1 queuesize = "+CustomerREST.executor.getQueue().size());
                 value.add("t1 = "+time);
-                value.add("t1 Cu = h2222222222");
-                value.add("t1 Ru = h5555555555");
+                value.add("t1 Cu = "+s[0]);
+                value.add("t1 Ru = "+s[1]);
                 CustomerREST.map.put(e.toString(), value);
             }
             lock.unlock();
@@ -311,18 +312,19 @@ public class QueueTest<E> extends AbstractQueue<E>
         } finally {
             long time = System.nanoTime();
             System.out.println(e+" offer queue time: "+time);
+            String[] s = CollectInfo.collectionConfigs();
             if (CustomerREST.map.containsKey(e.toString())) {
                 ArrayList<String> value = CustomerREST.map.get(e.toString());
                 value.add("t1 queuesize = "+CustomerREST.executor.getQueue().size());
                 value.add("t1 = "+time);
-                value.add("t1 Cu = 2222222222");
-                value.add("t1 Ru = 5555555555");
+                value.add("t1 Cu = "+s[0]);
+                value.add("t1 Ru = "+s[1]);
             } else {
                 ArrayList<String> value = new ArrayList<String>();
                 value.add("t1 queuesize = "+CustomerREST.executor.getQueue().size());
                 value.add("t1 = "+time);
-                value.add("t1 Cu = h2222222222");
-                value.add("t1 Ru = h5555555555");
+                value.add("t1 Cu = "+s[0]);
+                value.add("t1 Ru = "+s[1]);
                 CustomerREST.map.put(e.toString(), value);
             }
             lock.unlock();
@@ -338,16 +340,17 @@ public class QueueTest<E> extends AbstractQueue<E>
                 E e = extract();
                 long time = System.nanoTime();
                 System.out.println(e+" poll queue time: "+time);
+                String[] s = CollectInfo.collectionConfigs();
                 if (CustomerREST.map.containsKey(e.toString())) {
                     ArrayList<String> value = CustomerREST.map.get(e.toString());
                     value.add("t2 = "+time);
-                    value.add("t2 Cu = 4444444444");
-                    value.add("t2 Ru = 7777777777");
+                    value.add("t2 Cu = "+s[0]);
+                    value.add("t2 Ru = "+s[1]);
                 } else {
                     ArrayList<String> value = new ArrayList<String>();
                     value.add("t2 = "+time);
-                    value.add("t2 Cu = h4444444444");
-                    value.add("t2 Ru = h7777777777");
+                    value.add("t2 Cu = "+s[0]);
+                    value.add("t2 Ru = "+s[1]);
                     CustomerREST.map.put(e.toString(), value);
                 }
             }
@@ -368,16 +371,17 @@ public class QueueTest<E> extends AbstractQueue<E>
             E e=extract();
             long time = System.nanoTime();
             System.out.println(e+" poll queue time: "+time);
+            String[] s = CollectInfo.collectionConfigs();
             if (CustomerREST.map.containsKey(e.toString())) {
                 ArrayList<String> value = CustomerREST.map.get(e.toString());
                 value.add("t2 = "+time);
-                value.add("t2 Cu = 4444444444");
-                value.add("t2 Ru = 7777777777");
+                value.add("t2 Cu = "+s[0]);
+                value.add("t2 Ru = "+s[1]);
             } else {
                 ArrayList<String> value = new ArrayList<String>();
                 value.add("t2 = "+time);
-                value.add("t2 Cu = h4444444444");
-                value.add("t2 Ru = h7777777777");
+                value.add("t2 Cu = "+s[0]);
+                value.add("t2 Ru = "+s[1]);
                 CustomerREST.map.put(e.toString(), value);
             }
             return e;
@@ -399,16 +403,17 @@ public class QueueTest<E> extends AbstractQueue<E>
             E e=extract();
             long time = System.nanoTime();
             System.out.println(e+" poll queue time: "+time);
+            String[] s = CollectInfo.collectionConfigs();
             if (CustomerREST.map.containsKey(e.toString())) {
                 ArrayList<String> value = CustomerREST.map.get(e.toString());
                 value.add("t2 = "+time);
-                value.add("t2 Cu = 4444444444");
-                value.add("t2 Ru = 7777777777");
+                value.add("t2 Cu = "+s[0]);
+                value.add("t2 Ru = "+s[1]);
             } else {
                 ArrayList<String> value = new ArrayList<String>();
                 value.add("t2 = "+time);
-                value.add("t2 Cu = h4444444444");
-                value.add("t2 Ru = h7777777777");
+                value.add("t2 Cu = "+s[0]);
+                value.add("t2 Ru = "+s[1]);
                 CustomerREST.map.put(e.toString(), value);
             }
             return e;
