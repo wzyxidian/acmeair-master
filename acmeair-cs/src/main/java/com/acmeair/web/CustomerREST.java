@@ -103,16 +103,15 @@ public class CustomerREST {
 			}
 
 			try {
-				if (index > poolSize && executor.getQueue().size() == 0) {
-					flag--;
-					if (flag == 0) {
+//				if (index > poolSize && executor.getQueue().size() == 0) {
+//					flag--;
+//					if (flag == 0) {
 						System.out.println("begin to write");
 						try {
 
 							String line = System.getProperty("line.separator");
 							StringBuffer str = new StringBuffer();
-							FileWriter fw = new FileWriter("/home/"
-									+ System.currentTimeMillis() + ".txt", true);
+							FileWriter fw = new FileWriter("/home/e.txt", true);
 							for (Entry<String, ArrayList<String>> vo : map
 									.entrySet()) {
 								str.append(vo.getKey() + " : ");
@@ -129,8 +128,8 @@ public class CustomerREST {
 							// TODO Auto-generated catch block
 							e.printStackTrace();
 						}
-					}
-				}
+//					}
+//				}
 			} catch (Exception e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
