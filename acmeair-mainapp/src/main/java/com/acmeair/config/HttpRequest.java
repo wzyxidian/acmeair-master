@@ -18,6 +18,10 @@ public class HttpRequest {
     private static String username = "";
     private static int PAPAMNUM = 10;
 
+    /**
+     * 自动生成传入的参数
+     * @return
+     */
     private static String generateUserName(){
         StringBuilder stringBuilder = new StringBuilder();
         Random random = new Random();
@@ -27,6 +31,12 @@ public class HttpRequest {
         return stringBuilder.toString().substring(0,stringBuilder.toString().length()-1);
     }
 
+    /**
+     * 发送请求
+     * @param sessionId    获取当前的sessionId
+     * @param time         请求发送的时间点
+     * @return
+     */
     public static String sendGet(String sessionId, long time) {
         String result = "";
         BufferedReader in = null;

@@ -17,12 +17,29 @@ public class CollectInfo {
 
     private static String containerID = null;
 
+    /**
+     * 要查看性能的容器名称，默认为cs，不会改变
+     */
     private static String containerName = "cs";
 
-    private static String collectContainerIDUrl = "http://192.168.0.190:2375/containers/" + containerName + "/json";
+    /**
+     * http服务运行的宿主机的ip，要根据部署位置的不同修改ip，不能为localhost
+     */
+    private static String ip = "192.168.0.190";
+    /**
+     * 向docker守护进行发起的请求，通过容器名称获取容器ID
+     */
+    private static String collectContainerIDUrl = "http://" + ip +":2375/containers/" + containerName + "/json";
 
-    private static String collectConfigUrl = "http://192.168.0.190:8081/Restaurant/httpServlet";
+    /**
+     * 向http服务器发送的请求，通过该请求获取cu，ru
+     */
+    private static String collectConfigUrl = "http://" + ip +":8081/Restaurant/httpServlet";
 
+    /**
+     * 获取容器此时的cu，ru
+     * @return
+     */
     public static String[] collectionConfigs(){
         if(containerID  != null){
             System.out.println("containerID:"+containerID);
