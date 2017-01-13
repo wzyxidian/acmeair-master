@@ -30,21 +30,20 @@ import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import java.util.HashMap;
-import java.util.Map;
-import java.io.FileWriter;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Map.Entry;
+import java.io.FileWriter;
 
 @Path("/customer")
 public class CustomerREST {
 
-	private static int poolSize = 8;
-	static ThreadPoolExecutor executor = new ThreadPoolExecutor(poolSize, poolSize, 200, TimeUnit.MILLISECONDS, new QueueTest<Runnable>(200));
-	static int index=0;
-	static int count=0;
+	private static int poolSize = 8; //核心池大小
+	static ThreadPoolExecutor executor = new ThreadPoolExecutor(poolSize, poolSize, 200, TimeUnit.MILLISECONDS, new QueueTest<Runnable>(200),new ThreadPoolExecutor.DiscardPolicy());
+	static int index = 0; //请求数量
+	static int count = 0; //执行完的任务数量
 	public static Map<String, ArrayList<String>> map = new HashMap<String, ArrayList<String>>();
+	static int dbcount = 0; //请求数据库数量
+	static int flag = poolSize; //判断是否开始写入文件
 
 	private CustomerService customerService = ServiceLocator.instance().getService(CustomerService.class);
 
@@ -75,52 +74,61 @@ public class CustomerREST {
 	}
 
 	class MyTask implements Runnable {
-		private int taskNum;
-		private String sessionid;
-		private String customerid;
-		private String sendtime;
-		private String username;
-		private int ti = 100;
-		private int nr = 5000;
-		private int z = 20000;
-		private int to = 100;
-        private int fp = 100000;
+		private int taskNum; //任务编号
+		private String sessionid; //session id
+		private String customerid; //customer id
+		private String sendtime; //请求发送时间
+		private String username; //用户名
+		private int ti = 100; //数据库输入数据
+		private int nr = 5000; //数据库表记录条数
+		private int z = 20000; //数据库并发连接数
+		private int to = 100; //数据库输出数据
+		private int fp = 100000; //程序复杂度
 
-		public MyTask(int num,String sessionid,String customerid,String sendtime,String username) {
+		public MyTask(int num, String sessionid, String customerid, String sendtime, String username) {
 			this.taskNum = num;
-			this.sessionid=sessionid;
-			this.customerid=customerid;
-			this.sendtime=sendtime;
-			this.username=username;
+			this.sessionid = sessionid;
+			this.customerid = customerid;
+			this.sendtime = sendtime;
+			this.username = username;
 		}
 
 		@Override
 		public void run() {
 			try {
-				getInfo(sessionid,customerid,sendtime,username);
+				getInfo(sessionid, customerid, sendtime, username);
 				count++;
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
 
 			try {
-				if(count==index){
-					try {
-						String line = System.getProperty("line.separator");
-						StringBuffer str = new StringBuffer();
-						FileWriter fw = new FileWriter("/home/" + System.currentTimeMillis()
-								+ ".txt", true);
-						for (Entry<String, ArrayList<String>> vo : map.entrySet()) {
-							str.append(vo.getKey() + " : ").append(line);
-							for (int j = 0; j < vo.getValue().size(); j++) {
-								str.append(vo.getValue().get(j) + " ").append(line);
+				if (index > poolSize && executor.getQueue().size() == 0) {
+					flag--;
+					if (flag == 0) {
+						System.out.println("begin to write");
+						try {
+
+							String line = System.getProperty("line.separator");
+							StringBuffer str = new StringBuffer();
+							FileWriter fw = new FileWriter("/home/"
+									+ System.currentTimeMillis() + ".txt", true);
+							for (Entry<String, ArrayList<String>> vo : map
+									.entrySet()) {
+								str.append(vo.getKey() + " : ");
+								for (int j = 0; j < vo.getValue().size(); j++) {
+									str.append(vo.getValue().get(j)).append(",");
+								}
+								str.append(line);
 							}
+
+							fw.write(str.toString());
+							fw.close();
+
+						} catch (IOException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
 						}
-						fw.write(str.toString());
-						fw.close();
-					} catch (IOException e) {
-						// TODO Auto-generated catch block
-						e.printStackTrace();
 					}
 				}
 			} catch (Exception e) {
@@ -129,6 +137,13 @@ public class CustomerREST {
 			}
 		}
 
+		/**
+		 * 通过customerid获取customer信息
+		 * @param sessionid
+		 * @param customerid
+		 * @param sendtime
+		 * @param username
+		 */
 		public void getInfo(String sessionid,String customerid,String sendtime,String username){
 			System.out.println("send time: " + sendtime);
 			if (map.containsKey("Task" + Integer.toString(taskNum))) {
@@ -156,17 +171,16 @@ public class CustomerREST {
                 int[] array = new int[fp];
                 sortNum(array, fp);
                 String[] s = CollectInfo.collectionConfigs();
-
-                long time = System.nanoTime();
+                long t3 = System.nanoTime();
 
 				if (map.containsKey("Task" + Integer.toString(taskNum))) {
 
 					ArrayList<String> value = map.get("Task"
 							+ Integer.toString(taskNum));
-                    value.add("t3 = " + time);
+                    value.add("t3 = " + t3);
                     value.add("t3 Cu = " + s[0]);
                     value.add("t3 Ru = " + s[1]);
-                    value.add("t3 f(p) = "+complexity(fp));
+                    value.add("t3 fp = "+fp);
 					value.add("t3 ti = " + ti);
 					value.add("t3 nr = " + nr);
 					value.add("t3 z = " + z);
@@ -174,37 +188,41 @@ public class CustomerREST {
 				} else {
 
 					ArrayList<String> value = new ArrayList<String>();
-                    value.add("t3 = " + time);
-                    value.add("t3 Cu = 3333333");
-                    value.add("t3 Ru = 66666666666");
-                    value.add("t3 f(p) = "+complexity(fp));
+                    value.add("t3 = " + t3);
+					value.add("t3 Cu = " + s[0]);
+					value.add("t3 Ru = " + s[1]);
+                    value.add("t3 fp = "+fp);
 					value.add("t3 ti = " + ti);
 					value.add("t3 nr = " + nr);
 					value.add("t3 z = " + z);
 					map.put("Task" + Integer.toString(taskNum), value);
 				}
 				String[] customerIds = username.split(";");
+				dbcount++;
 				String ss = customerService.getCustomersByUsernames(customerIds);
-
+				long t4 = System.nanoTime();
+				dbcount--;
 				if (map.containsKey("Task" + Integer.toString(taskNum))) {
 
 					ArrayList<String> value = map.get("Task"
 							+ Integer.toString(taskNum));
-					value.add("t4 = " + System.nanoTime());
+					value.add("t4 = " + t4);
 					int num = ss.getBytes().length;
 					value.add("t4 mso = " + num);
 					value.add("t4 to = " + to);
+					value.add("count = "+dbcount);
 
 				} else {
 
 					ArrayList<String> value = new ArrayList<String>();
-					value.add("t4 = " + System.nanoTime());
+					value.add("t4 = " + t4);
 					int num = ss.getBytes().length;
 					value.add("t4 mso = " + num);
 					value.add("t4 to = " + to);
+					value.add("count = "+dbcount);
 					map.put("Task" + Integer.toString(taskNum), value);
 				}
-				System.out.println(customerService.getCustomersByUsernames(customerIds));
+
 			}
 			catch (Exception e) {
 				e.printStackTrace();
@@ -258,73 +276,6 @@ public class CustomerREST {
             int temp = a[end];
             a[end] = a[begin];
             a[begin] = temp;
-        }
-
-        public int complexity(int fp) {
-            int c = 0;
-            switch (fp) {
-                case 5000:
-                    c = 1;
-                    break;
-                case 10000:
-                    c = 2;
-                    break;
-                case 30000:
-                    c = 3;
-                    break;
-                case 60000:
-                    c = 4;
-                    break;
-                case 90000:
-                    c = 5;
-                    break;
-                case 100000:
-                    c = 6;
-                    break;
-                case 300000:
-                    c = 7;
-                    break;
-                case 500000:
-                    c = 8;
-                    break;
-                case 700000:
-                    c = 9;
-                    break;
-                case 900000:
-                    c = 10;
-                    break;
-                case 1000000:
-                    c = 11;
-                    break;
-                case 2000000:
-                    c = 12;
-                    break;
-                case 3000000:
-                    c = 13;
-                    break;
-                case 4000000:
-                    c = 14;
-                    break;
-                case 5000000:
-                    c = 15;
-                    break;
-                case 6000000:
-                    c = 16;
-                    break;
-                case 7000000:
-                    c = 17;
-                    break;
-                case 8000000:
-                    c = 18;
-                    break;
-                case 9000000:
-                    c = 19;
-                    break;
-                case 10000000:
-                    c = 20;
-                    break;
-            }
-            return c;
         }
 	}
 
