@@ -44,7 +44,7 @@ public class CustomerREST {
     static int count = 0; //执行完的任务数量
     public static Map<String, ArrayList<String>> map = new HashMap<String, ArrayList<String>>();
     static int dbcount = 0; //请求数据库数量
-    static int size = 100; //判断是否开始写入文件
+    static int size = 400; //判断是否开始写入文件
 
     private CustomerService customerService = ServiceLocator.instance().getService(CustomerService.class);
 
