@@ -26,6 +26,7 @@ import javax.ws.rs.core.Response;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Random;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
@@ -43,7 +44,7 @@ public class CustomerREST {
     static int count = 0; //执行完的任务数量
     public static Map<String, ArrayList<String>> map = new HashMap<String, ArrayList<String>>();
     static int dbcount = 0; //请求数据库数量
-    static int size = 50; //判断是否开始写入文件
+    static int size = 500; //判断是否开始写入文件
 
     private CustomerService customerService = ServiceLocator.instance().getService(CustomerService.class);
 
@@ -79,7 +80,7 @@ public class CustomerREST {
         private String customerid; //customer id
         private String sendtime; //请求发送时间
         private String username; //用户名
-        private int ti = 100; //数据库输入数据
+        private int ti = 10; //数据库输入数据
         private int nr = 5000; //数据库表记录条数
         private int z = 20000; //数据库并发连接数
         private int to = 100; //数据库输出数据
@@ -180,6 +181,13 @@ public class CustomerREST {
                 String[] s = CollectInfo.collectionConfigs();
                 long t3 = System.nanoTime();
 
+                StringBuilder stringBuilder = new StringBuilder();
+                Random random = new Random();
+                for(int i=0; i<ti; i++){
+                    stringBuilder.append("uid" + random.nextInt(500) + "@email.com;");
+                }
+                String tiSize = stringBuilder.toString().substring(0,stringBuilder.toString().length()-1);
+
                 if (map.containsKey("Task" + Integer.toString(taskNum))) {
 
                     ArrayList<String> value = map.get("Task"
@@ -188,7 +196,7 @@ public class CustomerREST {
                     value.add("t3 Cu = " + s[0]);
                     value.add("t3 Ru = " + s[1]);
                     value.add("t3 fp = " + fp);
-                    value.add("t3 ti = " + ti);
+                    value.add("t3 ti = " + tiSize.getBytes().length);
                     value.add("t3 nr = " + nr);
                     value.add("t3 z = " + z);
 
@@ -199,12 +207,12 @@ public class CustomerREST {
                     value.add("t3 Cu = " + s[0]);
                     value.add("t3 Ru = " + s[1]);
                     value.add("t3 fp = " + fp);
-                    value.add("t3 ti = " + ti);
-                    value.add("t3 nr = " + nr);
-                    value.add("t3 z = " + z);
+                    value.add("ti = " + tiSize.getBytes().length);
+                    value.add("nr = " + nr);
+                    value.add("z = " + z);
                     map.put("Task" + Integer.toString(taskNum), value);
                 }
-                String[] customerIds = username.split(";");
+                String[] customerIds = tiSize.split(";");
                 dbcount++;
                 String ss = customerService.getCustomersByUsernames(customerIds);
                 long t4 = System.nanoTime();
