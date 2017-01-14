@@ -196,9 +196,9 @@ public class CustomerREST {
                     value.add("t3 Cu = " + s[0]);
                     value.add("t3 Ru = " + s[1]);
                     value.add("t3 fp = " + fp);
-                    value.add("t3 ti = " + tiSize.getBytes().length);
-                    value.add("t3 nr = " + nr);
-                    value.add("t3 z = " + z);
+                    value.add("ti = " + tiSize.getBytes().length);
+                    value.add("nr = " + nr);
+                    value.add("z = " + z);
 
                 } else {
 
