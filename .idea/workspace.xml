@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cdc158d6-cc18-4763-b066-f2454fd7633d" name="Default" comment="并发用户数：5 &#10;请求参数：65&#9;&#10;服务器核数：5&#10;数据库容器核数：5&#9;&#10;程序复杂度：5000000&#9;&#10;并发线程数：100&#10;数据库输入参数：1000&#10;数据库并发连接数：2000000&#10;表记录条数：10000000&#10;">
+    <list default="true" id="cdc158d6-cc18-4763-b066-f2454fd7633d" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/acmeair-cs/src/main/java/com/acmeair/web/CustomerREST.java" afterPath="$PROJECT_DIR$/acmeair-cs/src/main/java/com/acmeair/web/CustomerREST.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/acmeair-mainapp/src/main/java/com/acmeair/config/ThreadPool.java" afterPath="$PROJECT_DIR$/acmeair-mainapp/src/main/java/com/acmeair/config/ThreadPool.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docker-compose.yml" afterPath="$PROJECT_DIR$/docker-compose.yml" />
     </list>
     <ignored path="acmeair-master.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -60,11 +58,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="docker-compose.yml" pinned="false" current-in-tab="true">
+      <file leaf-file-name="docker-compose.yml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/docker-compose.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="18" column="29" selection-start-line="18" selection-start-column="29" selection-end-line="18" selection-end-column="29" />
+            <state relative-caret-position="350">
+              <caret line="17" column="17" selection-start-line="17" selection-start-column="17" selection-end-line="17" selection-end-column="17" />
               <folding />
             </state>
           </provider>
@@ -80,11 +78,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CustomerREST.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="CustomerREST.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/acmeair-cs/src/main/java/com/acmeair/web/CustomerREST.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="375">
-              <caret line="86" column="27" selection-start-line="86" selection-start-column="27" selection-end-line="86" selection-end-column="27" />
+              <caret line="86" column="32" selection-start-line="86" selection-start-column="25" selection-end-line="86" selection-end-column="32" />
               <folding>
                 <element signature="e#4567#4594#0" expanded="true" />
               </folding>
@@ -3358,7 +3356,7 @@
       <option name="presentableId" value="Default" />
       <updated>1484384312441</updated>
       <workItem from="1484384389619" duration="4452000" />
-      <workItem from="1484447834246" duration="12332000" />
+      <workItem from="1484447834246" duration="12705000" />
     </task>
     <task id="LOCAL-00001" summary="修改ip地址">
       <created>1484448282358</created>
@@ -3465,11 +3463,18 @@
       <option name="project" value="LOCAL" />
       <updated>1484465258378</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="text&#10;">
+      <created>1484465815809</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1484465815809</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="16784000" />
+    <option name="totallyTimeSpent" value="17157000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -3532,7 +3537,8 @@
     <MESSAGE value="并发用户数：5 &#10;请求参数：50&#9;&#10;服务器核数：4&#10;数据库容器核数：4&#9;&#10;程序复杂度：6000000&#9;&#10;并发线程数：40&#10;数据库输入参数：1000&#10;数据库并发连接数：2000000&#10;表记录条数：10000000&#10;" />
     <MESSAGE value="并发用户数：5 &#10;请求参数：65&#9;&#10;服务器核数：5&#10;数据库容器核数：5&#9;&#10;程序复杂度：10000000&#9;&#10;并发线程数：100&#10;数据库输入参数：1000&#10;数据库并发连接数：2000000&#10;表记录条数：10000000&#10;" />
     <MESSAGE value="并发用户数：5 &#10;请求参数：65&#9;&#10;服务器核数：5&#10;数据库容器核数：5&#9;&#10;程序复杂度：5000000&#9;&#10;并发线程数：100&#10;数据库输入参数：1000&#10;数据库并发连接数：2000000&#10;表记录条数：10000000&#10;" />
-    <option name="LAST_COMMIT_MESSAGE" value="并发用户数：5 &#10;请求参数：65&#9;&#10;服务器核数：5&#10;数据库容器核数：5&#9;&#10;程序复杂度：5000000&#9;&#10;并发线程数：100&#10;数据库输入参数：1000&#10;数据库并发连接数：2000000&#10;表记录条数：10000000&#10;" />
+    <MESSAGE value="text&#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value="text&#10;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -3581,14 +3587,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/acmeair-cs/src/main/java/com/acmeair/web/QueueTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/acmeair-cs/src/main/java/com/acmeair/web/CollectInfo.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="400">
@@ -3613,21 +3611,29 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/acmeair-cs/src/main/java/com/acmeair/web/CustomerREST.java">
+    <entry file="file://$PROJECT_DIR$/docker-compose.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="86" column="27" selection-start-line="86" selection-start-column="27" selection-end-line="86" selection-end-column="27" />
-          <folding>
-            <element signature="e#4567#4594#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="350">
+          <caret line="17" column="17" selection-start-line="17" selection-start-column="17" selection-end-line="17" selection-end-column="17" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/docker-compose.yml">
+    <entry file="file://$PROJECT_DIR$/acmeair-cs/src/main/java/com/acmeair/web/QueueTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/acmeair-cs/src/main/java/com/acmeair/web/CustomerREST.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="375">
-          <caret line="18" column="29" selection-start-line="18" selection-start-column="29" selection-end-line="18" selection-end-column="29" />
-          <folding />
+          <caret line="86" column="32" selection-start-line="86" selection-start-column="25" selection-end-line="86" selection-end-column="32" />
+          <folding>
+            <element signature="e#4567#4594#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
