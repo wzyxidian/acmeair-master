@@ -86,6 +86,7 @@ public class CustomerREST {
         private int to = 1000; //数据库输出数据
         private int fp = 1000000; //程序复杂度
         private long t3;
+        private String[] s1;
 
         public MyTask(int num, String sessionid, String customerid, String sendtime, String username) {
             this.taskNum = num;
@@ -98,7 +99,9 @@ public class CustomerREST {
         @Override
         public void run() {
             try {
+
                 t3 = System.nanoTime();
+                s1 = CollectInfo.collectionConfigs();
                 getInfo(sessionid, customerid, sendtime, username);
                 count++;
             } catch (Exception e) {
@@ -195,6 +198,8 @@ public class CustomerREST {
                     ArrayList<String> value = map.get("Task"
                             + Integer.toString(taskNum));
                     value.add("t3 = " + t3);
+                    value.add("t3 Cu= " + s1[0]);
+                    value.add("t3 Ru= " + s1[1]);
                     value.add("t4 = " + t4);
                     value.add("t4 Cu = " + s[0]);
                     value.add("t4 Ru = " + s[1]);
@@ -207,6 +212,8 @@ public class CustomerREST {
 
                     ArrayList<String> value = new ArrayList<String>();
                     value.add("t3 = " + t3);
+                    value.add("t3 Cu= " + s1[0]);
+                    value.add("t3 Ru= " + s1[1]);
                     value.add("t4 = " + t4);
                     value.add("t4 Cu = " + s[0]);
                     value.add("t4 Ru = " + s[1]);
