@@ -80,11 +80,11 @@ public class CustomerREST {
         private String customerid; //customer id
         private String sendtime; //请求发送时间
         private String username; //用户名
-        private int ti = 100; //数据库输入数据
+        private int ti = 1; //数据库输入数据
         private int nr = 10000000; //数据库表记录条数
-        private int z = 200000; //数据库并发连接数
-        private int to = 100; //数据库输出数据
-        private int fp = 300000; //程序复杂度
+        private int z = 20000; //数据库并发连接数
+        private int to = 1; //数据库输出数据
+        private int fp = 100000; //程序复杂度
         private long t3;
         private String[] s1;
 
