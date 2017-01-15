@@ -62,6 +62,8 @@ cs:
   build: ./acmeair-cs/
   environment:
     - LICENSE=accept
+  volumes:
+    - /test:/test
 
 fs:
   container_name: fs

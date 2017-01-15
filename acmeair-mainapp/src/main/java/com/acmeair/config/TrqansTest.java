@@ -19,6 +19,7 @@ public class TrqansTest {
 //        String result = ThreadPool.sendRequest(sessionid);
 //        return Response.ok(result).build();
         ThreadPool.sendRequest(sessionid);
+//        HttpRequest.sendGet(sessionid,System.currentTimeMillis());
         return null;
     }
 }
