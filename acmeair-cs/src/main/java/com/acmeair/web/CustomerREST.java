@@ -84,7 +84,7 @@ public class CustomerREST {
         private int nr = 10000000; //数据库表记录条数
         private int z = 200; //数据库并发连接数
         private int to = 1000; //数据库输出数据
-        private int fp = 10000000; //程序复杂度
+        private int fp = 5000000; //程序复杂度
 
         public MyTask(int num, String sessionid, String customerid, String sendtime, String username) {
             this.taskNum = num;
