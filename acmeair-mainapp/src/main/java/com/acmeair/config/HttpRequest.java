@@ -14,7 +14,7 @@ import java.util.Random;
 public class HttpRequest {
 
     private static String param = "uid0@email.com";
-    private static String url = "http://192.168.0.190/customer/acmeair-cs/rest/api/customer/byid/" + param;
+    private static String url = "http://192.168.0.195/customer/acmeair-cs/rest/api/customer/byid/" + param;
     private static String username = "";
     private static int PAPAMNUM = 10;
 

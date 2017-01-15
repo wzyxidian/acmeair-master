@@ -25,7 +25,7 @@ public class CollectInfo {
     /**
      * http服务运行的宿主机的ip，要根据部署位置的不同修改ip，不能为localhost
      */
-    private static String ip = "192.168.0.190";
+    private static String ip = "192.168.0.195";
     /**
      * 向docker守护进行发起的请求，通过容器名称获取容器ID
      */
