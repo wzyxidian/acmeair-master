@@ -62,8 +62,8 @@
       <file leaf-file-name="docker-compose.yml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/docker-compose.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="254">
-              <caret line="18" column="26" selection-start-line="18" selection-start-column="26" selection-end-line="18" selection-end-column="26" />
+            <state relative-caret-position="129">
+              <caret line="7" column="12" selection-start-line="7" selection-start-column="12" selection-end-line="7" selection-end-column="12" />
               <folding />
             </state>
           </provider>
@@ -83,9 +83,9 @@
         <entry file="file://$PROJECT_DIR$/acmeair-cs/src/main/java/com/acmeair/web/CustomerREST.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="406">
-              <caret line="85" column="27" selection-start-line="85" selection-start-column="25" selection-end-line="85" selection-end-column="27" />
+              <caret line="85" column="28" selection-start-line="85" selection-start-column="28" selection-end-line="85" selection-end-column="28" />
               <folding>
-                <element signature="e#4553#4580#0" expanded="true" />
+                <element signature="e#4555#4582#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -3347,7 +3347,7 @@
       <option name="presentableId" value="Default" />
       <updated>1484384312441</updated>
       <workItem from="1484384389619" duration="4452000" />
-      <workItem from="1484447834246" duration="5584000" />
+      <workItem from="1484447834246" duration="6131000" />
     </task>
     <task id="LOCAL-00001" summary="修改ip地址">
       <created>1484448282358</created>
@@ -3384,11 +3384,18 @@
       <option name="project" value="LOCAL" />
       <updated>1484455463953</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="并发用户数：5 &#10;请求参数：1&#9;&#10;服务器核数：1&#9;&#10;数据库容器核数：1&#9;&#10;程序复杂度：100000&#9;&#10;并发线程数：5&#10;数据库输入参数：10&#10;数据库并发连接数：2000&#10;表记录条数：100000&#10;">
+      <created>1484455968305</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1484455968305</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="10036000" />
+    <option name="totallyTimeSpent" value="10583000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -3407,7 +3414,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18576017" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18576017" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -3442,7 +3449,8 @@
     <MESSAGE value="配置compose 核心数" />
     <MESSAGE value="修改ti to" />
     <MESSAGE value="并发用户数：5 &#10;请求参数：1&#9;&#10;服务器核数：1&#9;&#10;数据库容器核数：1&#9;&#10;程序复杂度：100000&#9;&#10;并发线程数：5&#10;数据库输入参数：1&#9;&#10;数据库并发连接数：200&#10;表记录条数：10000&#10;" />
-    <option name="LAST_COMMIT_MESSAGE" value="并发用户数：5 &#10;请求参数：1&#9;&#10;服务器核数：1&#9;&#10;数据库容器核数：1&#9;&#10;程序复杂度：100000&#9;&#10;并发线程数：5&#10;数据库输入参数：1&#9;&#10;数据库并发连接数：200&#10;表记录条数：10000&#10;" />
+    <MESSAGE value="并发用户数：5 &#10;请求参数：1&#9;&#10;服务器核数：1&#9;&#10;数据库容器核数：1&#9;&#10;程序复杂度：100000&#9;&#10;并发线程数：5&#10;数据库输入参数：10&#10;数据库并发连接数：2000&#10;表记录条数：100000&#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value="并发用户数：5 &#10;请求参数：1&#9;&#10;服务器核数：1&#9;&#10;数据库容器核数：1&#9;&#10;程序复杂度：100000&#9;&#10;并发线程数：5&#10;数据库输入参数：10&#10;数据库并发连接数：2000&#10;表记录条数：100000&#10;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -3454,7 +3462,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#4553#4580#0" expanded="true" />
+            <element signature="e#4555#4582#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -3518,17 +3526,17 @@
     <entry file="file://$PROJECT_DIR$/acmeair-cs/src/main/java/com/acmeair/web/CustomerREST.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="406">
-          <caret line="85" column="27" selection-start-line="85" selection-start-column="25" selection-end-line="85" selection-end-column="27" />
+          <caret line="85" column="28" selection-start-line="85" selection-start-column="28" selection-end-line="85" selection-end-column="28" />
           <folding>
-            <element signature="e#4553#4580#0" expanded="true" />
+            <element signature="e#4555#4582#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/docker-compose.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="254">
-          <caret line="18" column="26" selection-start-line="18" selection-start-column="26" selection-end-line="18" selection-end-column="26" />
+        <state relative-caret-position="129">
+          <caret line="7" column="12" selection-start-line="7" selection-start-column="12" selection-end-line="7" selection-end-column="12" />
           <folding />
         </state>
       </provider>
