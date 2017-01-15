@@ -14,7 +14,7 @@ customer_db1:
   container_name: customer_db1
   image: mongo
   net: ${NETWORK}
-  command: --maxConns=10002
+  command: --maxConns=200
   cpuset: "5"
   mem_limit: 2G
 
@@ -69,6 +69,7 @@ cs:
     - /test:/test
   cpuset: "10"
   mem_limit: 2G
+
 fs:
   container_name: fs
   net: ${NETWORK}
