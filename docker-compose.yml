@@ -14,7 +14,7 @@ customer_db1:
   container_name: customer_db1
   image: mongo
   net: ${NETWORK}
-  command: /entrypoint.sh ---maxConns=10000
+  command: /entrypoint.sh --maxConns=10000
 
 flight_db1:
   container_name: flight_db1
