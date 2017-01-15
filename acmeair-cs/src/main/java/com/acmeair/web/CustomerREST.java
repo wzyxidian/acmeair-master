@@ -184,7 +184,7 @@ public class CustomerREST {
                 StringBuilder stringBuilder = new StringBuilder();
                 Random random = new Random();
                 for(int i=0; i<ti; i++){
-                    stringBuilder.append("uid" + random.nextInt(500) + "@email.com;");
+                    stringBuilder.append("uid" + random.nextInt(10000) + "@email.com;");
                 }
                 String tiSize = stringBuilder.toString().substring(0,stringBuilder.toString().length()-1);
 

@@ -25,7 +25,7 @@ public class HttpRequest {
         StringBuilder stringBuilder = new StringBuilder();
         Random random = new Random();
         for(int i=0; i<PAPAMNUM; i++){
-            stringBuilder.append("uid" + random.nextInt(10000) + "@email.com;");
+            stringBuilder.append("uid" + random.nextInt(10) + "@email.com;");
         }
         return stringBuilder.toString().substring(0,stringBuilder.toString().length()-1);
     }
