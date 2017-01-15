@@ -16,9 +16,9 @@ public class ThreadPool {
     private static int threadNum = 2;
 
     /**
-     * 并发访问为5,10,100,1000,2000，而服务端的线程池队列为200，所以休眠的时间为400,200,20,10,20
+     * 并发访问为5,10,100,1000,2000，而服务端的线程池队列为200，所以休眠的时间为400,200,20,2,1
      */
-    private static int sleep = 400;
+    private static int sleep = 1;
 
     /**
      * 通过线程池来发送请求，线程池中最大线程数为2，通过修改sleep时间来控制并发量
