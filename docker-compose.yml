@@ -16,7 +16,7 @@ customer_db1:
   container_name: customer_db1
   image: mongo
   net: ${NETWORK}
-  command: --maxConns=200000
+  command: --maxConns=2000000
   cpuset: "5"
   mem_limit: 2G
 
