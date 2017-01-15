@@ -85,6 +85,7 @@ public class CustomerREST {
         private int z = 2000000; //数据库并发连接数
         private int to = 1000; //数据库输出数据
         private int fp = 1000000; //程序复杂度
+        private long t3;
 
         public MyTask(int num, String sessionid, String customerid, String sendtime, String username) {
             this.taskNum = num;
@@ -97,6 +98,7 @@ public class CustomerREST {
         @Override
         public void run() {
             try {
+                t3 = System.nanoTime();
                 getInfo(sessionid, customerid, sendtime, username);
                 count++;
             } catch (Exception e) {
@@ -179,7 +181,7 @@ public class CustomerREST {
                 int[] array = new int[fp];
                 sortNum(array, fp);
                 String[] s = CollectInfo.collectionConfigs();
-                long t3 = System.nanoTime();
+                long t4 = System.nanoTime();
 
                 StringBuilder stringBuilder = new StringBuilder();
                 Random random = new Random();
@@ -193,9 +195,10 @@ public class CustomerREST {
                     ArrayList<String> value = map.get("Task"
                             + Integer.toString(taskNum));
                     value.add("t3 = " + t3);
-                    value.add("t3 Cu = " + s[0]);
-                    value.add("t3 Ru = " + s[1]);
-                    value.add("t3 fp = " + fp);
+                    value.add("t4 = " + t4);
+                    value.add("t4 Cu = " + s[0]);
+                    value.add("t4 Ru = " + s[1]);
+                    value.add("t4 fp = " + fp);
                     value.add("ti = " + ti);
                     value.add("nr = " + nr);
                     value.add("z = " + z);
@@ -204,9 +207,10 @@ public class CustomerREST {
 
                     ArrayList<String> value = new ArrayList<String>();
                     value.add("t3 = " + t3);
-                    value.add("t3 Cu = " + s[0]);
-                    value.add("t3 Ru = " + s[1]);
-                    value.add("t3 fp = " + fp);
+                    value.add("t4 = " + t4);
+                    value.add("t4 Cu = " + s[0]);
+                    value.add("t4 Ru = " + s[1]);
+                    value.add("t4 fp = " + fp);
                     value.add("ti = " + ti);
                     value.add("nr = " + nr);
                     value.add("z = " + z);
@@ -215,25 +219,25 @@ public class CustomerREST {
                 String[] customerIds = tiSize.split(";");
                 dbcount++;
                 String ss = customerService.getCustomersByUsernames(customerIds);
-                long t4 = System.nanoTime();
+                long t5 = System.nanoTime();
                 dbcount--;
                 if (map.containsKey("Task" + Integer.toString(taskNum))) {
 
                     ArrayList<String> value = map.get("Task"
                             + Integer.toString(taskNum));
-                    value.add("t4 = " + t4);
+                    value.add("t5 = " + t5);
                     int num = ss.getBytes().length;
-                    value.add("t4 mso = " + num);
-                    value.add("t4 to = " + to);
+                    value.add("t5 mso = " + num);
+                    value.add("t5 to = " + to);
                     value.add("count = " + dbcount);
 
                 } else {
 
                     ArrayList<String> value = new ArrayList<String>();
-                    value.add("t4 = " + t4);
+                    value.add("t5 = " + t5);
                     int num = ss.getBytes().length;
-                    value.add("t4 mso = " + num);
-                    value.add("t4 to = " + to);
+                    value.add("t5 mso = " + num);
+                    value.add("t5 to = " + to);
                     value.add("count = " + dbcount);
                     map.put("Task" + Integer.toString(taskNum), value);
                 }
