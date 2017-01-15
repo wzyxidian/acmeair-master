@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="cdc158d6-cc18-4763-b066-f2454fd7633d" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docker-compose.yml" afterPath="$PROJECT_DIR$/docker-compose.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/acmeair-cs/src/main/java/com/acmeair/web/CustomerREST.java" afterPath="$PROJECT_DIR$/acmeair-cs/src/main/java/com/acmeair/web/CustomerREST.java" />
     </list>
     <ignored path="acmeair-master.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -58,11 +58,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="docker-compose.yml" pinned="false" current-in-tab="true">
+      <file leaf-file-name="docker-compose.yml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/docker-compose.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="579">
-              <caret line="75" column="14" selection-start-line="75" selection-start-column="14" selection-end-line="75" selection-end-column="14" />
+            <state relative-caret-position="429">
+              <caret line="69" column="14" selection-start-line="69" selection-start-column="14" selection-end-line="69" selection-end-column="14" />
               <folding />
             </state>
           </provider>
@@ -78,11 +78,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CustomerREST.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="CustomerREST.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/acmeair-cs/src/main/java/com/acmeair/web/CustomerREST.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="318">
-              <caret line="84" column="41" selection-start-line="84" selection-start-column="33" selection-end-line="84" selection-end-column="41" />
+            <state relative-caret-position="256">
+              <caret line="216" column="73" selection-start-line="216" selection-start-column="71" selection-end-line="216" selection-end-column="73" />
               <folding />
             </state>
           </provider>
@@ -113,6 +113,16 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="125">
               <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="QueueTest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/acmeair-cs/src/main/java/com/acmeair/web/QueueTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="200">
+              <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -2563,10 +2573,10 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/acmeair-cs/src/main/java/com/acmeair/web/CustomerREST.java" />
         <option value="$PROJECT_DIR$/acmeair-cs/src/main/java/com/acmeair/web/CollectInfo.java" />
         <option value="$PROJECT_DIR$/acmeair-mainapp/src/main/java/com/acmeair/config/HttpRequest.java" />
         <option value="$PROJECT_DIR$/docker-compose.yml" />
+        <option value="$PROJECT_DIR$/acmeair-cs/src/main/java/com/acmeair/web/CustomerREST.java" />
       </list>
     </option>
   </component>
@@ -3323,7 +3333,7 @@
       <option name="presentableId" value="Default" />
       <updated>1484384312441</updated>
       <workItem from="1484384389619" duration="4452000" />
-      <workItem from="1484447834246" duration="2252000" />
+      <workItem from="1484447834246" duration="2497000" />
     </task>
     <task id="LOCAL-00001" summary="修改ip地址">
       <created>1484448282358</created>
@@ -3332,11 +3342,18 @@
       <option name="project" value="LOCAL" />
       <updated>1484448282358</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="配置compose 核心数">
+      <created>1484450108336</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1484450108336</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="6704000" />
+    <option name="totallyTimeSpent" value="6949000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -3351,7 +3368,7 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="CDI" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32988507" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -3387,7 +3404,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="修改ip地址" />
-    <option name="LAST_COMMIT_MESSAGE" value="修改ip地址" />
+    <MESSAGE value="配置compose 核心数" />
+    <option name="LAST_COMMIT_MESSAGE" value="配置compose 核心数" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -3406,22 +3424,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="600">
           <caret line="30" column="89" selection-start-line="25" selection-start-column="8" selection-end-line="30" selection-end-column="89" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/acmeair-cs/src/main/java/com/acmeair/web/CustomerREST.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="318">
-          <caret line="84" column="41" selection-start-line="84" selection-start-column="33" selection-end-line="84" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/acmeair-cs/src/main/java/com/acmeair/web/CollectInfo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="550">
-          <caret line="30" column="7" selection-start-line="30" selection-start-column="5" selection-end-line="30" selection-end-column="7" />
           <folding />
         </state>
       </provider>
@@ -3452,8 +3454,32 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/docker-compose.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="579">
-          <caret line="75" column="14" selection-start-line="75" selection-start-column="14" selection-end-line="75" selection-end-column="14" />
+        <state relative-caret-position="429">
+          <caret line="69" column="14" selection-start-line="69" selection-start-column="14" selection-end-line="69" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/acmeair-cs/src/main/java/com/acmeair/web/CollectInfo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="550">
+          <caret line="30" column="7" selection-start-line="30" selection-start-column="5" selection-end-line="30" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/acmeair-cs/src/main/java/com/acmeair/web/QueueTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/acmeair-cs/src/main/java/com/acmeair/web/CustomerREST.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="256">
+          <caret line="216" column="73" selection-start-line="216" selection-start-column="71" selection-end-line="216" selection-end-column="73" />
           <folding />
         </state>
       </provider>

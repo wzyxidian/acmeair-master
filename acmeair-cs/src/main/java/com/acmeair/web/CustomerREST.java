@@ -83,7 +83,7 @@ public class CustomerREST {
         private int ti = 10; //数据库输入数据
         private int nr = 5000; //数据库表记录条数
         private int z = 20000; //数据库并发连接数
-        private int to = 100; //数据库输出数据
+        private int to = 10; //数据库输出数据
         private int fp = 100000; //程序复杂度
 
         public MyTask(int num, String sessionid, String customerid, String sendtime, String username) {
@@ -196,7 +196,7 @@ public class CustomerREST {
                     value.add("t3 Cu = " + s[0]);
                     value.add("t3 Ru = " + s[1]);
                     value.add("t3 fp = " + fp);
-                    value.add("ti = " + tiSize.getBytes().length);
+                    value.add("ti = " + ti);
                     value.add("nr = " + nr);
                     value.add("z = " + z);
 
@@ -207,7 +207,7 @@ public class CustomerREST {
                     value.add("t3 Cu = " + s[0]);
                     value.add("t3 Ru = " + s[1]);
                     value.add("t3 fp = " + fp);
-                    value.add("ti = " + tiSize.getBytes().length);
+                    value.add("ti = " + ti);
                     value.add("nr = " + nr);
                     value.add("z = " + z);
                     map.put("Task" + Integer.toString(taskNum), value);
