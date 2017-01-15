@@ -44,7 +44,7 @@ public class CustomerREST {
     static int count = 0; //执行完的任务数量
     public static Map<String, ArrayList<String>> map = new HashMap<String, ArrayList<String>>();
     static int dbcount = 0; //请求数据库数量
-    static int size = 100; //判断是否开始写入文件
+    static int size = 101; //判断是否开始写入文件
 
     private CustomerService customerService = ServiceLocator.instance().getService(CustomerService.class);
 
@@ -81,8 +81,8 @@ public class CustomerREST {
         private String sendtime; //请求发送时间
         private String username; //用户名
         private int ti = 1; //数据库输入数据
-        private int nr = 5000; //数据库表记录条数
-        private int z = 20000; //数据库并发连接数
+        private int nr = 10000; //数据库表记录条数
+        private int z = 200; //数据库并发连接数
         private int to = 1; //数据库输出数据
         private int fp = 100000; //程序复杂度
 

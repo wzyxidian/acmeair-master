@@ -9,6 +9,8 @@ booking_db1:
   container_name: booking_db1
   image: mongo
   net: ${NETWORK}
+  cpuset: "4"
+  mem_limit: 2G
 
 customer_db1:
   container_name: customer_db1
@@ -22,7 +24,8 @@ flight_db1:
   container_name: flight_db1
   image: mongo
   net: ${NETWORK}
-
+  cpuset: "4"
+  mem_limit: 2G
 
 nginx:
   container_name: nginx
@@ -51,13 +54,15 @@ as:
     - LICENSE=accept
   cpuset: "3"
   mem_limit: 2G
+
 bs:
   container_name: bs
   net: ${NETWORK}
   build: ./acmeair-bs/
   environment:
     - LICENSE=accept
-
+  cpuset: "4"
+  mem_limit: 2G
 
 cs:
   container_name: cs
@@ -76,4 +81,5 @@ fs:
   build: ./acmeair-fs/
   environment:
     - LICENSE=accept
-
+  cpuset: "4"
+  mem_limit: 2G
