@@ -198,8 +198,8 @@ public class CustomerREST {
                     ArrayList<String> value = map.get("Task"
                             + Integer.toString(taskNum));
                     value.add("t3 = " + t3);
-                    value.add("t3 Cu= " + s1[0]);
-                    value.add("t3 Ru= " + s1[1]);
+                    value.add("t3 Cu = " + s1[0]);
+                    value.add("t3 Ru = " + s1[1]);
                     value.add("t4 = " + t4);
                     value.add("t4 Cu = " + s[0]);
                     value.add("t4 Ru = " + s[1]);
@@ -212,8 +212,8 @@ public class CustomerREST {
 
                     ArrayList<String> value = new ArrayList<String>();
                     value.add("t3 = " + t3);
-                    value.add("t3 Cu= " + s1[0]);
-                    value.add("t3 Ru= " + s1[1]);
+                    value.add("t3 Cu = " + s1[0]);
+                    value.add("t3 Ru = " + s1[1]);
                     value.add("t4 = " + t4);
                     value.add("t4 Cu = " + s[0]);
                     value.add("t4 Ru = " + s[1]);
