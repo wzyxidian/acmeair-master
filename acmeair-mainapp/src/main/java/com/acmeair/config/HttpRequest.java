@@ -15,7 +15,7 @@ public class HttpRequest {
 
     private static String param = "uid0@email.com";
     private static String url = "http://192.168.0.195/customer/acmeair-cs/rest/api/customer/byid/" + param;
-    private static int PAPAMNUM = 10;
+    private static int PAPAMNUM = 20;
 
     /**
      * 自动生成传入的参数
