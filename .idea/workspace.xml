@@ -63,8 +63,8 @@
       <file leaf-file-name="docker-compose.yml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/docker-compose.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="404">
-              <caret line="75" column="14" selection-start-line="75" selection-start-column="14" selection-end-line="75" selection-end-column="14" />
+            <state relative-caret-position="304">
+              <caret line="20" column="14" selection-start-line="20" selection-start-column="14" selection-end-line="20" selection-end-column="14" />
               <folding />
             </state>
           </provider>
@@ -73,8 +73,8 @@
       <file leaf-file-name="CustomerREST.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/acmeair-cs/src/main/java/com/acmeair/web/CustomerREST.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="325">
-              <caret line="85" column="39" selection-start-line="85" selection-start-column="39" selection-end-line="85" selection-end-column="39" />
+            <state relative-caret-position="350">
+              <caret line="80" column="48" selection-start-line="80" selection-start-column="48" selection-end-line="80" selection-end-column="48" />
               <folding />
             </state>
           </provider>
@@ -84,7 +84,7 @@
         <entry file="file://$PROJECT_DIR$/acmeair-mainapp/src/main/java/com/acmeair/config/HttpRequest.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="125">
-              <caret line="17" column="35" selection-start-line="17" selection-start-column="35" selection-end-line="17" selection-end-column="35" />
+              <caret line="17" column="36" selection-start-line="17" selection-start-column="36" selection-end-line="17" selection-end-column="36" />
               <folding />
             </state>
           </provider>
@@ -3383,14 +3383,7 @@
       <workItem from="1484476911615" duration="10768000" />
       <workItem from="1484528346767" duration="7113000" />
       <workItem from="1484536147627" duration="342000" />
-      <workItem from="1484540156756" duration="2203000" />
-    </task>
-    <task id="LOCAL-00012" summary="并发用户数：5 &#10;请求参数：50&#9;&#10;服务器核数：4&#10;数据库容器核数：4&#9;&#10;程序复杂度：6000000&#9;&#10;并发线程数：40&#10;数据库输入参数：1000&#10;数据库并发连接数：2000000&#10;表记录条数：10000000&#10;">
-      <created>1484463318370</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1484463318370</updated>
+      <workItem from="1484540156756" duration="2705000" />
     </task>
     <task id="LOCAL-00013" summary="并发用户数：5 &#10;请求参数：50&#9;&#10;服务器核数：4&#10;数据库容器核数：4&#9;&#10;程序复杂度：6000000&#9;&#10;并发线程数：40&#10;数据库输入参数：1000&#10;数据库并发连接数：2000000&#10;表记录条数：10000000&#10;">
       <created>1484463759801</created>
@@ -3728,11 +3721,18 @@
       <option name="project" value="LOCAL" />
       <updated>1484550181149</updated>
     </task>
-    <option name="localTasksCounter" value="61" />
+    <task id="LOCAL-00061" summary="并发用户数：1000&#10;请求参数&#9;：50&#10;核数&#9;：2&#10;数据库服务器核数：5&#9;&#10;程序复杂度&#9;：30 0000&#10;并发线程数&#9;：5&#10;数据库输入参数&#9;：500&#10;数据库并发连接数&#9;：2000&#10;表记录条数&#9;：1000 0000&#10;">
+      <created>1484550566293</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1484550566293</updated>
+    </task>
+    <option name="localTasksCounter" value="62" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="42508000" />
+    <option name="totallyTimeSpent" value="43010000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="0" />
@@ -3782,7 +3782,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="并发用户数：5&#9;&#10;请求参数&#9;：10&#10;核数：2&#10;数据库服务器核数：2&#10;程序复杂度：100000&#10;并发线程数：10&#10;数据库输入参数：1000&#9;&#10;数据库并发连接数：200 0000&#10;表记录条数：1000 0000&#10;&#10;" />
     <MESSAGE value="并发用户数：5&#9;&#10;请求参数&#9;：20&#10;核数：3&#10;数据库服务器核数：3&#10;程序复杂度：30 0000&#10;并发线程数：20&#10;数据库输入参数：1000&#9;&#10;数据库并发连接数：200 0000&#10;表记录条数：1000 0000&#10;&#10;" />
     <MESSAGE value="并发用户数：5&#9;&#10;请求参数&#9;：50&#10;核数：4&#10;数据库服务器核数：4&#10;程序复杂度：70 0000&#10;并发线程数：40&#10;数据库输入参数：1000&#9;&#10;数据库并发连接数：200 0000&#10;表记录条数：1000 0000&#10;&#10;" />
     <MESSAGE value="并发用户数：5&#9;&#10;请求参数&#9;：65&#10;核数：5&#10;数据库服务器核数：5&#10;程序复杂度：100 0000&#10;并发线程数：100&#10;数据库输入参数：1000&#9;&#10;数据库并发连接数：200 0000&#10;表记录条数：1000 0000&#10;&#10;" />
@@ -3807,7 +3806,8 @@
     <MESSAGE value="Merge branch 'master' of https://github.com/wzyxidian/acmeair-master&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;" />
     <MESSAGE value="并发用户数：1000&#10;请求参数&#9;：10&#10;核数&#9;：5&#10;数据库服务器核数：3&#9;&#10;程序复杂度&#9;：10000&#10;并发线程数&#9;：40&#10;数据库输入参数&#9;：500&#10;数据库并发连接数&#9;：2000&#10;表记录条数&#9;：1000 0000&#10;" />
     <MESSAGE value="并发用户数：1000&#10;请求参数&#9;：20&#10;核数&#9;：1&#10;数据库服务器核数：4&#9;&#10;程序复杂度&#9;：10 0000&#10;并发线程数&#9;：100&#10;数据库输入参数&#9;：500&#10;数据库并发连接数&#9;：2000&#10;表记录条数&#9;：1000 0000&#10;" />
-    <option name="LAST_COMMIT_MESSAGE" value="并发用户数：1000&#10;请求参数&#9;：20&#10;核数&#9;：1&#10;数据库服务器核数：4&#9;&#10;程序复杂度&#9;：10 0000&#10;并发线程数&#9;：100&#10;数据库输入参数&#9;：500&#10;数据库并发连接数&#9;：2000&#10;表记录条数&#9;：1000 0000&#10;" />
+    <MESSAGE value="并发用户数：1000&#10;请求参数&#9;：50&#10;核数&#9;：2&#10;数据库服务器核数：5&#9;&#10;程序复杂度&#9;：30 0000&#10;并发线程数&#9;：5&#10;数据库输入参数&#9;：500&#10;数据库并发连接数&#9;：2000&#10;表记录条数&#9;：1000 0000&#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value="并发用户数：1000&#10;请求参数&#9;：50&#10;核数&#9;：2&#10;数据库服务器核数：5&#9;&#10;程序复杂度&#9;：30 0000&#10;并发线程数&#9;：5&#10;数据库输入参数&#9;：500&#10;数据库并发连接数&#9;：2000&#10;表记录条数&#9;：1000 0000&#10;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -4262,26 +4262,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/docker-compose.yml">
+    <entry file="file://$PROJECT_DIR$/acmeair-mainapp/src/main/java/com/acmeair/config/HttpRequest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="404">
-          <caret line="75" column="14" selection-start-line="75" selection-start-column="14" selection-end-line="75" selection-end-column="14" />
+        <state relative-caret-position="125">
+          <caret line="17" column="36" selection-start-line="17" selection-start-column="36" selection-end-line="17" selection-end-column="36" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/acmeair-mainapp/src/main/java/com/acmeair/config/HttpRequest.java">
+    <entry file="file://$PROJECT_DIR$/docker-compose.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="125">
-          <caret line="17" column="35" selection-start-line="17" selection-start-column="35" selection-end-line="17" selection-end-column="35" />
+        <state relative-caret-position="304">
+          <caret line="20" column="14" selection-start-line="20" selection-start-column="14" selection-end-line="20" selection-end-column="14" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/acmeair-cs/src/main/java/com/acmeair/web/CustomerREST.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="325">
-          <caret line="85" column="39" selection-start-line="85" selection-start-column="39" selection-end-line="85" selection-end-column="39" />
+        <state relative-caret-position="350">
+          <caret line="80" column="48" selection-start-line="80" selection-start-column="48" selection-end-line="80" selection-end-column="48" />
           <folding />
         </state>
       </provider>
