@@ -73,7 +73,7 @@ cs:
   volumes:
     - /test:/test
   cpuset: "10,11,12,13"
-  mem_limit: 4G
+  mem_limit: 8G
 
 fs:
   container_name: fs
