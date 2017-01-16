@@ -31,7 +31,7 @@ public class ThreadPool {
             fixedThreadPool.execute(new Runnable() {
                 @Override
                 public void run() {
-                    while(System.currentTimeMillis() - time <= 2 * 60 * 1000){
+                    while(System.currentTimeMillis() - time <= 3 * 60 * 1000){
                         String result = HttpRequest.sendGet(sessionid,System.nanoTime());
                         System.out.println(Thread.currentThread() + " --- " + result);
                         try {
