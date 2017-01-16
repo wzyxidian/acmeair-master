@@ -13,7 +13,7 @@ public class ThreadPool {
     /**
      * 设置线程池中线程数目，因为这个客户端只是用来模拟并发请求的，此值为不可调整的值，分配1核，2G内存，线程数目为2
      */
-    private static int threadNum = 2;
+    private static int threadNum = 10;
 
     /**
      * 并发访问为5,10,100,1000,2000，而服务端的线程池队列为200，所以休眠的时间为400,200,20,2,1
