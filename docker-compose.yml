@@ -72,8 +72,8 @@ cs:
     - LICENSE=accept
   volumes:
     - /test:/test
-  cpuset: "10,11,12,13,14"
-  mem_limit: 10G
+  cpuset: "10,11,12,13"
+  mem_limit: 4G
 
 fs:
   container_name: fs
