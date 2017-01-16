@@ -17,8 +17,8 @@ customer_db1:
   image: mongo
   net: ${NETWORK}
   command: --maxConns=2000
-  cpuset: "5,6"
-  mem_limit: 4G
+  cpuset: "5,6,7"
+  mem_limit: 6G
 
 flight_db1:
   container_name: flight_db1
@@ -72,8 +72,8 @@ cs:
     - LICENSE=accept
   volumes:
     - /test:/test
-  cpuset: "10,11,12,13"
-  mem_limit: 8G
+  cpuset: "10,11,12,13,14"
+  mem_limit: 10G
 
 fs:
   container_name: fs
