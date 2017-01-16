@@ -117,11 +117,13 @@ public class CustomerREST {
                         StringBuffer str = new StringBuffer();
                         FileWriter fw = new FileWriter("/test/" + System.currentTimeMillis() + ".txt", true);
                         Map<String, ArrayList<String>> map1 = new HashMap<String, ArrayList<String>>();
+                        System.out.println("map size: "+map.size());
                         for (Entry<String, ArrayList<String>> vo : map
                                 .entrySet()) {
                             for (int i = 0; i < vo.getValue().size(); i++) {
                                 if (vo.getValue().get(i).indexOf("count") != -1) {
                                     map1.put(vo.getKey(), vo.getValue());
+                                    System.out.println("map content: "+vo.getKey());
                                 }
                             }
                         }
