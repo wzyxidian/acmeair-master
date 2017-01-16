@@ -34,6 +34,7 @@ import java.util.logging.Logger;
 import java.io.IOException;
 import java.util.Map.Entry;
 import java.io.FileWriter;
+import java.util.concurrent.*;
 
 @Path("/customer")
 public class CustomerREST {
@@ -42,7 +43,7 @@ public class CustomerREST {
     static ThreadPoolExecutor executor = new ThreadPoolExecutor(poolSize, poolSize, 200, TimeUnit.MILLISECONDS, new QueueTest<Runnable>(200), new ThreadPoolExecutor.DiscardPolicy());
     static int index = 0; //请求数量
     static int count = 0; //执行完的任务数量
-    public static Map<String, ArrayList<String>> map = new HashMap<String, ArrayList<String>>();
+    public static Map<String, ArrayList<String>> map = new ConcurrentHashMap<String, ArrayList<String>>();
     static int dbcount = 0; //请求数据库数量
     static int size = 101; //判断是否开始写入文件
 
@@ -117,11 +118,14 @@ public class CustomerREST {
                         StringBuffer str = new StringBuffer();
                         FileWriter fw = new FileWriter("/test/" + System.currentTimeMillis() + ".txt", true);
                         Map<String, ArrayList<String>> map1 = new HashMap<String, ArrayList<String>>();
+                        System.out.println("map size: "+map.size());
                         for (Entry<String, ArrayList<String>> vo : map
                                 .entrySet()) {
                             for (int i = 0; i < vo.getValue().size(); i++) {
                                 if (vo.getValue().get(i).indexOf("count") != -1) {
                                     map1.put(vo.getKey(), vo.getValue());
+                                    System.out.println("map content: "+vo.getKey());
+
                                 }
                             }
                         }
