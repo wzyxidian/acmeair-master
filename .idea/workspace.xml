@@ -63,8 +63,8 @@
       <file leaf-file-name="docker-compose.yml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/docker-compose.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="304">
-              <caret line="20" column="14" selection-start-line="20" selection-start-column="14" selection-end-line="20" selection-end-column="14" />
+            <state relative-caret-position="554">
+              <caret line="75" column="15" selection-start-line="75" selection-start-column="15" selection-end-line="75" selection-end-column="15" />
               <folding />
             </state>
           </provider>
@@ -73,8 +73,8 @@
       <file leaf-file-name="CustomerREST.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/acmeair-cs/src/main/java/com/acmeair/web/CustomerREST.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="425">
-              <caret line="83" column="37" selection-start-line="83" selection-start-column="37" selection-end-line="83" selection-end-column="37" />
+            <state relative-caret-position="575">
+              <caret line="86" column="37" selection-start-line="86" selection-start-column="37" selection-end-line="86" selection-end-column="37" />
               <folding />
             </state>
           </provider>
@@ -83,8 +83,8 @@
       <file leaf-file-name="HttpRequest.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/acmeair-mainapp/src/main/java/com/acmeair/config/HttpRequest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="50">
-              <caret line="17" column="35" selection-start-line="17" selection-start-column="35" selection-end-line="17" selection-end-column="35" />
+            <state relative-caret-position="150">
+              <caret line="21" column="14" selection-start-line="21" selection-start-column="14" selection-end-line="21" selection-end-column="14" />
               <folding />
             </state>
           </provider>
@@ -3383,14 +3383,7 @@
       <workItem from="1484476911615" duration="10768000" />
       <workItem from="1484528346767" duration="7113000" />
       <workItem from="1484536147627" duration="342000" />
-      <workItem from="1484540156756" duration="7134000" />
-    </task>
-    <task id="LOCAL-00023" summary="并发用户数:5&#9;&#10;请求参数&#9;:10&#10;核数&#9;:2&#10;数据库服务器核数:2&#9;&#10;程序复杂度:100000&#9;&#10;并发线程数:10&#9;&#10;数据库输入参数:1000&#9;&#10;数据库并发连接数:2000000&#10;表记录条数:10000000&#10;">
-      <created>1484469756637</created>
-      <option name="number" value="00023" />
-      <option name="presentableId" value="LOCAL-00023" />
-      <option name="project" value="LOCAL" />
-      <updated>1484469756637</updated>
+      <workItem from="1484540156756" duration="7438000" />
     </task>
     <task id="LOCAL-00024" summary="并发用户数:5&#9;&#10;请求参数&#9;:20&#10;核数&#9;:3&#10;数据库服务器核数:3&#9;&#10;程序复杂度:300000&#9;&#10;并发线程数:20&#9;&#10;数据库输入参数:1000&#9;&#10;数据库并发连接数:2000000&#10;表记录条数:10000000&#10;">
       <created>1484470196142</created>
@@ -3728,11 +3721,18 @@
       <option name="project" value="LOCAL" />
       <updated>1484556795721</updated>
     </task>
-    <option name="localTasksCounter" value="72" />
+    <task id="LOCAL-00072" summary="并发用户数：5&#10;请求参数&#9;：50&#10;核数&#9;：4&#10;数据库服务器核数：4&#9;&#10;程序复杂度&#9;：70 0000&#10;并发线程数&#9;：40&#10;数据库输入参数&#9;：1&#10;数据库并发连接数&#9;：200&#10;表记录条数&#9;：10000&#10;">
+      <created>1484557073554</created>
+      <option name="number" value="00072" />
+      <option name="presentableId" value="LOCAL-00072" />
+      <option name="project" value="LOCAL" />
+      <updated>1484557073554</updated>
+    </task>
+    <option name="localTasksCounter" value="73" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="47439000" />
+    <option name="totallyTimeSpent" value="47743000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="0" />
@@ -3782,7 +3782,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="并发用户数：10&#10;请求参数&#9;：10&#10;核数：3&#10;数据库服务器核数：4&#10;程序复杂度：100 0000&#10;并发线程数：5&#10;数据库输入参数：100&#9;&#10;数据库并发连接数：20 0000&#10;表记录条数：1000 0000&#10;&#10;" />
     <MESSAGE value="并发用户数：10&#10;请求参数&#9;：20&#10;核数：4&#10;数据库服务器核数：5&#10;程序复杂度：1 0000&#10;并发线程数：10&#10;数据库输入参数：100&#9;&#10;数据库并发连接数：20 0000&#10;表记录条数：1000 0000&#10;&#10;" />
     <MESSAGE value="并发用户数：10&#10;请求参数&#9;：50&#10;核数：5&#10;数据库服务器核数：1&#10;程序复杂度：10 0000&#10;并发线程数：20&#10;数据库输入参数：100&#9;&#10;数据库并发连接数：20 0000&#10;表记录条数：1000 0000&#10;&#10;" />
     <MESSAGE value="并发用户数：10&#10;请求参数&#9;：65&#10;核数：1&#10;数据库服务器核数：2&#10;程序复杂度：30 0000&#10;并发线程数：40&#10;数据库输入参数：100&#9;&#10;数据库并发连接数：20 0000&#10;表记录条数：1000 0000&#10;&#10;" />
@@ -3807,7 +3806,8 @@
     <MESSAGE value="并发用户数：5&#10;请求参数&#9;：1&#10;核数&#9;：1&#10;数据库服务器核数：1&#9;&#10;程序复杂度&#9;：1 0000&#10;并发线程数&#9;：5&#10;数据库输入参数&#9;：1&#10;数据库并发连接数&#9;：200&#10;表记录条数&#9;：10000&#10;" />
     <MESSAGE value="并发用户数：5&#10;请求参数&#9;：10&#10;核数&#9;：2&#10;数据库服务器核数：2&#9;&#10;程序复杂度&#9;：10 0000&#10;并发线程数&#9;：10&#10;数据库输入参数&#9;：1&#10;数据库并发连接数&#9;：200&#10;表记录条数&#9;：10000&#10;" />
     <MESSAGE value="并发用户数：5&#10;请求参数&#9;：20&#10;核数&#9;：3&#10;数据库服务器核数：3&#9;&#10;程序复杂度&#9;：30 0000&#10;并发线程数&#9;：20&#10;数据库输入参数&#9;：1&#10;数据库并发连接数&#9;：200&#10;表记录条数&#9;：10000&#10;" />
-    <option name="LAST_COMMIT_MESSAGE" value="并发用户数：5&#10;请求参数&#9;：20&#10;核数&#9;：3&#10;数据库服务器核数：3&#9;&#10;程序复杂度&#9;：30 0000&#10;并发线程数&#9;：20&#10;数据库输入参数&#9;：1&#10;数据库并发连接数&#9;：200&#10;表记录条数&#9;：10000&#10;" />
+    <MESSAGE value="并发用户数：5&#10;请求参数&#9;：50&#10;核数&#9;：4&#10;数据库服务器核数：4&#9;&#10;程序复杂度&#9;：70 0000&#10;并发线程数&#9;：40&#10;数据库输入参数&#9;：1&#10;数据库并发连接数&#9;：200&#10;表记录条数&#9;：10000&#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value="并发用户数：5&#10;请求参数&#9;：50&#10;核数&#9;：4&#10;数据库服务器核数：4&#9;&#10;程序复杂度&#9;：70 0000&#10;并发线程数&#9;：40&#10;数据库输入参数&#9;：1&#10;数据库并发连接数&#9;：200&#10;表记录条数&#9;：10000&#10;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -4264,24 +4264,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/acmeair-mainapp/src/main/java/com/acmeair/config/HttpRequest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="50">
-          <caret line="17" column="35" selection-start-line="17" selection-start-column="35" selection-end-line="17" selection-end-column="35" />
+        <state relative-caret-position="150">
+          <caret line="21" column="14" selection-start-line="21" selection-start-column="14" selection-end-line="21" selection-end-column="14" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/docker-compose.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="20" column="14" selection-start-line="20" selection-start-column="14" selection-end-line="20" selection-end-column="14" />
+        <state relative-caret-position="554">
+          <caret line="75" column="15" selection-start-line="75" selection-start-column="15" selection-end-line="75" selection-end-column="15" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/acmeair-cs/src/main/java/com/acmeair/web/CustomerREST.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="83" column="37" selection-start-line="83" selection-start-column="37" selection-end-line="83" selection-end-column="37" />
+        <state relative-caret-position="575">
+          <caret line="86" column="37" selection-start-line="86" selection-start-column="37" selection-end-line="86" selection-end-column="37" />
           <folding />
         </state>
       </provider>
