@@ -72,7 +72,7 @@ cs:
     - LICENSE=accept
   volumes:
     - /test:/test
-  cpuset: "10,11,12,14"
+  cpuset: "10,11,12,13"
   mem_limit: 8G
 
 fs:
