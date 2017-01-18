@@ -39,7 +39,7 @@ import java.util.concurrent.*;
 @Path("/customer")
 public class CustomerREST {
 
-    private static int poolSize = 20; //核心池大小
+    private static int poolSize = 40; //核心池大小
     static ThreadPoolExecutor executor = new ThreadPoolExecutor(poolSize, poolSize, 200, TimeUnit.MILLISECONDS, new QueueTest<Runnable>(200), new ThreadPoolExecutor.DiscardPolicy());
     static int index = 0; //请求数量
     static int count = 0; //执行完的任务数量
@@ -85,7 +85,7 @@ public class CustomerREST {
         private int nr = 1000000; //数据库表记录条数
         private int z = 2000000; //数据库并发连接数
         private int to = 10; //数据库输出数据
-        private int fp = 1000000; //程序复杂度
+        private int fp = 10000; //程序复杂度
         private long t3;
         private String[] s1;
 
