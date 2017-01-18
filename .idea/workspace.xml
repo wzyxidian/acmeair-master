@@ -83,7 +83,7 @@
       <file leaf-file-name="docker-compose.yml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/docker-compose.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="229">
+            <state relative-caret-position="379">
               <caret line="20" column="14" selection-start-line="20" selection-start-column="14" selection-end-line="20" selection-end-column="14" />
               <folding />
             </state>
@@ -96,7 +96,7 @@
             <state relative-caret-position="125">
               <caret line="41" column="36" selection-start-line="41" selection-start-column="36" selection-end-line="41" selection-end-column="36" />
               <folding>
-                <element signature="e#1832#1859#0" expanded="true" />
+                <element signature="e#1833#1860#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -3327,14 +3327,7 @@
       <workItem from="1484626177859" duration="2459000" />
       <workItem from="1484642226577" duration="1409000" />
       <workItem from="1484700778383" duration="13346000" />
-      <workItem from="1484717658657" duration="10373000" />
-    </task>
-    <task id="LOCAL-00120" summary="并发用户数：2000&#10;请求参数&#9;：50&#10;核数&#9;：3&#10;数据库服务器核数：2&#9;&#10;程序复杂度&#9;：10000&#10;并发线程数&#9;：100&#10;数据库输入参数&#9;：500&#10;数据库并发连接数&#9;：20000&#10;表记录条数&#9;：100000&#10;">
-      <created>1484636808750</created>
-      <option name="number" value="00120" />
-      <option name="presentableId" value="LOCAL-00120" />
-      <option name="project" value="LOCAL" />
-      <updated>1484636808750</updated>
+      <workItem from="1484717658657" duration="10647000" />
     </task>
     <task id="LOCAL-00121" summary="并发用户数：5&#10;请求参数&#9;：1&#10;核数&#9;：1&#10;数据库服务器核数：1&#9;&#10;程序复杂度&#9;：10000&#10;并发线程数&#9;：5&#10;数据库输入参数&#9;：100&#10;数据库并发连接数&#9;：20000&#10;表记录条数&#9;：1000000&#10;">
       <created>1484701840584</created>
@@ -3672,11 +3665,18 @@
       <option name="project" value="LOCAL" />
       <updated>1484730359590</updated>
     </task>
-    <option name="localTasksCounter" value="169" />
+    <task id="LOCAL-00169" summary="并发用户数：2000&#10;请求参数&#9;：20&#10;核数&#9;：2&#10;数据库服务器核数：1&#10;程序复杂度&#9;：1000000&#10;并发线程数&#9;：40&#10;数据库输入参数&#9;：1&#10;数据库并发连接数&#9;：2000000&#10;表记录条数&#9;：5000000&#10;">
+      <created>1484730674312</created>
+      <option name="number" value="00169" />
+      <option name="presentableId" value="LOCAL-00169" />
+      <option name="project" value="LOCAL" />
+      <updated>1484730674312</updated>
+    </task>
+    <option name="localTasksCounter" value="170" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="98107000" />
+    <option name="totallyTimeSpent" value="98381000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="0" />
@@ -3745,7 +3745,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_COMMIT_MESSAGE_SPELLING" value="false" />
-    <MESSAGE value="并发用户数：2000&#10;请求参数&#9;：20&#10;核数&#9;：2&#10;数据库服务器核数：1&#9;&#10;程序复杂度&#9;：1000000&#10;并发线程数&#9;：40&#10;数据库输入参数&#9;：1000&#10;数据库并发连接数&#9;：200000&#10;表记录条数&#9;：1000000&#10;" />
     <MESSAGE value="并发用户数：2000&#10;请求参数&#9;：50&#10;核数&#9;：3&#10;数据库服务器核数：2&#9;&#10;程序复杂度&#9;：10000&#10;并发线程数&#9;：100&#10;数据库输入参数&#9;：1000&#10;数据库并发连接数&#9;：200000&#10;表记录条数&#9;：1000000&#10;" />
     <MESSAGE value="并发用户数：2000&#10;请求参数&#9;：65&#10;核数&#9;：4&#10;数据库服务器核数：3&#9;&#10;程序复杂度&#9;：100000&#10;并发线程数&#9;：5&#10;数据库输入参数&#9;：1000&#10;数据库并发连接数&#9;：200000&#10;表记录条数&#9;：1000000&#10;" />
     <MESSAGE value="并发用户数：5&#10;请求参数&#9;：1&#10;核数&#9;：1&#10;数据库服务器核数：1&#9;&#10;程序复杂度&#9;：10000&#10;并发线程数&#9;：5&#10;数据库输入参数&#9;：500&#10;数据库并发连接数&#9;：200000&#10;表记录条数&#9;：5000000&#10;" />
@@ -3770,7 +3769,8 @@
     <MESSAGE value="并发用户数：1000&#10;请求参数&#9;：65&#10;核数&#9;：3&#10;数据库服务器核数：1&#10;程序复杂度&#9;：700000&#10;并发线程数&#9;：10&#10;数据库输入参数&#9;：100&#10;数据库并发连接数&#9;：200&#10;表记录条数&#9;：5000000&#10;" />
     <MESSAGE value="并发用户数：2000&#10;请求参数&#9;：1&#10;核数&#9;：5&#10;数据库服务器核数：4&#10;程序复杂度&#9;：300000&#10;并发线程数&#9;：10&#10;数据库输入参数&#9;：1&#10;数据库并发连接数&#9;：2000000&#10;表记录条数&#9;：5000000&#10;" />
     <MESSAGE value="并发用户数：2000&#10;请求参数&#9;：10&#10;核数&#9;：1&#10;数据库服务器核数：5&#10;程序复杂度&#9;：700000&#10;并发线程数&#9;：20&#10;数据库输入参数&#9;：1&#10;数据库并发连接数&#9;：2000000&#10;表记录条数&#9;：5000000&#10;" />
-    <option name="LAST_COMMIT_MESSAGE" value="并发用户数：2000&#10;请求参数&#9;：10&#10;核数&#9;：1&#10;数据库服务器核数：5&#10;程序复杂度&#9;：700000&#10;并发线程数&#9;：20&#10;数据库输入参数&#9;：1&#10;数据库并发连接数&#9;：2000000&#10;表记录条数&#9;：5000000&#10;" />
+    <MESSAGE value="并发用户数：2000&#10;请求参数&#9;：20&#10;核数&#9;：2&#10;数据库服务器核数：1&#10;程序复杂度&#9;：1000000&#10;并发线程数&#9;：40&#10;数据库输入参数&#9;：1&#10;数据库并发连接数&#9;：2000000&#10;表记录条数&#9;：5000000&#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value="并发用户数：2000&#10;请求参数&#9;：20&#10;核数&#9;：2&#10;数据库服务器核数：1&#10;程序复杂度&#9;：1000000&#10;并发线程数&#9;：40&#10;数据库输入参数&#9;：1&#10;数据库并发连接数&#9;：2000000&#10;表记录条数&#9;：5000000&#10;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -3855,7 +3855,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/docker-compose.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="229">
+        <state relative-caret-position="379">
           <caret line="20" column="14" selection-start-line="20" selection-start-column="14" selection-end-line="20" selection-end-column="14" />
           <folding />
         </state>
@@ -3866,7 +3866,7 @@
         <state relative-caret-position="125">
           <caret line="41" column="36" selection-start-line="41" selection-start-column="36" selection-end-line="41" selection-end-column="36" />
           <folding>
-            <element signature="e#1832#1859#0" expanded="true" />
+            <element signature="e#1833#1860#0" expanded="true" />
           </folding>
         </state>
       </provider>
