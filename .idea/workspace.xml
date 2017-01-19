@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cdc158d6-cc18-4763-b066-f2454fd7633d" name="Default" comment="并发用户数：10&#10;请求参数&#9;：1&#10;核数&#9;：2&#10;数据库服务器核数：3&#10;程序复杂度&#9;：700000&#10;并发线程数&#9;：100&#10;数据库输入参数&#9;：1000&#10;数据库并发连接数&#9;：200&#10;表记录条数&#9;：100000&#10;">
+    <list default="true" id="cdc158d6-cc18-4763-b066-f2454fd7633d" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/acmeair-cs/src/main/java/com/acmeair/web/CustomerREST.java" afterPath="$PROJECT_DIR$/acmeair-cs/src/main/java/com/acmeair/web/CustomerREST.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/acmeair-mainapp/src/main/java/com/acmeair/config/HttpRequest.java" afterPath="$PROJECT_DIR$/acmeair-mainapp/src/main/java/com/acmeair/config/HttpRequest.java" />
@@ -75,7 +75,7 @@
         <entry file="file://$PROJECT_DIR$/acmeair-mainapp/src/main/java/com/acmeair/config/HttpRequest.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="275">
-              <caret line="17" column="35" selection-start-line="17" selection-start-column="35" selection-end-line="17" selection-end-column="35" />
+              <caret line="17" column="36" selection-start-line="17" selection-start-column="36" selection-end-line="17" selection-end-column="36" />
               <folding />
             </state>
           </provider>
@@ -84,8 +84,8 @@
       <file leaf-file-name="docker-compose.yml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/docker-compose.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="250">
-              <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+            <state relative-caret-position="125">
+              <caret line="18" column="26" selection-start-line="18" selection-start-column="26" selection-end-line="18" selection-end-column="26" />
               <folding />
             </state>
           </provider>
@@ -94,8 +94,8 @@
       <file leaf-file-name="CustomerREST.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/acmeair-cs/src/main/java/com/acmeair/web/CustomerREST.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="450">
-              <caret line="84" column="27" selection-start-line="84" selection-start-column="27" selection-end-line="84" selection-end-column="27" />
+            <state relative-caret-position="675">
+              <caret line="87" column="27" selection-start-line="87" selection-start-column="27" selection-end-line="87" selection-end-column="27" />
               <folding />
             </state>
           </provider>
@@ -2549,8 +2549,8 @@
         <option value="$PROJECT_DIR$/acmeair-cs/src/main/java/com/acmeair/web/CollectInfo.java" />
         <option value="$PROJECT_DIR$/acmeair-mainapp/src/main/java/com/acmeair/config/ThreadPool.java" />
         <option value="$PROJECT_DIR$/acmeair-mainapp/src/main/java/com/acmeair/config/HttpRequest.java" />
-        <option value="$PROJECT_DIR$/acmeair-cs/src/main/java/com/acmeair/web/CustomerREST.java" />
         <option value="$PROJECT_DIR$/docker-compose.yml" />
+        <option value="$PROJECT_DIR$/acmeair-cs/src/main/java/com/acmeair/web/CustomerREST.java" />
       </list>
     </option>
   </component>
@@ -3141,14 +3141,7 @@
       <workItem from="1484717658657" duration="11374000" />
       <workItem from="1484793798709" duration="164000" />
       <workItem from="1484795750340" duration="12123000" />
-      <workItem from="1484815239709" duration="9853000" />
-    </task>
-    <task id="LOCAL-00179" summary="并发用户数：10&#10;请求参数&#9;：20&#10;核数&#9;：4&#10;数据库服务器核数：5&#10;程序复杂度&#9;：10000&#10;并发线程数&#9;：10&#10;数据库输入参数&#9;：10&#10;数据库并发连接数&#9;：20000&#10;表记录条数&#9;：5000000&#10;">
-      <created>1484807058774</created>
-      <option name="number" value="00179" />
-      <option name="presentableId" value="LOCAL-00179" />
-      <option name="project" value="LOCAL" />
-      <updated>1484807058774</updated>
+      <workItem from="1484815239709" duration="10064000" />
     </task>
     <task id="LOCAL-00180" summary="并发用户数：10&#10;请求参数&#9;：50&#10;核数&#9;：5&#10;数据库服务器核数：1&#10;程序复杂度&#9;：100000&#10;并发线程数&#9;：20&#10;数据库输入参数&#9;：10&#10;数据库并发连接数&#9;：20000&#10;表记录条数&#9;：5000000&#10;">
       <created>1484807370192</created>
@@ -3486,11 +3479,18 @@
       <option name="project" value="LOCAL" />
       <updated>1484827278144</updated>
     </task>
-    <option name="localTasksCounter" value="228" />
+    <task id="LOCAL-00228" summary="并发用户数：10&#10;请求参数&#9;：1&#10;核数&#9;：2&#10;数据库服务器核数：3&#10;程序复杂度&#9;：700000&#10;并发线程数&#9;：100&#10;数据库输入参数&#9;：1000&#10;数据库并发连接数&#9;：200&#10;表记录条数&#9;：100000&#10;">
+      <created>1484827589617</created>
+      <option name="number" value="00228" />
+      <option name="presentableId" value="LOCAL-00228" />
+      <option name="project" value="LOCAL" />
+      <updated>1484827589617</updated>
+    </task>
+    <option name="localTasksCounter" value="229" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="121248000" />
+    <option name="totallyTimeSpent" value="121459000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="54" y="-8" width="1874" height="1096" extended-state="6" />
@@ -3559,7 +3559,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_COMMIT_MESSAGE_SPELLING" value="false" />
-    <MESSAGE value="并发用户数：5&#10;请求参数&#9;：65&#10;核数&#9;：5&#10;数据库服务器核数：5&#10;程序复杂度&#9;：1000000&#10;并发线程数&#9;：100&#10;数据库输入参数&#9;：1&#10;数据库并发连接数&#9;：200&#10;表记录条数&#9;：10000&#10;" />
     <MESSAGE value="并发用户数：10&#10;请求参数&#9;：1&#10;核数&#9;：2&#10;数据库服务器核数：3&#10;程序复杂度&#9;：700000&#10;并发线程数&#9;：100&#10;数据库输入参数&#9;：500&#10;数据库并发连接数&#9;：2000000&#10;表记录条数&#9;：10000&#10;" />
     <MESSAGE value="并发用户数：10&#10;请求参数&#9;：10&#10;核数&#9;：3&#10;数据库服务器核数：4&#10;程序复杂度&#9;：1000000&#10;并发线程数&#9;：5&#10;数据库输入参数&#9;：500&#10;数据库并发连接数&#9;：2000000&#10;表记录条数&#9;：10000&#10;" />
     <MESSAGE value="并发用户数：10&#10;请求参数&#9;：20&#10;核数&#9;：4&#10;数据库服务器核数：5&#10;程序复杂度&#9;：10000&#10;并发线程数&#9;：10&#10;数据库输入参数&#9;：500&#10;数据库并发连接数&#9;：2000000&#10;表记录条数&#9;：10000&#10;" />
@@ -3584,7 +3583,8 @@
     <MESSAGE value="并发用户数：5&#10;请求参数&#9;：20&#10;核数&#9;：3&#10;数据库服务器核数：3&#10;程序复杂度&#9;：300000&#10;并发线程数&#9;：20&#10;数据库输入参数&#9;：10&#10;数据库并发连接数&#9;：2000&#10;表记录条数&#9;：100000&#10;" />
     <MESSAGE value="并发用户数：5&#10;请求参数&#9;：50&#10;核数&#9;：4&#10;数据库服务器核数：4&#10;程序复杂度&#9;：700000&#10;并发线程数&#9;：40&#10;数据库输入参数&#9;：10&#10;数据库并发连接数&#9;：2000&#10;表记录条数&#9;：100000&#10;" />
     <MESSAGE value="并发用户数：5&#10;请求参数&#9;：65&#10;核数&#9;：5&#10;数据库服务器核数：5&#10;程序复杂度&#9;：1000000&#10;并发线程数&#9;：100&#10;数据库输入参数&#9;：10&#10;数据库并发连接数&#9;：2000&#10;表记录条数&#9;：100000&#10;" />
-    <option name="LAST_COMMIT_MESSAGE" value="并发用户数：5&#10;请求参数&#9;：65&#10;核数&#9;：5&#10;数据库服务器核数：5&#10;程序复杂度&#9;：1000000&#10;并发线程数&#9;：100&#10;数据库输入参数&#9;：10&#10;数据库并发连接数&#9;：2000&#10;表记录条数&#9;：100000&#10;" />
+    <MESSAGE value="并发用户数：10&#10;请求参数&#9;：1&#10;核数&#9;：2&#10;数据库服务器核数：3&#10;程序复杂度&#9;：700000&#10;并发线程数&#9;：100&#10;数据库输入参数&#9;：1000&#10;数据库并发连接数&#9;：200&#10;表记录条数&#9;：100000&#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value="并发用户数：10&#10;请求参数&#9;：1&#10;核数&#9;：2&#10;数据库服务器核数：3&#10;程序复杂度&#9;：700000&#10;并发线程数&#9;：100&#10;数据库输入参数&#9;：1000&#10;数据库并发连接数&#9;：200&#10;表记录条数&#9;：100000&#10;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -3662,23 +3662,23 @@
     <entry file="file://$PROJECT_DIR$/acmeair-mainapp/src/main/java/com/acmeair/config/HttpRequest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="275">
-          <caret line="17" column="35" selection-start-line="17" selection-start-column="35" selection-end-line="17" selection-end-column="35" />
+          <caret line="17" column="36" selection-start-line="17" selection-start-column="36" selection-end-line="17" selection-end-column="36" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/docker-compose.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="250">
-          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+        <state relative-caret-position="125">
+          <caret line="18" column="26" selection-start-line="18" selection-start-column="26" selection-end-line="18" selection-end-column="26" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/acmeair-cs/src/main/java/com/acmeair/web/CustomerREST.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="84" column="27" selection-start-line="84" selection-start-column="27" selection-end-line="84" selection-end-column="27" />
+        <state relative-caret-position="675">
+          <caret line="87" column="27" selection-start-line="87" selection-start-column="27" selection-end-line="87" selection-end-column="27" />
           <folding />
         </state>
       </provider>
