@@ -85,7 +85,7 @@ public class CustomerREST {
         private int nr = 10000; //数据库表记录条数
         private int z = 2000; //数据库并发连接数
         private int to = 100; //数据库输出数据
-        private int fp = 1000000; //程序复杂度
+        private int fp = 10000; //程序复杂度
         private long t3;
         private String[] s1;
 
